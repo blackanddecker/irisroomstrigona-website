@@ -1,0 +1,75 @@
+
+/* General container styling */
+/* Section heading */
+h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #4F4A46; /* Dark Gray */
+}
+
+/* Cards styling */
+.card {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Card image */
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 5px solid #D87A56; /* Terracotta */
+}
+
+/* Card title */
+.card-title {
+    font-size: 1.5rem;
+    color: #D87A56; /* Terracotta */
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+/* Card text */
+.card-text {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+/* Time information */
+.card-body p strong {
+    color: #4F4A46; /* Dark Gray */
+}
+
+/* Button styling */
+.btn-primary {
+    background-color: #D87A56; /* Terracotta */
+    border-color: #D87A56;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 50px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.btn-primary:hover {
+    background-color: #A5C16A; /* Green */
+    border-color: #A5C16A;
+    transform: translateY(-3px);
+    color: white;
+}
+
+/* Row spacing */
+.row {
+    row-gap: 30px;
+}

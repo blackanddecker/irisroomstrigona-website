@@ -1,0 +1,181 @@
+/* Hero Section */
+.hero-section {
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('{{ url_for('static', filename='hero-image.jpg') }}') no-repeat center center;
+    background-size: cover;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.hero-section h1 {
+    font-size: 4rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.hero-section p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Image Cards */
+.image-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.image-card img {
+    width: 100%;
+    height: 100px; /* Set fixed height for consistency */
+    transition: transform 0.5s ease-in-out;
+}
+
+.image-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.image-card:hover img {
+    transform: scale(1.1); /* Zoom-in effect on hover */
+}
+
+.image-card .overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-align: center;
+    transition: opacity 0.3s ease;
+    opacity: 0;
+}
+
+.image-card:hover .overlay {
+    opacity: 1;
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: #D87A56; /* Terracotta */
+    border-color: #D87A56;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border-radius: 50px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #A5C16A; /* Green */
+    border-color: #A5C16A;
+    transform: translateY(-3px);
+}
+
+.btn-outline-primary {
+    color: #D87A56;
+    border-color: #D87A56;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border-radius: 50px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-outline-primary:hover {
+    background-color: #D87A56;
+    color: white;
+    transform: translateY(-3px);
+}
+
+/* Footer */
+.footer {
+    background-color: #B6DDF1; /* Sky Blue */
+    padding: 30px 0;
+    text-align: center;
+    color: #4F4A46;
+    border-top: 4px solid #D87A56;
+    font-size: 1rem;
+}
+
+.footer a {
+    color: #D87A56;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.footer a:hover {
+    color: #A5C16A;
+    text-decoration: underline;
+}
+
+.text-dark-gray {
+    color: #4F4A46; /* Dark Gray */
+}
+
+.contact-item i {
+    color: #D87A56; /* Terracotta */
+}
+
+.contact-item a:hover {
+    color: #A5C16A; /* Green */
+    text-decoration: underline;
+}
+
+/* General styling for the section */
+h2.text-dark-gray {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #4F4A46;
+    margin-bottom: 30px;
+}
+
+.bg-light {
+    background-color: #F8F9FA !important;
+}
+
+.bg-primary {
+    background-color: #D87A56 !important; /* Terracotta */
+}
+
+.text-primary {
+    color: #D87A56 !important;
+}
+
+/* Icon styling */
+ul li i {
+    color: #A5C16A; /* Green */
+}
+
+/* Box shadow for better aesthetics */
+.shadow-sm {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+

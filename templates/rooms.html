@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='rooms.css') }}">
+
+<div class="container mt-5">
+<h2 class="display-4 text-center text-dark-gray mb-4">Our Rooms</h2>
+    <div class="display-8 text-center text-dark-gray">All bookings are threw Airbnb. Click on the button to view the details and book your stay. </div>
+    <br>
+    <div class="row">
+        <!-- Iris Apartments Trigona 4 -->
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm">
+                <img src="{{ url_for('static', filename='room4.jpeg') }}" class="card-img-top" alt="Iris Apartments Trigona 4">
+                <div class="card-body">
+                    <h5 class="card-title">Iris Apartments Trigona 4</h5>
+                    <p class="card-text">Located in the serene village of Trigona, this cozy apartment offers a peaceful retreat with stunning views of the surrounding landscape. Perfect for couples or solo travelers.</p>
+                    <ul class="list-unstyled mt-3 mb-4">
+                        <li><i class="fas fa-bed text-primary"></i> 2 Single Beds - 1 Bathroom</li>
+                        <li><i class="fas fa-wifi text-primary"></i> Wi-Fi - TV - Hot Water</li>
+                        <li><i class="fas fa-utensils text-primary"></i> Fully Equipped Kitchen</li>
+                    </ul>
+                    <a href="https://www.airbnb.com/rooms/1135680475926315700" class="btn btn-primary" target="_blank">View Details on Airbnb</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Iris Apartments Trigona 5 -->
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm">
+                <img src="{{ url_for('static', filename='room5.jpeg') }}" class="card-img-top" alt="Iris Apartments Trigona 5">
+                <div class="card-body">
+                    <h5 class="card-title">Iris Apartments Trigona 5</h5>
+                    <p class="card-text">Another charming apartment in Trigona, offering modern amenities and a cozy ambiance. Perfect for couples that want to relax and have a morning coffee with view in the mountains.</p>
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li><i class="fas fa-bed text-primary"></i> 1 Double Bed - 1 Bathroom</li>
+                            <li><i class="fas fa-wifi text-primary"></i> Wi-Fi - <i class="fas fa-tv text-primary"></i> TV - <i class="fas fa-fire-alt text-primary"></i> Hot Water</li>
+                            <li><i class="fas fa-utensils text-primary"></i> Fully Equipped Kitchen</li>
+                            <li><i class="fas fa-tree text-primary"></i> Own Balcony</li>
+                        </ul>
+                    <a href="https://www.airbnb.com/rooms/1134810135090425245" class="btn btn-primary" target="_blank">View Details on Airbnb</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Iris Apartments Trigona 6 -->
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm">
+                <img src="{{ url_for('static', filename='room6.jpeg') }}" class="card-img-top" alt="Iris Apartments Trigona 6">
+                <div class="card-body">
+                    <h5 class="card-title">Iris Apartments Trigona 6</h5>
+                    <p class="card-text">Another charming apartment in Trigona, offering modern amenities and a cozy ambiance. Perfect for couples that want to relax and have a morning coffee with view in the mountains, or use the fireplace.</p>
+                    <ul class="list-unstyled mt-3 mb-4">
+                        <li><i class="fas fa-bed text-primary"></i> 1 Double Bed - 1 Bathroom</li>
+                        <li><i class="fas fa-wifi text-primary"></i> Wi-Fi - TV - Hot Water</li>
+                        <li><i class="fas fa-utensils text-primary"></i> Fully Equipped Kitchen</li>
+                        <li><i class="fas fa-utensils text-primary"></i> Fireplace</li>
+                        <li><i class="fas fa-utensils text-primary"></i> Own balcony</li>
+                    </ul>
+                    <a href="https://www.airbnb.com/rooms/1139212536056596157?source_impression_id=p3_1736526255_P3GxvqSus9ncaane" class="btn btn-primary" target="_blank">View Details on Airbnb</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,161 @@
+/* General Body Styles */
+body {
+    background-color: #F3E9D5; /* Light Beige */
+    font-family: 'Arial', sans-serif;
+    color: #4F4A46; /* Dark Gray */
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #F3E9D5; /* Light Beige */
+    border-bottom: 2px solid #D87A56; /* Terracotta */
+}
+
+header .navbar-brand img {
+    height: 60px;
+    width: auto;
+}
+
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+    color: #4F4A46; /* Dark Gray */
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+/* Contact Details */
+.contact-details p {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    padding-left: 20px;
+    border-left: 4px solid #D87A56;
+    transition: padding-left 0.3s ease;
+    color: #4F4A46; /* Dark Gray */
+}
+
+.contact-details p:hover {
+    padding-left: 30px;
+}
+
+/* Cards */
+.card {
+    border-radius: 15px;
+    border: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #FFFFFF; /* White background for cards */
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Card Titles */
+.card-title {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    color: #D87A56; /* Terracotta */
+}
+
+/* Iframe (Map) */
+iframe {
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+iframe:hover {
+    transform: scale(1.02);
+}
+
+/* Links */
+a {
+    color: #D87A56; /* Terracotta */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #A5C16A; /* Green */
+    text-decoration: underline;
+}
+
+/* Button Styles */
+.btn-primary {
+    background-color: #D87A56; /* Terracotta */
+    border-color: #D87A56;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 50px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #A5C16A; /* Green */
+    border-color: #A5C16A;
+    transform: translateY(-3px);
+}
+
+.btn-outline-primary {
+    color: #D87A56;
+    border-color: #D87A56;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 50px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-outline-primary:hover {
+    background-color: #D87A56;
+    color: white;
+    transform: translateY(-3px);
+}
+
+/* Footer */
+.footer {
+    background-color: #B6DDF1; /* Sky Blue */
+    padding: 30px 0;
+    text-align: center;
+    color: #4F4A46;
+    border-top: 4px solid #D87A56;
+    font-size: 1rem;
+}
+
+.footer a {
+    color: #D87A56; /* Terracotta */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.footer a:hover {
+    color: #A5C16A; /* Green */
+    text-decoration: underline;
+}
+
+.text-dark-gray {
+    color: #4F4A46; /* Dark Gray */
+}
+
+/* Navbar Contact Info */
+.navbar .fa-map-marker-alt,
+.navbar .fa-phone-alt {
+    color: #D87A56; /* Terracotta */
+    margin-right: 5px;
+}
+
+.navbar a {
+    font-weight: bold;
+}
+
+.navbar a:hover {
+    color: #A5C16A; /* Green */
+    text-decoration: underline;
+}

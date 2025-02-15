@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='contact.css') }}">
+
+<div class="container mt-5">
+    <h1 class="display-4 text-center text-dark-gray mb-5">Contact Us</h1>
+
+    <div class="row">
+        <!-- Left Section: Contact Details & Access Time -->
+        <div class="col-lg-6 mb-4">
+            <div class="card shadow-sm border-0">
+                <div class="card-body">
+                    <h3 class="card-title text-secondary">Get in Touch</h3>
+                    <p class="card-text">We are here to assist you! Reach out to us with any questions or inquiries.</p>
+                    <div class="contact-details mt-4">
+                        <p><i class="fas fa-map-marker-alt text-primary"></i> <strong>Address:</strong> Trigona, Kalambaka, 42200</p>
+                        <p><i class="fas fa-phone text-primary"></i> <strong>Phone:</strong> <a href="tel:+30 2432070119">+30 2432070119</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Access Time Information Section -->
+            <div class="card shadow-sm border-0 mt-4">
+                <div class="card-body">
+                    <h3 class="card-title text-secondary">Access Time to Nearby Attractions</h3>
+                    <ul class="list-unstyled mt-3">
+                        <li><i class="fas fa-map-signs text-primary"></i> <strong>Meteora:</strong> 30 minutes by car</li>
+                        <li><i class="fas fa-map-signs text-primary"></i> <strong>Trikala:</strong> 50 minutes by car</li>
+                        <li><i class="fas fa-map-signs text-primary"></i> <strong>Valia Calda National Park:</strong> 90 minutes by car</li>
+                        <li><i class="fas fa-map-signs text-primary"></i> <strong>Metsovo:</strong> 40 minutes by car</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Section: Map -->
+        <div class="col-lg-6 mb-4">
+            <div class="card shadow-sm border-0">
+                <div class="card-body">
+                    <h3 class="card-title text-secondary">Find Us on the Map</h3>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1792.0618536434736!2d21.414068055292324!3d39.78802502199674!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1359736d0f607d65%3A0xbd8ae6056eb2514a!2sIris%20Rooms%20Trigona!5e0!3m2!1sen!2sgr!4v1694425401239!5m2!1sen!2sgr"
+                        width="100%"
+                        height="340"
+                        style="border:0; border-radius: 10px;"
+                        allowfullscreen=""
+                        loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

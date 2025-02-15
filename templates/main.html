@@ -1,0 +1,139 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<!-- Hero Section -->
+<!--<div class="text-center">-->
+<!--    <h1 class="display-3">Welcome to Iris Guesthouse</h1>-->
+<!--</div>-->
+<div class="hero-section" style="background: url('{{ url_for('static', filename='hotel-trigona.jpeg') }}') no-repeat center center; background-size: cover; height: 60vh; display: flex; align-items: center; justify-content: center; color: white; text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);">
+</div>
+
+<!-- Main Content -->
+<div class="container mt-5">
+    <!-- History - About Us Section -->
+    <div class="mb-5">
+        <h2 class="text-dark-gray mb-4">Welcome to our Guesthouse</h2>
+        <div class="row align-items-center">
+            <!-- Left Column: Text -->
+            <div class="col-md-12">
+                <div class="p-4 bg-light rounded shadow-sm">
+                    <h4 class="text-dark-gray mb-3">Our Story</h4>
+                    <p class="mb-3">
+                        Established in 1988 along the main road from Igoumenitsa to Athens, Hotel Trigona has been a cherished part of countless guests' journeys, creating lasting memories over the decades. Now, 35 years later, it continues the legacy by offering the same warm, authentic hospitality through Iris Guesthouse. What began as a humble, family-run hotel has evolved into a beloved retreat for travelers worldwide. Combining traditional Greek charm with modern comforts, we strive to provide every visitor with a truly unforgettable experience.                    </p>
+                    <p class="mb-0">
+                        Nestled in the tranquil village of Trigona, surrounded by breathtaking landscapes, we cater to those seeking relaxation, adventure, or cultural exploration. Our commitment is to make every guest feel at home while exploring the natural beauty of the region.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- For Whom It's Ideal Section -->
+    <div class="mb-5">
+        <h2 class="text-dark-gray mb-4">Who It’s Ideal For</h2>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-sm">
+                    <div class="text-center card-body">
+                        <i class="fas fa-hiking fa-3x text-primary mb-3"></i>
+                        <h5 class="card-title">Adventure Seekers</h5>
+                        <p class="card-text">Perfect for those who love hiking, climbing, and exploring the natural beauty of Meteora and the surrounding mountains.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-sm">
+                    <div class="text-center card-body">
+                        <i class="fas fa-heart fa-3x text-primary mb-3"></i>
+                        <h5 class="card-title">Couples</h5>
+                        <p class="card-text">An ideal romantic getaway, offering cozy rooms, serene views, and a peaceful ambiance for couples to unwind.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-sm">
+                    <div class="text-center card-body">
+                        <i class="fas fa-child fa-3x text-primary mb-3"></i>
+                        <h5 class="card-title">Families</h5>
+                        <p class="card-text">A safe and family-friendly environment with spacious apartments, fully equipped kitchens, and beautiful outdoor spaces.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Image Gallery Section -->
+    <div class="mb-5">
+        <h2 class="text-dark-gray mb-4">Our Guesthouse</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="image-card position-relative overflow-hidden rounded">
+                    <img src="{{ url_for('static', filename='guesthouse/exterior1.jpeg') }}" class="img-fluid rounded mb-3" alt="Winter 2008">
+                    <div class="overlay position-absolute bottom-0 start-50 translate-middle-x text-white fw-bold py-2 w-100 text-center" style="background: rgba(0, 0, 0, 0.6);">
+                        Exterior
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="image-card position-relative overflow-hidden rounded">
+                    <img src="{{ url_for('static', filename='guesthouse/snow.jpg') }}" class="img-fluid rounded mb-3" alt="Winter 2008">
+                    <div class="overlay position-absolute bottom-0 start-50 translate-middle-x text-white fw-bold py-2 w-100 text-center" style="background: rgba(0, 0, 0, 0.6);">
+                        December 2007
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="image-card position-relative overflow-hidden rounded">
+                    <img src="{{ url_for('static', filename='guesthouse/balkon1.jpeg') }}" class="img-fluid rounded mb-3" alt="Winter 2008">
+                    <div class="overlay position-absolute bottom-0 start-50 translate-middle-x text-white fw-bold py-2 w-100 text-center" style="background: rgba(0, 0, 0, 0.6);">
+                        Private Balcony
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Customer Reviews Section -->
+    <div class="mb-5">
+        <h2 class="text-dark-gray mb-4">What Our Guests Say</h2>
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">Incredible Experience!</h5>
+                        <p class="card-text">The accommodation was truly amazing. The environment of the house and the host was very friendly and they made you feel like it was your own house like a family. The cleaning service was immediate and all the room services exceptional. Thank you very much for everything.</p>
+                        <div class="text-warning">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="text-muted">- Dimitrios, Airbnb, December 2024</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">Unforgettable Memory!</h5>
+                        <p class="card-text">The host was very kind and made us feel like home.
+The room is in the courtyard that avoids the main road, the garden is thoughtfully taken care of, the lovely little dog.The breakfast was perfect and plentiful.
+Not just a short stay, more unforgettable memory for us.</p>
+                        <div class="text-warning">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="text-muted">- Zhen, Airbnb, June 2024</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

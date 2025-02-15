@@ -1,0 +1,64 @@
+/* General Styles */
+h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #D87A56; /* Terracotta */
+}
+
+.card {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #4F4A46; /* Dark Gray */
+}
+
+.card-text {
+    font-size: 1rem;
+    color: #555;
+}
+
+.contact-details p,
+.contact-details ul li {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    color: #4F4A46; /* Dark Gray */
+}
+
+.contact-details i {
+    margin-right: 10px;
+    color: #A5C16A; /* Green for icons */
+}
+
+/* Links */
+.contact-details a {
+    color: #D87A56; /* Terracotta */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+.contact-details a:hover {
+    color: #A5C16A; /* Green */
+}
+
+/* Map Styling */
+iframe {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Hover Effect for Cards */
+.card:hover {
+    transform: scale(1.02);
+    transition: transform 0.3s ease;
+}
+
+.text-dark-gray {
+    color: #4F4A46; /* Dark Gray */
+}

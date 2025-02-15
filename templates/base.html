@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Iris Rooms Trigona</title>
+    <link rel="icon" href="{{ url_for('static', filename='logo-iris-rooms.jpg') }}" type="image/x-icon">
+</head>
+<body>
+    <!-- Navbar with Logo, Phone, and Address -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light py-3">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <img src="{{ url_for('static', filename='logo-iris-rooms.jpg') }}" alt="Iris Rooms Trigona Logo" style="height: 50px;">
+                Iris Rooms Trigona
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="/">Guesthouse</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/rooms">Rooms</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/activities">Activities</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/contact">Contact</a></li>
+                </ul>
+                <!-- Contact Info in Navbar -->
+                <div class="d-none d-lg-flex align-items-center ms-4">
+                    <div class="me-3">
+                        <i class="fas fa-map-marker-alt text-primary"></i> Trigona, Kalambaka, 42200
+                    </div>
+                    <div>
+                        <i class="fas fa-phone-alt text-primary"></i> <a href="tel:+30 2432070119" class="text-dark text-decoration-none">+30 2432070119</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mt-5">
+        {% block content %}{% endblock %}
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-4 bg-light text-center">
+        <p class="mt-2 mb-0">© 2025 Iris Rooms Trigona. All rights reserved.</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

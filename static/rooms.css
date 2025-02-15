@@ -1,0 +1,56 @@
+/* Ensure all cards have the same height */
+.card {
+    height: 100%;
+    border-radius: 15px;
+    border: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.text-dark-gray {
+    color: #4F4A46; /* Dark Gray */
+}
+
+/* Center the button */
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* List items styling */
+.card-body ul li {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.card-body ul li i {
+    margin-right: 10px;
+    font-size: 1.2rem;
+    color: #D87A56; /* Terracotta */
+}
+
+
+.btn-primary {
+    margin: 0 auto;
+    display: block;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 50px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    background-color: #D87A56; /* Terracotta */
+    border-color: #D87A56;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #A5C16A; /* Green */
+    border-color: #A5C16A;
+    transform: translateY(-3px);
+}
