@@ -230,3 +230,20 @@ footer a:hover,
         margin-top: 12px;
     }
 }
+
+.superhost-badge img {
+    height: 28px;
+    margin-left: 6px;
+}
+
+@media (max-width: 991.98px) {
+
+    .superhost-badge {
+        margin-top: 4px;
+    }
+
+    .superhost-badge img {
+        height: 26px;
+    }
+
+}
