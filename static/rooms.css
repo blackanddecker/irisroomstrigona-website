@@ -54,3 +54,26 @@
     border-color: #A5C16A;
     transform: translateY(-3px);
 }
+
+.accordion-button {
+    font-weight: 600;
+    border-radius: 8px;
+}
+
+.accordion-item {
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: #f8f9fa;
+    color: #333;
+    box-shadow: none;
+}
+
+.accordion-body {
+    background-color: #ffffff;
+    color: #555;
+}

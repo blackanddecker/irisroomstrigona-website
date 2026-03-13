@@ -179,3 +179,15 @@ p {
     line-height: 1.8;
 }
 
+footer a:hover {
+    color: #0d6efd;
+}
+
+footer h6 {
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+}
+
+footer p {
+    font-size: 0.9rem;
+}

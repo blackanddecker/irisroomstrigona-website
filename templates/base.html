@@ -3,36 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <title>Iris Rooms Trigona</title>
     <link rel="icon" href="{{ url_for('static', filename='logo-iris-rooms.jpg') }}" type="image/x-icon">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <!-- Navbar with Logo, Phone, and Address -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light py-3">
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light py-3 border-bottom">
         <div class="container">
-            <a class="navbar-brand" href="/">
-                <img src="{{ url_for('static', filename='logo-iris-rooms.jpg') }}" alt="Iris Rooms Trigona Logo" style="height: 50px;">
-                Iris Rooms Trigona
+            <a class="navbar-brand d-flex align-items-center gap-2" href="/">
+                <img src="{{ url_for('static', filename='logo-iris-rooms.jpg') }}"
+                     alt="Iris Rooms Trigona Logo"
+                     style="height: 50px;">
+                <span class="fw-semibold">Iris Rooms Trigona</span>
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
+                <ul class="navbar-nav ms-auto mb-3 mb-lg-0">
                     <li class="nav-item"><a class="nav-link" href="/">Guesthouse</a></li>
                     <li class="nav-item"><a class="nav-link" href="/rooms">Rooms</a></li>
                     <li class="nav-item"><a class="nav-link" href="/activities">Activities</a></li>
                     <li class="nav-item"><a class="nav-link" href="/contact">Contact</a></li>
                 </ul>
-                <!-- Contact Info in Navbar -->
-                <div class="d-none d-lg-flex align-items-center ms-4">
-                    <div class="me-3">
-                        <i class="fas fa-map-marker-alt text-primary"></i> Trigona, Kalambaka, 42200
+
+                <!-- Contact Info -->
+                <div class="d-flex flex-column flex-lg-row align-items-start align-items-lg-center ms-lg-4 mt-2 mt-lg-0 small">
+                    <div class="me-lg-3 mb-2 mb-lg-0">
+                        <i class="fas fa-map-marker-alt text-primary me-1"></i>
+                        Trigona, Kalambaka, 42200
                     </div>
                     <div>
-                        <i class="fas fa-phone-alt text-primary"></i> <a href="tel:+30 2432070119" class="text-dark text-decoration-none">+30 2432070119</a>
+                        <i class="fas fa-phone-alt text-primary me-1"></i>
+                        <a href="tel:+302432070119" class="text-dark text-decoration-none">
+                            +30 2432070119
+                        </a>
                     </div>
                 </div>
             </div>
@@ -40,13 +58,70 @@
     </nav>
 
     <!-- Main Content -->
-    <div class="container mt-5">
+    <main class="container mt-5">
         {% block content %}{% endblock %}
-    </div>
+    </main>
 
     <!-- Footer -->
-    <footer class="py-4 bg-light text-center">
-        <p class="mt-2 mb-0">© 2025 Iris Rooms Trigona. All rights reserved.</p>
+    <footer class="bg-light border-top mt-5">
+        <div class="container py-4">
+            <div class="row text-center text-md-start align-items-start">
+
+                <!-- Brand -->
+                <div class="col-12 col-md-4 mb-4">
+                    <img src="{{ url_for('static', filename='logo-iris-rooms.jpg') }}"
+                         alt="Iris Rooms Trigona Logo"
+                         style="height: 45px;">
+                    <h5 class="mt-2 mb-2">Iris Rooms Trigona</h5>
+                    <p class="text-muted small mb-0">
+                        Cozy apartments located in Trigona near Kalambaka and Meteora.
+                        Enjoy a peaceful stay with mountain views and modern comforts.
+                    </p>
+                </div>
+
+                <!-- Navigation -->
+                <div class="col-12 col-md-3 mb-4">
+                    <h6 class="fw-bold mb-3">Explore</h6>
+                    <ul class="list-unstyled mb-0">
+                        <li class="mb-2"><a class="text-dark text-decoration-none" href="/">Guesthouse</a></li>
+                        <li class="mb-2"><a class="text-dark text-decoration-none" href="/rooms">Rooms</a></li>
+                        <li class="mb-2"><a class="text-dark text-decoration-none" href="/activities">Activities</a></li>
+                        <li class="mb-2"><a class="text-dark text-decoration-none" href="/contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div class="col-12 col-md-3 mb-4">
+                    <h6 class="fw-bold mb-3">Contact</h6>
+                    <p class="mb-2">
+                        <i class="fas fa-phone-alt text-primary me-2"></i>
+                        <a href="tel:+302432070119" class="text-dark text-decoration-none">
+                            +30 2432070119
+                        </a>
+                    </p>
+                    <p class="mb-0">
+                        <i class="fas fa-map-marker-alt text-primary me-2"></i>
+                        Trigona, Kalambaka, 42200
+                    </p>
+                </div>
+
+                <!-- Airbnb -->
+                <div class="col-12 col-md-2 mb-4">
+                    <h6 class="fw-bold mb-3">Airbnb</h6>
+                    <a href="https://www.airbnb.com/rooms/1139212536056596157?source_impression_id=p3_1736526255_P3GxvqSus9ncaane"
+                       class="btn btn-primary btn-sm"
+                       target="_blank">
+                        View on Airbnb
+                    </a>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="text-center small text-muted">
+                © 2025 Iris Rooms Trigona • All rights reserved
+            </div>
+        </div>
     </footer>
 
     <!-- Bootstrap JS -->

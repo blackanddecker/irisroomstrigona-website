@@ -140,6 +140,19 @@ a:hover {
     text-decoration: underline;
 }
 
+footer a:hover {
+    color: #0d6efd;
+}
+
+footer h6 {
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+}
+
+footer p {
+    font-size: 0.9rem;
+}
+
 .text-dark-gray {
     color: #4F4A46; /* Dark Gray */
 }
@@ -158,4 +171,62 @@ a:hover {
 .navbar a:hover {
     color: #A5C16A; /* Green */
     text-decoration: underline;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.navbar-brand span {
+    font-size: 1.1rem;
+}
+
+.navbar .nav-link {
+    font-weight: 500;
+}
+
+footer a:hover,
+.navbar a:hover {
+    color: #0d6efd !important;
+}
+
+@media (max-width: 991.98px) {
+    .navbar-brand img {
+        height: 42px !important;
+    }
+
+    .navbar-brand span {
+        font-size: 1rem;
+    }
+
+    .navbar-collapse {
+        margin-top: 12px;
+    }
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.navbar-brand span {
+    font-size: 1.1rem;
+}
+
+.navbar .nav-link {
+    font-weight: 500;
+}
+
+footer a:hover,
+@media (max-width: 991.98px) {
+    .navbar-brand img {
+        height: 42px !important;
+    }
+
+    .navbar-brand span {
+        font-size: 1rem;
+    }
+
+    .navbar-collapse {
+        margin-top: 12px;
+    }
 }
