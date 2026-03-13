@@ -1,74 +1,227 @@
-.hero-section {
-    min-height: 70vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: #fff;
-    padding: 2rem;
-    border-radius: 15px;
-    background:
-        linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
-        url('/static/hero-image.jpg') no-repeat center center;
-    background-size: cover;
-    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);
-}
-
-.hero-section h1 {
-    font-size: clamp(2.2rem, 5vw, 4rem);
-    margin-bottom: 1rem;
-    animation: fadeIn 1.2s ease-in-out;
-}
-
-.hero-section p {
-    font-size: clamp(1rem, 2vw, 1.4rem);
-    margin-bottom: 1.5rem;
-    animation: fadeIn 1.6s ease-in-out;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-.image-card {
+.guesthouse-page {
     position: relative;
-    overflow: hidden;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.image-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.14);
-}
-
-.image-card img {
+/* Hero Section - Simple full-width image banner */
+.hero-section {
     width: 100%;
-    height: 180px;
-    object-fit: cover;
-    transition: transform 0.5s ease;
+    height: 60vh;
+    min-height: 400px;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
 }
 
-.image-card:hover img {
-    transform: scale(1.05);
+.guesthouse-hero {
+    position: relative;
+    width: 100vw;
+    height: 600px;
+    min-height: 600px;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+
+    display: block;
+
+    border-radius: 0;
+    overflow: hidden;
+
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #F3E9D5;
+
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
 }
 
-.image-card .overlay {
+.guesthouse-hero-overlay {
     position: absolute;
     inset: 0;
+    background: rgba(0, 0, 0, 0.28);
+    z-index: 1;
+}
+
+.guesthouse-hero-content {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: 2rem;
+    text-align: center;
+    color: white;
+}
+
+.guesthouse-eyebrow {
+    display: inline-block;
+    margin-bottom: 0.75rem;
+    padding: 6px 14px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.18);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.guesthouse-hero-title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    line-height: 1.1;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.guesthouse-hero-subtitle {
+    font-size: 1.15rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.92);
+}
+
+/* SECTION HEADINGS */
+.section-heading {
+    max-width: 760px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.section-kicker {
+    display: inline-block;
+    margin-bottom: 0.75rem;
+    color: #D87A56;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.section-intro {
+    max-width: 640px;
+    color: #7B746C;
+}
+
+/* STORY PANEL */
+.story-panel {
+    background: #f9f4eb;
+    border: 1px solid rgba(216, 122, 86, 0.12);
+    border-radius: 18px;
+}
+
+/* FEATURE CARDS */
+.feature-card {
+    border-radius: 18px;
+}
+
+.feature-icon {
+    width: 72px;
+    height: 72px;
+    margin: 0 auto;
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(0, 0, 0, 0.35);
-    color: #fff;
-    font-size: 1.05rem;
-    font-weight: 600;
-    opacity: 0;
-    transition: opacity 0.3s ease;
+    background: rgba(216, 122, 86, 0.10);
 }
 
-.image-card:hover .overlay {
+/* GALLERY */
+.gallery-card {
+    border-radius: 18px;
+}
+
+.gallery-card img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    display: block;
+    border-radius: 18px;
+}
+
+.gallery-card .overlay {
+    position: absolute;
+    inset: auto 0 0 0;
+    padding: 14px 18px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.15));
+    color: #fff;
+    font-weight: 600;
+    letter-spacing: 0.02em;
     opacity: 1;
+    text-align: left;
+}
+
+/* REVIEWS */
+.review-card {
+    border-radius: 18px;
+}
+
+.review-stars {
+    font-size: 0.95rem;
+    letter-spacing: 0.12em;
+}
+
+.review-meta {
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+/* TABLET */
+@media (max-width: 991.98px) {
+    .hero-section {
+        height: 50vh;
+        min-height: 350px;
+    }
+
+    .guesthouse-hero {
+        height: 60vh;
+        min-height: 420px;
+        background-size: cover;
+    }
+
+    .guesthouse-hero-content {
+        padding: 1.5rem;
+    }
+
+    .gallery-card img {
+        height: 220px;
+    }
+}
+
+/* MOBILE */
+@media (max-width: 767.98px) {
+    .hero-section {
+        height: 40vh;
+        min-height: 300px;
+    }
+
+    .guesthouse-page {
+        padding-top: 2rem !important;
+        padding-bottom: 2rem !important;
+    }
+
+    .guesthouse-hero {
+        height: 50vh;
+        min-height: 320px;
+        background-size: cover;
+    }
+
+    .guesthouse-hero-title {
+        font-size: 2rem;
+    }
+
+    .guesthouse-hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .gallery-card img {
+        height: 210px;
+    }
+
+    .story-panel,
+    .feature-card,
+    .review-card {
+        border-radius: 14px;
+    }
 }
