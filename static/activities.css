@@ -1,75 +1,89 @@
-
-/* General container styling */
-/* Section heading */
-h1 {
-    font-size: 2.5rem;
-    font-weight: bold;
-    margin-bottom: 30px;
-    color: #4F4A46; /* Dark Gray */
+.activities-page {
+    position: relative;
 }
 
-/* Cards styling */
-.card {
-    border-radius: 15px;
+.section-heading {
+    max-width: 760px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.section-kicker {
+    display: inline-block;
+    margin-bottom: 0.75rem;
+    color: #D87A56;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.section-intro {
+    max-width: 640px;
+    color: #7B746C;
+}
+
+.activity-card {
+    border-radius: 18px;
+    background: #fff;
     overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    height: 100%;
 }
 
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-}
-
-/* Card image */
-.card-img-top {
-    height: 200px;
+.activity-image {
+    width: 100%;
+    height: 280px;
     object-fit: cover;
-    border-bottom: 5px solid #D87A56; /* Terracotta */
-}
-
-/* Card title */
-.card-title {
-    font-size: 1.5rem;
-    color: #D87A56; /* Terracotta */
-    margin-bottom: 15px;
-    font-weight: bold;
-}
-
-/* Card text */
-.card-text {
-    font-size: 1rem;
-    color: #555;
-    margin-bottom: 15px;
-}
-
-/* Time information */
-.card-body p strong {
-    color: #4F4A46; /* Dark Gray */
-}
-
-/* Button styling */
-.btn-primary {
-    background-color: #D87A56; /* Terracotta */
-    border-color: #D87A56;
-    padding: 10px 20px;
-    font-size: 1rem;
-    border-radius: 50px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
     display: block;
-    margin: 0 auto;
-    text-align: center;
 }
 
-.btn-primary:hover {
-    background-color: #A5C16A; /* Green */
-    border-color: #A5C16A;
-    transform: translateY(-3px);
-    color: white;
+.activity-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
-/* Row spacing */
-.row {
-    row-gap: 30px;
+.activity-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 14px;
+    border-radius: 999px;
+    background: rgba(216, 122, 86, 0.12);
+    color: #D87A56;
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.activity-card .card-title {
+    margin-bottom: 0.85rem;
+}
+
+.activity-card .card-text {
+    color: #5f5954;
+    margin-bottom: 1.2rem;
+    line-height: 1.8;
+}
+
+.activity-card .btn {
+    width: 100%;
+}
+
+@media (max-width: 991.98px) {
+    .activity-card {
+        border-radius: 16px;
+    }
+
+    .activity-image {
+        height: 240px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .activities-page {
+        padding-top: 2rem !important;
+        padding-bottom: 2rem !important;
+    }
+
+    .activity-image {
+        height: 220px;
+    }
 }

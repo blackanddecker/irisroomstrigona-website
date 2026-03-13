@@ -2,91 +2,115 @@
 {% block content %}
 <link rel="stylesheet" href="{{ url_for('static', filename='rooms.css') }}">
 
-<div class="container mt-5">
-    <h2 class="display-4 text-center text-dark-gray mb-4">Our Rooms</h2>
-    <div class="display-8 text-center text-dark-gray">
-        All bookings are through Airbnb. Click on the button to view the details and book your stay.
+<div class="container rooms-page py-5">
+    <div class="section-heading text-center mb-5">
+        <span class="section-kicker">Stay With Us</span>
+        <h1 class="display-5 text-dark-gray mb-3">Our Rooms</h1>
+        <p class="section-intro mx-auto">
+            Discover comfortable apartments in Trigona with warm hospitality, modern amenities, and direct Airbnb booking.
+        </p>
     </div>
-    <br>
 
-    <div class="row">
+    <div class="booking-note text-center mb-5">
+        All bookings are made through Airbnb. Click on a button below to view details and reserve your stay.
+    </div>
+
+    <div class="row g-4">
         <!-- Iris Apartments Trigona 4 -->
-        <div class="col-md-4 mb-4">
-            <div class="card shadow-sm">
-                <img src="{{ url_for('static', filename='room4.jpeg') }}" class="card-img-top" alt="Iris Apartments Trigona 4">
-                <div class="card-body">
+        <div class="col-lg-4 col-md-6">
+            <div class="card room-card shadow-sm border-0 h-100">
+                <img src="{{ url_for('static', filename='room4.jpeg') }}" class="card-img-top room-image" alt="Iris Apartments Trigona 4">
+                <div class="card-body p-4">
                     <h5 class="card-title">Iris Apartments Trigona 4</h5>
                     <p class="card-text">
-                        Located in the serene village of Trigona, this cozy apartment offers a peaceful retreat with stunning views of the surrounding landscape. Perfect for couples or solo travelers.
+                        Located in the serene village of Trigona, this cozy apartment offers a peaceful retreat with beautiful views of the surrounding landscape. Ideal for couples or solo travelers.
                     </p>
-                    <ul class="list-unstyled mt-3 mb-4">
-                        <li><i class="fas fa-bed text-primary"></i> 2 Single Beds - 1 Bathroom</li>
-                        <li><i class="fas fa-wifi text-primary"></i> Wi-Fi - TV - Hot Water</li>
-                        <li><i class="fas fa-utensils text-primary"></i> Fully Equipped Kitchen</li>
+
+                    <ul class="room-features list-unstyled mt-4 mb-4">
+                        <li><i class="fas fa-bed text-primary me-2"></i>2 Single Beds · 1 Bathroom</li>
+                        <li><i class="fas fa-wifi text-primary me-2"></i>Wi-Fi · <i class="fas fa-tv text-primary mx-2"></i>TV · <i class="fas fa-fire-alt text-primary mx-2"></i>Hot Water</li>
+                        <li><i class="fas fa-utensils text-primary me-2"></i>Fully Equipped Kitchen</li>
                     </ul>
-                    <a href="https://www.airbnb.com/rooms/1135680475926315700" class="btn btn-primary" target="_blank">View Details on Airbnb</a>
+
+                    <a href="https://www.airbnb.com/rooms/1135680475926315700" class="btn btn-primary mt-2" target="_blank">
+                        View Details on Airbnb
+                    </a>
                 </div>
             </div>
         </div>
 
         <!-- Iris Apartments Trigona 5 -->
-        <div class="col-md-4 mb-4">
-            <div class="card shadow-sm">
-                <img src="{{ url_for('static', filename='room5.jpeg') }}" class="card-img-top" alt="Iris Apartments Trigona 5">
-                <div class="card-body">
+        <div class="col-lg-4 col-md-6">
+            <div class="card room-card shadow-sm border-0 h-100">
+                <img src="{{ url_for('static', filename='room5.jpeg') }}" class="card-img-top room-image" alt="Iris Apartments Trigona 5">
+                <div class="card-body p-4">
                     <h5 class="card-title">Iris Apartments Trigona 5</h5>
                     <p class="card-text">
-                        Another charming apartment in Trigona, offering modern amenities and a cozy ambiance. Perfect for couples that want to relax and have a morning coffee with view in the mountains.
+                        A charming apartment in Trigona with modern comforts and a warm atmosphere, perfect for couples who want to relax and enjoy mountain views with their morning coffee.
                     </p>
-                    <ul class="list-unstyled mt-3 mb-4">
-                        <li><i class="fas fa-bed text-primary"></i> 1 Double Bed - 1 Bathroom</li>
-                        <li><i class="fas fa-wifi text-primary"></i> Wi-Fi - <i class="fas fa-tv text-primary"></i> TV - <i class="fas fa-fire-alt text-primary"></i> Hot Water</li>
-                        <li><i class="fas fa-utensils text-primary"></i> Fully Equipped Kitchen</li>
-                        <li><i class="fas fa-tree text-primary"></i> Own Balcony</li>
+
+                    <ul class="room-features list-unstyled mt-4 mb-4">
+                        <li><i class="fas fa-bed text-primary me-2"></i>1 Double Bed · 1 Bathroom</li>
+                        <li><i class="fas fa-wifi text-primary me-2"></i>Wi-Fi · <i class="fas fa-tv text-primary mx-2"></i>TV · <i class="fas fa-fire-alt text-primary mx-2"></i>Hot Water</li>
+                        <li><i class="fas fa-utensils text-primary me-2"></i>Fully Equipped Kitchen</li>
+                        <li><i class="fas fa-tree text-primary me-2"></i>Private Balcony</li>
                     </ul>
-                    <a href="https://www.airbnb.com/rooms/1134810135090425245" class="btn btn-primary" target="_blank">View Details on Airbnb</a>
+
+                    <a href="https://www.airbnb.com/rooms/1134810135090425245" class="btn btn-primary mt-2" target="_blank">
+                        View Details on Airbnb
+                    </a>
                 </div>
             </div>
         </div>
 
         <!-- Iris Apartments Trigona 6 -->
-        <div class="col-md-4 mb-4">
-            <div class="card shadow-sm">
-                <img src="{{ url_for('static', filename='room6.jpeg') }}" class="card-img-top" alt="Iris Apartments Trigona 6">
-                <div class="card-body">
+        <div class="col-lg-4 col-md-6">
+            <div class="card room-card shadow-sm border-0 h-100">
+                <img src="{{ url_for('static', filename='room6.jpeg') }}" class="card-img-top room-image" alt="Iris Apartments Trigona 6">
+                <div class="card-body p-4">
                     <h5 class="card-title">Iris Apartments Trigona 6</h5>
                     <p class="card-text">
-                        Another charming apartment in Trigona, offering modern amenities and a cozy ambiance. Perfect for couples that want to relax and have a morning coffee with view in the mountains, or use the fireplace.
+                        Another inviting apartment in Trigona, offering comfort, mountain views, a private balcony, and a fireplace for guests who want an especially cozy stay.
                     </p>
-                    <ul class="list-unstyled mt-3 mb-4">
-                        <li><i class="fas fa-bed text-primary"></i> 1 Double Bed - 1 Bathroom</li>
-                        <li><i class="fas fa-wifi text-primary"></i> Wi-Fi - TV - Hot Water</li>
-                        <li><i class="fas fa-utensils text-primary"></i> Fully Equipped Kitchen</li>
-                        <li><i class="fas fa-fire text-primary"></i> Fireplace</li>
-                        <li><i class="fas fa-tree text-primary"></i> Own Balcony</li>
+
+                    <ul class="room-features list-unstyled mt-4 mb-4">
+                        <li><i class="fas fa-bed text-primary me-2"></i>1 Double Bed · 1 Bathroom</li>
+                        <li><i class="fas fa-wifi text-primary me-2"></i>Wi-Fi · <i class="fas fa-tv text-primary mx-2"></i>TV · <i class="fas fa-fire-alt text-primary mx-2"></i>Hot Water</li>
+                        <li><i class="fas fa-utensils text-primary me-2"></i>Fully Equipped Kitchen</li>
+                        <li><i class="fas fa-fire text-primary me-2"></i>Fireplace</li>
+                        <li><i class="fas fa-tree text-primary me-2"></i>Private Balcony</li>
                     </ul>
-                    <a href="https://www.airbnb.com/rooms/1139212536056596157?source_impression_id=p3_1736526255_P3GxvqSus9ncaane" class="btn btn-primary" target="_blank">View Details on Airbnb</a>
+
+                    <a href="https://www.airbnb.com/rooms/1139212536056596157?source_impression_id=p3_1736526255_P3GxvqSus9ncaane" class="btn btn-primary mt-2" target="_blank">
+                        View Details on Airbnb
+                    </a>
                 </div>
             </div>
         </div>
     </div>
 
     <!-- Policies Section -->
-    <div class="mt-5">
-        <h3 class="text-center text-dark-gray mb-4">Check-in, Check-out & Policies</h3>
+    <div class="policies-section mt-5 pt-3">
+        <div class="section-heading text-center mb-4">
+            <span class="section-kicker">Guest Information</span>
+            <h2 class="text-dark-gray mb-2">Check-in, Check-out & Policies</h2>
+            <p class="section-intro mx-auto">
+                Useful information to help you plan your stay comfortably and smoothly.
+            </p>
+        </div>
 
-        <div class="accordion" id="policiesAccordion">
+        <div class="accordion policies-accordion" id="policiesAccordion">
             <div class="accordion-item">
                 <h2 class="accordion-header" id="headingCheckin">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCheckin" aria-expanded="false" aria-controls="collapseCheckin">
-                        <i class="fas fa-clock text-primary me-2"></i> Check-in & Check-out Time
+                        <i class="fas fa-clock text-primary me-2"></i>
+                        Check-in & Check-out Time
                     </button>
                 </h2>
                 <div id="collapseCheckin" class="accordion-collapse collapse" aria-labelledby="headingCheckin" data-bs-parent="#policiesAccordion">
                     <div class="accordion-body">
-                        Check-in time is from <strong>15:00</strong>.
+                        Check-in time is from <strong>15:00</strong>.<br>
                         Check-out is until <strong>12:00 noon</strong>.
-
                     </div>
                 </div>
             </div>
@@ -94,7 +118,8 @@
             <div class="accordion-item">
                 <h2 class="accordion-header" id="headingLuggage">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseLuggage" aria-expanded="false" aria-controls="collapseLuggage">
-                        <i class="fas fa-suitcase text-primary me-2"></i> Luggage Storage
+                        <i class="fas fa-suitcase text-primary me-2"></i>
+                        Luggage Storage
                     </button>
                 </h2>
                 <div id="collapseLuggage" class="accordion-collapse collapse" aria-labelledby="headingLuggage" data-bs-parent="#policiesAccordion">
@@ -107,7 +132,8 @@
             <div class="accordion-item">
                 <h2 class="accordion-header" id="headingSmoking">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSmoking" aria-expanded="false" aria-controls="collapseSmoking">
-                        <i class="fas fa-smoking-ban text-danger me-2"></i> Smoking Policy
+                        <i class="fas fa-smoking-ban text-danger me-2"></i>
+                        Smoking Policy
                     </button>
                 </h2>
                 <div id="collapseSmoking" class="accordion-collapse collapse" aria-labelledby="headingSmoking" data-bs-parent="#policiesAccordion">
@@ -120,7 +146,8 @@
             <div class="accordion-item">
                 <h2 class="accordion-header" id="headingPets">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePets" aria-expanded="false" aria-controls="collapsePets">
-                        <i class="fas fa-paw text-primary me-2"></i> Pets Policy
+                        <i class="fas fa-paw text-primary me-2"></i>
+                        Pets Policy
                     </button>
                 </h2>
                 <div id="collapsePets" class="accordion-collapse collapse" aria-labelledby="headingPets" data-bs-parent="#policiesAccordion">
@@ -132,4 +159,5 @@
         </div>
     </div>
 </div>
+
 {% endblock %}

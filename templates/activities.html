@@ -1,110 +1,165 @@
 {% extends 'base.html' %}
 {% block content %}
 <link rel="stylesheet" href="{{ url_for('static', filename='activities.css') }}">
-<div class="container mt-5">
-    <h1 class="display-4 text-center text-dark-gray mb-5">Our Activities</h1>
-    <div class="row">
-        <!-- Activity 1: Visit Meteora -->
-        <div class="col-md-6 mb-4">
-            <div class="card shadow-sm">
-                <img src="{{ url_for('static', filename='activities/meteora.jpg') }}" class="card-img-top" alt="Visit Meteora">
-                <div class="card-body">
+
+<div class="container activities-page py-5">
+    <div class="section-heading text-center mb-5">
+        <span class="section-kicker">Experiences & Excursions</span>
+        <h1 class="display-5 text-dark-gray mb-3">Our Activities</h1>
+        <p class="section-intro mx-auto">
+            Discover beautiful destinations, nature escapes, cultural landmarks, and memorable day trips near Iris Rooms Trigona.
+        </p>
+    </div>
+
+    <div class="row g-4">
+        <!-- Meteora -->
+        <div class="col-lg-6">
+            <div class="card activity-card shadow-sm border-0 h-100">
+                <img src="{{ url_for('static', filename='activities/meteora.jpg') }}" class="card-img-top activity-image" alt="Visit Meteora">
+                <div class="card-body p-4">
+                    <div class="activity-meta mb-3">
+                        <span class="activity-badge">
+                            <i class="fas fa-clock me-2"></i>30 min by car
+                        </span>
+                    </div>
                     <h5 class="card-title">Visit Meteora</h5>
-                    <p class="card-text">Explore the iconic Meteora monasteries, perched atop towering rock formations. A UNESCO World Heritage site and a must-visit destination.</p>
-                    <p><strong>Time from Guesthouse:</strong> 30 minutes by car</p>
-                    <a href="https://visitmeteora.travel" class="btn btn-primary" target="_blank">Visit Site</a>
+                    <p class="card-text">
+                        Explore the iconic monasteries of Meteora, dramatically perched atop towering rock formations. A UNESCO World Heritage destination and one of the most unforgettable experiences in Greece.
+                    </p>
+                    <a href="https://visitmeteora.travel" class="btn btn-primary mt-3" target="_blank">Visit Site</a>
                 </div>
             </div>
         </div>
 
-        <!-- Activity 2: Valia Calda National Park -->
-        <div class="col-md-6 mb-4">
-            <div class="card shadow-sm">
-                <img src="{{ url_for('static', filename='activities/ValiaKalda.jpg') }}" class="card-img-top" alt="Visit Valia Kalda">
-                <div class="card-body">
+        <!-- Valia Calda -->
+        <div class="col-lg-6">
+            <div class="card activity-card shadow-sm border-0 h-100">
+                <img src="{{ url_for('static', filename='activities/ValiaKalda.jpg') }}" class="card-img-top activity-image" alt="Valia Calda National Park">
+                <div class="card-body p-4">
+                    <div class="activity-meta mb-3">
+                        <span class="activity-badge">
+                            <i class="fas fa-clock me-2"></i>1.5 hours by car
+                        </span>
+                    </div>
                     <h5 class="card-title">Valia Calda National Park</h5>
-                    <p class="card-text">Discover the breathtaking beauty of Valia Calda, a pristine wilderness ideal for nature lovers and hikers.</p>
-                    <p><strong>Time from Guesthouse:</strong> 1.5 hours by car</p>
-                    <a href="https://topoguide.gr/mountains/macedonia/hiking_on_valia_kalda_en.php" class="btn btn-primary" target="_blank">Visit Site</a>
+                    <p class="card-text">
+                        Discover the breathtaking beauty of Valia Calda, a pristine natural landscape ideal for nature lovers, hikers, and visitors seeking quiet mountain wilderness.
+                    </p>
+                    <a href="https://topoguide.gr/mountains/macedonia/hiking_on_valia_kalda_en.php" class="btn btn-primary mt-3" target="_blank">Visit Site</a>
                 </div>
             </div>
         </div>
 
-
-        <div class="col-md-6 mb-4">
-            <div class="card shadow-sm">
-                <img src="{{ url_for('static', filename='activities/hiking.jpeg') }}" class="card-img-top" alt="Hiking Meteora">
-                <div class="card-body">
-                    <h5 class="card-title">Hiking Meteora</h5>
-                    <p class="card-text">Meteora offers a unique hiking experience through its awe-inspiring rock formations and serene monasteries perched high above the cliffs. Whether you’re an experienced hiker or a beginner, the trails around Meteora provide breathtaking views of the ancient monasteries, lush forests, and picturesque villages.
-Popular trails include routes from the village of Kastraki to the monasteries, offering panoramic views and peaceful moments amidst nature. Don't forget to bring your camera – every step offers a postcard-worthy scene!</p>
-                    <p><strong>Time from Guesthouse:</strong> 1 hour by car</p>
-                    <a href="https://meteoratrails.com/" class="btn btn-primary" target="_blank">Visit Site</a>
+        <!-- Hiking Meteora -->
+        <div class="col-lg-6">
+            <div class="card activity-card shadow-sm border-0 h-100">
+                <img src="{{ url_for('static', filename='activities/hiking.jpeg') }}" class="card-img-top activity-image" alt="Hiking in Meteora">
+                <div class="card-body p-4">
+                    <div class="activity-meta mb-3">
+                        <span class="activity-badge">
+                            <i class="fas fa-clock me-2"></i>1 hour by car
+                        </span>
+                    </div>
+                    <h5 class="card-title">Hiking in Meteora</h5>
+                    <p class="card-text">
+                        Enjoy one of the most unique hiking experiences in Greece, with scenic trails winding through awe-inspiring rock formations, monasteries, forests, and panoramic viewpoints.
+                    </p>
+                    <a href="https://meteoratrails.com/" class="btn btn-primary mt-3" target="_blank">Visit Site</a>
                 </div>
             </div>
         </div>
 
-
-        <div class="col-md-6 mb-4">
-            <div class="card shadow-sm">
-                <img src="{{ url_for('static', filename='activities/museum.jpg') }}" class="card-img-top" alt="Museum of Masrooms ">
-                <div class="card-body">
-                    <h5 class="card-title">Meteora Natural History Museum and Mushroom Museum</h5>
-                    <p class="card-text">The Museum contains a rich collection of birds and mammals as well as a comprehensive mushroom museum, the first of its kind in Greece. The museum houses approximately 300 exhibits of animals and several dozens of the main species of mushrooms.</p>
-                    <p><strong>Time from Guesthouse:</strong> 30 minutes by car</p>
-                    <a href="https://visitmeteora.travel/meteora-natural-history-museum-and-mushroom-museum/" class="btn btn-primary" target="_blank">Visit Site</a>
+        <!-- Museum -->
+        <div class="col-lg-6">
+            <div class="card activity-card shadow-sm border-0 h-100">
+                <img src="{{ url_for('static', filename='activities/museum.jpg') }}" class="card-img-top activity-image" alt="Meteora Natural History Museum and Mushroom Museum">
+                <div class="card-body p-4">
+                    <div class="activity-meta mb-3">
+                        <span class="activity-badge">
+                            <i class="fas fa-clock me-2"></i>30 min by car
+                        </span>
+                    </div>
+                    <h5 class="card-title">Natural History & Mushroom Museum</h5>
+                    <p class="card-text">
+                        Visit a fascinating museum featuring rich collections of birds, mammals, and mushrooms. It is one of the most distinctive museums of its kind in Greece.
+                    </p>
+                    <a href="https://visitmeteora.travel/meteora-natural-history-museum-and-mushroom-museum/" class="btn btn-primary mt-3" target="_blank">Visit Site</a>
                 </div>
             </div>
         </div>
-        <!-- Activity 3: Metsovo Village -->
-        <div class="col-md-6 mb-4">
-            <div class="card shadow-sm">
-                <img src="{{ url_for('static', filename='activities/Metsovo.jpg') }}" class="card-img-top" alt="Metsovo Village">
-                <div class="card-body">
+
+        <!-- Metsovo -->
+        <div class="col-lg-6">
+            <div class="card activity-card shadow-sm border-0 h-100">
+                <img src="{{ url_for('static', filename='activities/Metsovo.jpg') }}" class="card-img-top activity-image" alt="Metsovo Village">
+                <div class="card-body p-4">
+                    <div class="activity-meta mb-3">
+                        <span class="activity-badge">
+                            <i class="fas fa-clock me-2"></i>1 hour by car
+                        </span>
+                    </div>
                     <h5 class="card-title">Metsovo Village</h5>
-                    <p class="card-text">Visit the picturesque village of Metsovo, known for its traditional architecture, local cuisine, and famous cheeses.</p>
-                    <p><strong>Time from Guesthouse:</strong> 1 hour by car</p>
-                    <a href="https://el.wikipedia.org/wiki/%CE%9C%CE%AD%CF%84%CF%83%CE%BF%CE%B2%CE%BF" class="btn btn-primary" target="_blank">Visit Site</a>
+                    <p class="card-text">
+                        Discover the picturesque mountain village of Metsovo, known for its traditional architecture, local gastronomy, artisan products, and warm alpine atmosphere.
+                    </p>
+                    <a href="https://el.wikipedia.org/wiki/%CE%9C%CE%AD%CF%84%CF%83%CE%BF%CE%B2%CE%BF" class="btn btn-primary mt-3" target="_blank">Visit Site</a>
                 </div>
             </div>
         </div>
 
-        <!-- Activity 4: Milos ton Xotikon in Trikala -->
-        <div class="col-md-6 mb-4">
-            <div class="card shadow-sm">
-                <img src="{{ url_for('static', filename='activities/miloskswtikwn.jpeg') }}" class="card-img-top" alt="Milos ton Xotikon in Trikala">
-                <div class="card-body">
-                    <h5 class="card-title">Christmas theme park in Trikala</h5>
-                    <p class="card-text">Experience the magic of Milos ton Xotikon, a Christmas-themed park in Trikala that delights visitors of all ages.</p>
-                    <p><strong>Time from Guesthouse:</strong> 50 minutes by car</p>
-                    <a href="https://www.milosxotikon.gr" class="btn btn-primary" target="_blank">Visit Site</a>
+        <!-- Trikala Christmas Park -->
+        <div class="col-lg-6">
+            <div class="card activity-card shadow-sm border-0 h-100">
+                <img src="{{ url_for('static', filename='activities/miloskswtikwn.jpeg') }}" class="card-img-top activity-image" alt="The Mill of the Elves in Trikala">
+                <div class="card-body p-4">
+                    <div class="activity-meta mb-3">
+                        <span class="activity-badge">
+                            <i class="fas fa-clock me-2"></i>50 min by car
+                        </span>
+                    </div>
+                    <h5 class="card-title">Christmas Theme Park in Trikala</h5>
+                    <p class="card-text">
+                        Experience the festive magic of Trikala’s famous Christmas park, a seasonal destination loved by families, children, and visitors of all ages.
+                    </p>
+                    <a href="https://www.milosxotikon.gr" class="btn btn-primary mt-3" target="_blank">Visit Site</a>
                 </div>
             </div>
         </div>
 
-        <!-- Activity 5: Explore Ioannina -->
-        <div class="col-md-6 mb-4">
-            <div class="card shadow-sm">
-                <img src="{{ url_for('static', filename='activities/ioannina.jpg') }}" class="card-img-top" alt="Explore Ioannina">
-                <div class="card-body">
+        <!-- Ioannina -->
+        <div class="col-lg-6">
+            <div class="card activity-card shadow-sm border-0 h-100">
+                <img src="{{ url_for('static', filename='activities/ioannina.jpg') }}" class="card-img-top activity-image" alt="Explore Ioannina">
+                <div class="card-body p-4">
+                    <div class="activity-meta mb-3">
+                        <span class="activity-badge">
+                            <i class="fas fa-clock me-2"></i>1 hour by car
+                        </span>
+                    </div>
                     <h5 class="card-title">Explore Ioannina</h5>
-                    <p class="card-text">Visit Ioannina, a vibrant city with a rich history, a beautiful lake, and charming old town streets.</p>
-                    <p><strong>Time from Guesthouse:</strong> 1 hour by car</p>
-                    <a href="https://ioannina.gr/" class="btn btn-primary" target="_blank">Visit Site</a>
+                    <p class="card-text">
+                        Visit Ioannina, a vibrant city with rich history, a beautiful lakeside setting, an atmospheric old town, and many cultural landmarks to explore.
+                    </p>
+                    <a href="https://ioannina.gr/" class="btn btn-primary mt-3" target="_blank">Visit Site</a>
                 </div>
             </div>
         </div>
 
-        <!-- Activity 6: Climbing in Meteora -->
-        <div class="col-md-6 mb-4">
-            <div class="card shadow-sm">
-                <img src="{{ url_for('static', filename='activities/anarixisi.jpg') }}" class="card-img-top" alt="Climbing in Meteora">
-                <div class="card-body">
+        <!-- Climbing Meteora -->
+        <div class="col-lg-6">
+            <div class="card activity-card shadow-sm border-0 h-100">
+                <img src="{{ url_for('static', filename='activities/anarixisi.jpg') }}" class="card-img-top activity-image" alt="Climbing in Meteora">
+                <div class="card-body p-4">
+                    <div class="activity-meta mb-3">
+                        <span class="activity-badge">
+                            <i class="fas fa-clock me-2"></i>30 min by car
+                        </span>
+                    </div>
                     <h5 class="card-title">Climbing in Meteora</h5>
-                    <p class="card-text">For adventure seekers, climbing the iconic rocks of Meteora is an unforgettable experience. Suitable for both beginners and experienced climbers.</p>
-                    <p><strong>Time from Guesthouse:</strong> 30 minutes by car</p>
-                    <a href="https://www.ukclimbing.com/articles/dehttps://climbing-meteora.comstinations/meteora_greece_-_a_sport_climbing_area_for_trad_climbers-15531" class="btn btn-primary" target="_blank">Visit Site</a>
-                </div>
+                    <p class="card-text">
+                        For adventure seekers, climbing the iconic rocks of Meteora is a truly unforgettable experience, suitable for both beginners and experienced climbers.
+                    </p>
+                    <a href="https://www.ukclimbing.com/articles/dehttps://climbing-meteora.comstinations/meteora_greece_-_a_sport_climbing_area_for_trad_climbers-15531" class="btn btn-primary" target="_blank">Visit Site</a>                </div>
             </div>
         </div>
     </div>
