@@ -3,6 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{% block title %}Iris Rooms Trigona{% endblock %}</title>
+
+    <meta name="description" content="{% block description %}Comfortable apartments in Trigona near Kalambaka and Meteora. Peaceful mountain stay with modern amenities.{% endblock %}">
+
+    <meta name="keywords" content="Meteora accommodation, Kalambaka guesthouse, Trigona rooms, Meteora apartments, Trigona Hotel, Kalambaka lodging, Meteora stay, Trigona accommodation, Kalambaka apartments, Meteora guesthouse">
+
+    <meta name="author" content="Iris Rooms Trigona">
+
+    <link rel="canonical" href="{% block canonical %}https://irisroomstrigona.gr{% endblock %}">
+
     <title>Iris Rooms Trigona</title>
     <link rel="icon" href="{{ url_for('static', filename='logo-iris-rooms.jpg') }}" type="image/x-icon">
 
@@ -14,6 +25,24 @@
 
     <!-- Main CSS -->
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script type="application/ld+json">
+    {
+     "@context": "https://schema.org",
+     "@type": "LodgingBusiness",
+     "name": "Iris Rooms Trigona",
+     "image": "https://irisroomstrigona.gr/static/hotel-trigona.jpeg",
+     "address": {
+       "@type": "PostalAddress",
+       "streetAddress": "Trigona",
+       "addressLocality": "Kalambaka",
+       "postalCode": "42200",
+       "addressCountry": "GR"
+     },
+     "telephone": "+302432070119",
+     "url": "https://irisroomstrigona.gr",
+     "priceRange": "€"
+    }
+    </script>
 </head>
 <body>
 
