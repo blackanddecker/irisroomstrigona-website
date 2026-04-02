@@ -25,6 +25,7 @@
 
     <!-- Main CSS -->
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    {% block extra_css %}{% endblock %}
     <script type="application/ld+json">
     {
      "@context": "https://schema.org",

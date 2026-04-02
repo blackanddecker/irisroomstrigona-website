@@ -1,119 +1,318 @@
-.guesthouse-page {
-    position: relative;
-}
+/* ================================================================
+   MAIN.CSS — Modern homepage with synchronized images & animations
+   ================================================================ */
 
-/* Hero Section - Simple full-width image banner */
+/* ── HERO SECTION ───────────────────────────────────────── */
 .hero-section {
+    position: relative;
     width: 100%;
-    height: 60vh;
-    min-height: 400px;
-    background-position: center center !important;
-    background-repeat: no-repeat !important;
-    background-size: cover !important;
+    height: 70vh;
+    min-height: 480px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.guesthouse-hero {
-    position: relative;
-    width: 100vw;
-    height: 600px;
-    min-height: 600px;
-    margin-left: calc(-50vw + 50%);
-    margin-right: calc(-50vw + 50%);
-
-    display: block;
-
-    border-radius: 0;
-    overflow: hidden;
-
+/* Ken Burns slow zoom background */
+.hero-bg {
+    position: absolute;
+    inset: -20px; /* slightly oversized for zoom room */
+    background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
-    background-size: cover;
-    background-color: #F3E9D5;
-
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    animation: kenBurns 18s ease-in-out infinite alternate;
+    will-change: transform;
 }
 
-.guesthouse-hero-overlay {
+@keyframes kenBurns {
+    0%   { transform: scale(1); }
+    100% { transform: scale(1.08); }
+}
+
+.hero-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.28);
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.25) 0%,
+        rgba(0, 0, 0, 0.50) 100%
+    );
     z-index: 1;
 }
 
-.guesthouse-hero-content {
-    position: absolute;
-    inset: 0;
+.hero-content {
+    position: relative;
     z-index: 2;
-
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-
-    padding: 2rem;
-    text-align: center;
-    color: white;
+    gap: 0.7rem;
+    padding: 1.5rem 2rem;
+    color: #fff;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.45);
 }
 
-.guesthouse-eyebrow {
+/* Kicker badge */
+.hero-kicker {
     display: inline-block;
-    margin-bottom: 0.75rem;
-    padding: 6px 14px;
+    padding: 5px 18px;
     border-radius: 999px;
-    background: rgba(255, 255, 255, 0.18);
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    font-size: 0.9rem;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    font-size: 0.8rem;
     font-weight: 700;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
     color: #fff;
+    text-shadow: none;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: fadeDown 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.3s forwards;
 }
 
-.guesthouse-hero-title {
-    font-size: clamp(2.5rem, 5vw, 4rem);
-    line-height: 1.1;
-    margin-bottom: 1rem;
-    color: white;
+.hero-title {
+    font-size: clamp(2rem, 5vw, 3.6rem);
+    font-weight: 800;
+    line-height: 1.08;
+    margin: 0;
+    letter-spacing: -0.02em;
+
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeUp 0.85s cubic-bezier(0.22, 1, 0.36, 1) 0.55s forwards;
 }
 
-.guesthouse-hero-subtitle {
-    font-size: 1.15rem;
-    line-height: 1.7;
-    color: rgba(255, 255, 255, 0.92);
+.hero-subtitle {
+    font-size: clamp(0.95rem, 1.8vw, 1.15rem);
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 540px;
+    line-height: 1.65;
+    margin: 0;
+
+    opacity: 0;
+    transform: translateY(22px);
+    animation: fadeUp 0.85s cubic-bezier(0.22, 1, 0.36, 1) 0.85s forwards;
 }
 
-/* SECTION HEADINGS */
-.section-heading {
-    max-width: 760px;
-    margin-left: auto;
-    margin-right: auto;
+/* Scroll hint arrow */
+.hero-scroll-hint {
+    margin-top: 1.5rem;
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.65);
+    opacity: 0;
+    animation: fadeUp 0.6s ease 1.3s forwards, bounceDown 2s ease-in-out 2s infinite;
+}
+
+@keyframes fadeDown {
+    to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeUp {
+    to { opacity: 1; transform: translateY(0); }
+}
+@keyframes bounceDown {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(8px); }
+}
+
+
+/* ── SPLIT SECTIONS (Image + Text side by side) ─────────── */
+.split-section {
+    padding: 6rem 0;
+}
+
+.split-title {
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    font-weight: 700;
+    color: var(--color-text, #4F4A46);
+    margin-bottom: 1.2rem;
+    line-height: 1.15;
 }
 
 .section-kicker {
     display: inline-block;
-    margin-bottom: 0.75rem;
-    color: #D87A56;
-    font-size: 0.9rem;
+    margin-bottom: 0.6rem;
+    color: var(--color-primary, #D87A56);
+    font-size: 0.85rem;
     font-weight: 700;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
 }
 
-.section-intro {
-    max-width: 640px;
-    color: #7B746C;
-}
-
-/* STORY PANEL */
-.story-panel {
-    background: #f9f4eb;
-    border: 1px solid rgba(216, 122, 86, 0.12);
+/* Reveal-image: clip-path wipe effect */
+.reveal-image {
+    overflow: hidden;
     border-radius: 18px;
 }
 
-/* FEATURE CARDS */
+.reveal-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 18px;
+    transition: transform 0.6s ease;
+}
+
+.reveal-image:hover img {
+    transform: scale(1.04);
+}
+
+/* Directional start states */
+.reveal-image.from-left {
+    opacity: 0;
+    transform: translateX(-60px);
+    transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.reveal-image.from-right {
+    opacity: 0;
+    transform: translateX(60px);
+    transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal-image.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Reveal text */
+.reveal-text.from-right {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.15s,
+                transform 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.15s;
+}
+.reveal-text.from-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.15s,
+                transform 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.15s;
+}
+.reveal-text.from-bottom {
+    opacity: 0;
+    transform: translateY(36px);
+    transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal-text.visible {
+    opacity: 1;
+    transform: translate(0);
+}
+
+
+/* ── PARALLAX IMAGE BREAKS ──────────────────────────────── */
+.parallax-break {
+    position: relative;
+    width: 100%;
+    height: 50vh;
+    min-height: 320px;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Fix for iOS (no fixed attachment support) */
+@supports (-webkit-touch-callout: none) {
+    .parallax-break {
+        background-attachment: scroll;
+    }
+}
+
+.parallax-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+}
+
+.parallax-text {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 2rem;
+}
+
+.parallax-quote {
+    color: #fff;
+    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+    font-style: italic;
+    font-weight: 400;
+    line-height: 1.7;
+    max-width: 650px;
+    display: inline-block;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+
+/* ── CARDS SECTIONS ─────────────────────────────────────── */
+.cards-section {
+    padding: 6rem 0;
+}
+
+/* ── IDEAL FOR HEADER + COMPACT SPLITS ──────────────────── */
+.ideal-for-header {
+    padding: 5rem 0 1rem;
+}
+
+.split-section.split-compact {
+    padding: 3rem 0;
+}
+
+.ideal-icon-badge {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(216, 122, 86, 0.10);
+    color: var(--color-primary, #D87A56);
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.split-compact:hover .ideal-icon-badge {
+    background: var(--color-primary, #D87A56);
+    color: #fff;
+    transform: scale(1.08);
+}
+
+/* Stagger card reveal */
+.stagger-card {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.stagger-card[data-delay="1"] { transition-delay: 0.12s; }
+.stagger-card[data-delay="2"] { transition-delay: 0.24s; }
+.stagger-card[data-delay="3"] { transition-delay: 0.36s; }
+
+.stagger-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Feature card styling */
 .feature-card {
     border-radius: 18px;
+    border: 1px solid rgba(0,0,0,0.06);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
 }
 
 .feature-icon {
@@ -125,103 +324,235 @@
     align-items: center;
     justify-content: center;
     background: rgba(216, 122, 86, 0.10);
+    color: var(--color-primary, #D87A56);
+    transition: background 0.3s ease, transform 0.3s ease;
 }
 
-/* GALLERY */
-.gallery-card {
+.feature-card:hover .feature-icon {
+    background: var(--color-primary, #D87A56);
+    color: #fff;
+    transform: scale(1.08);
+}
+
+
+/* ── GALLERY SECTION ────────────────────────────────────── */
+.gallery-section {
+    padding: 6rem 0;
+    background: rgba(0, 0, 0, 0.02);
+}
+
+/* ── REVIEW SPLIT STYLES ────────────────────────────────── */
+.review-stars-inline {
+    color: #f5a623;
+    font-size: 0.95rem;
+    letter-spacing: 0.1em;
+}
+
+.review-quote-text {
+    font-style: italic;
+    font-size: 1.05rem;
+    line-height: 1.85;
+    color: var(--color-muted, #7B746C);
+    border-left: 3px solid var(--color-primary, #D87A56);
+    padding-left: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.review-author {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+}
+
+.review-author-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(216, 122, 86, 0.10);
+    color: var(--color-primary, #D87A56);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    flex-shrink: 0;
+}
+
+.review-author strong {
+    display: block;
+    font-size: 0.95rem;
+    color: var(--color-text, #4F4A46);
+}
+
+.review-source {
+    display: block;
+    font-size: 0.82rem;
+    color: var(--color-muted, #7B746C);
+    letter-spacing: 0.02em;
+}
+
+.gallery-item {
+    position: relative;
     border-radius: 18px;
+    overflow: hidden;
 }
 
-.gallery-card img {
+.gallery-item img {
     width: 100%;
-    height: 260px;
+    height: 220px;
     object-fit: cover;
     display: block;
-    border-radius: 18px;
+    transition: transform 0.5s ease;
 }
 
-.gallery-card .overlay {
+.gallery-item.tall img {
+    height: calc(220px * 2 + 1.5rem); /* match two stacked items */
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+.gallery-label {
     position: absolute;
-    inset: auto 0 0 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
     padding: 14px 18px;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.15));
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
     color: #fff;
     font-weight: 600;
+    font-size: 0.95rem;
     letter-spacing: 0.02em;
-    opacity: 1;
-    text-align: left;
 }
 
-/* REVIEWS */
-.review-card {
-    border-radius: 18px;
+
+
+/* ── GUESTHOUSE PAGE WRAPPER ────────────────────────────── */
+.guesthouse-page {
+    position: relative;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+    overflow: hidden;
 }
 
-.review-stars {
-    font-size: 0.95rem;
-    letter-spacing: 0.12em;
+/* ── FULL-BLEED breakout from .container ────────────────── */
+/* The base.html wraps content in <main class="container mt-5">.
+   These elements need to be full-width, so we break them out. */
+.hero-section {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+    margin-top: -3rem; /* counteract mt-5 */
 }
 
-.review-meta {
-    font-size: 0.95rem;
-    font-weight: 500;
-}
+
+/* ================================================================
+   RESPONSIVE
+   ================================================================ */
 
 /* TABLET */
 @media (max-width: 991.98px) {
     .hero-section {
-        height: 50vh;
-        min-height: 350px;
+        height: 55vh;
+        min-height: 400px;
     }
 
-    .guesthouse-hero {
-        height: 60vh;
-        min-height: 420px;
-        background-size: cover;
+    .split-section {
+        padding: 4rem 0;
     }
 
-    .guesthouse-hero-content {
-        padding: 1.5rem;
+    .split-section.split-compact {
+        padding: 2.5rem 0;
     }
 
-    .gallery-card img {
-        height: 220px;
+    .ideal-for-header {
+        padding: 4rem 0 0.5rem;
+    }
+
+    .cards-section,
+    .gallery-section {
+        padding: 4rem 0;
+    }
+
+    .parallax-break {
+        height: 40vh;
+        min-height: 260px;
+    }
+
+    .gallery-item.tall img {
+        height: 300px;
     }
 }
 
 /* MOBILE */
 @media (max-width: 767.98px) {
     .hero-section {
-        height: 40vh;
-        min-height: 300px;
-    }
-
-    .guesthouse-page {
-        padding-top: 2rem !important;
-        padding-bottom: 2rem !important;
-    }
-
-    .guesthouse-hero {
         height: 50vh;
-        min-height: 320px;
-        background-size: cover;
+        min-height: 350px;
     }
 
-    .guesthouse-hero-title {
-        font-size: 2rem;
+    .hero-title {
+        font-size: 1.8rem;
     }
 
-    .guesthouse-hero-subtitle {
+    .hero-subtitle {
+        font-size: 0.9rem;
+    }
+
+    .hero-kicker {
+        font-size: 0.7rem;
+    }
+
+    .split-section {
+        padding: 3rem 0;
+    }
+
+    .split-section.split-compact {
+        padding: 2rem 0;
+    }
+
+    .ideal-for-header {
+        padding: 3rem 0 0;
+    }
+
+    .split-title {
+        font-size: 1.5rem;
+    }
+
+    .cards-section,
+    .gallery-section {
+        padding: 3rem 0;
+    }
+
+    .parallax-break {
+        height: 35vh;
+        min-height: 220px;
+        background-attachment: scroll; /* mobile fix */
+    }
+
+    .parallax-quote {
         font-size: 1rem;
     }
 
-    .gallery-card img {
-        height: 210px;
+    .gallery-item img,
+    .gallery-item.tall img {
+        height: 220px;
     }
 
-    .story-panel,
+    /* Directional reveals → simpler fade-up on mobile */
+    .reveal-image.from-left,
+    .reveal-image.from-right {
+        transform: translateY(30px);
+    }
+    .reveal-text.from-left,
+    .reveal-text.from-right {
+        transform: translateY(24px);
+    }
+
     .feature-card,
-    .review-card {
+    .review-card,
+    .gallery-item {
         border-radius: 14px;
     }
 }
