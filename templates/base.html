@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="el">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -69,25 +69,52 @@
 
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto mb-3 mb-lg-0">
-                    <li class="nav-item"><a class="nav-link" href="/">Guesthouse</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/rooms">Rooms</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/activities">Activities</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/contact">Contact</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">
+                            <span class="lang-en">Guesthouse</span>
+                            <span class="lang-el">Κατάλυμα</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/rooms">
+                            <span class="lang-en">Rooms</span>
+                            <span class="lang-el">Δωμάτια</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/activities">
+                            <span class="lang-en">Activities</span>
+                            <span class="lang-el">Δραστηριότητες</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contact">
+                            <span class="lang-en">Contact</span>
+                            <span class="lang-el">Επικοινωνία</span>
+                        </a>
+                    </li>
                 </ul>
 
                 <!-- Contact Info -->
                 <div class="d-flex flex-column flex-lg-row align-items-start align-items-lg-center ms-lg-4 mt-2 mt-lg-0 small">
                     <div class="me-lg-3 mb-2 mb-lg-0">
                         <i class="fas fa-map-marker-alt text-primary me-1"></i>
-                        Trigona, Kalambaka, 42200
+                        <span class="lang-en">Trigona, Kalambaka, 42200</span>
+                        <span class="lang-el">Τρυγόνα, Καλαμπάκα, 42200</span>
                     </div>
-                    <div>
+                    <div class="me-lg-3">
                         <i class="fas fa-phone-alt text-primary me-1"></i>
                         <a href="tel:+302432070119" class="text-dark text-decoration-none">
                             +30 2432070119
                         </a>
                     </div>
-
+                    <!-- Language Toggle -->
+                    <div class="lang-toggle-wrap mt-2 mt-lg-0">
+                        <button id="langToggleBtn" class="btn btn-sm btn-outline-secondary lang-toggle-btn" onclick="toggleLanguage()">
+                            <span class="lang-en">🇬🇷 Ελληνικά</span>
+                            <span class="lang-el">🇬🇧 English</span>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -104,31 +131,67 @@
             <div class="row text-center text-md-start align-items-start">
 
                 <!-- Brand -->
-                <div class="col-12 col-md-4 mb-4">
+            <div class="col-12 col-md-4 mb-4">
+
+                <div class="d-flex align-items-center mb-2">
                     <img src="{{ url_for('static', filename='logo-iris-rooms.jpg') }}"
                          alt="Iris Rooms Trigona Logo"
-                         style="height: 45px;">
-                    <h5 class="mt-2 mb-2">Iris Rooms Trigona</h5>
-                    <p class="text-muted small mb-0">
-                        Cozy apartments located in Trigona near Kalambaka and Meteora.
-                        Enjoy a peaceful stay with mountain views and modern comforts.
-                    </p>
+                         style="height: 45px; margin-right: 10px;">
+
+                    <h5 class="mb-0">Iris Rooms Trigona</h5>
                 </div>
+
+                <p class="text-muted small mb-0">
+                    <span class="lang-en">
+                        Cozy apartments located in Trigona near Kalambaka and Meteora. Enjoy a peaceful stay with mountain views and modern comforts.
+                    </span>
+                    <span class="lang-el">
+                        Άνετα διαμερίσματα στο χωριό Τρυγώνα κοντά στην Καλαμπάκα και τα Μετέωρα. Απολαύστε μια ήρεμη διαμονή με θέα στα βουνά και σύγχρονες ανέσεις.
+                    </span>
+                </p>
+
+            </div>
 
                 <!-- Navigation -->
                 <div class="col-12 col-md-3 mb-4">
-                    <h6 class="fw-bold mb-3">Explore</h6>
+                    <h6 class="fw-bold mb-3">
+                        <span class="lang-en">Explore Menu</span>
+                        <span class="lang-el">Εξερεύνηστε</span>
+                    </h6>
                     <ul class="list-unstyled mb-0">
-                        <li class="mb-2"><a class="text-dark text-decoration-none" href="/">Guesthouse</a></li>
-                        <li class="mb-2"><a class="text-dark text-decoration-none" href="/rooms">Rooms</a></li>
-                        <li class="mb-2"><a class="text-dark text-decoration-none" href="/activities">Activities</a></li>
-                        <li class="mb-2"><a class="text-dark text-decoration-none" href="/contact">Contact</a></li>
+                        <li class="mb-2">
+                            <a class="text-dark text-decoration-none" href="/">
+                                <span class="lang-en">Guesthouse</span>
+                                <span class="lang-el">Κατάλυμα</span>
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a class="text-dark text-decoration-none" href="/rooms">
+                                <span class="lang-en">Rooms</span>
+                                <span class="lang-el">Δωμάτια</span>
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a class="text-dark text-decoration-none" href="/activities">
+                                <span class="lang-en">Activities</span>
+                                <span class="lang-el">Δραστηριότητες</span>
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a class="text-dark text-decoration-none" href="/contact">
+                                <span class="lang-en">Contact</span>
+                                <span class="lang-el">Επικοινωνία</span>
+                            </a>
+                        </li>
                     </ul>
                 </div>
 
                 <!-- Contact -->
                 <div class="col-12 col-md-3 mb-4">
-                    <h6 class="fw-bold mb-3">Contact</h6>
+                    <h6 class="fw-bold mb-3">
+                        <span class="lang-en">Contact</span>
+                        <span class="lang-el">Επικοινωνία</span>
+                    </h6>
                     <p class="mb-2">
                         <i class="fas fa-phone-alt text-primary me-2"></i>
                         <a href="tel:+302432070119" class="text-dark text-decoration-none">
@@ -137,18 +200,19 @@
                     </p>
                     <p class="mb-0">
                         <i class="fas fa-map-marker-alt text-primary me-2"></i>
-                        Trigona, Kalambaka, 42200
+                        <span class="lang-en">Trigona, Kalambaka, 42200</span>
+                        <span class="lang-el">Tρυγόνα, Καλαμπάκα, 42200</span>
                     </p>
                 </div>
 
                 <!-- Airbnb -->
                 <div class="col-md-2 mb-4">
-                    <h6 class="fw-bold mb-3">Airbnb</h6>
 
                     <a href="https://www.airbnb.com/rooms/1139212536056596157?source_impression_id=p3_1736526255_P3GxvqSus9ncaane"
                        class="btn btn-primary btn-sm mb-2"
                        target="_blank">
-                       View on Airbnb
+                        <span class="lang-en">View on Airbnb</span>
+                        <span class="lang-el">Δείτε στο Airbnb</span>
                     </a>
 
                     <div>
@@ -162,13 +226,34 @@
             <hr>
 
             <div class="text-center small text-muted">
-                © 2025 Iris Rooms Trigona • All rights reserved
+                <span class="lang-en">© 2025 Iris Rooms Trigona · All rights reserved</span>
+                <span class="lang-el">© 2025 Iris Rooms Trigona · Όλα τα δικαιώματα διατηρούνται</span>
             </div>
         </div>
     </footer>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Language Toggle Script -->
+    <script>
+    // Determine saved or default language (default: Greek)
+    const savedLang = localStorage.getItem('siteLang') || 'el';
+    document.documentElement.setAttribute('data-lang', savedLang);
+
+    function applyLanguage(lang) {
+        document.documentElement.setAttribute('data-lang', lang);
+        localStorage.setItem('siteLang', lang);
+    }
+
+    function toggleLanguage() {
+        const current = document.documentElement.getAttribute('data-lang') || 'el';
+        applyLanguage(current === 'en' ? 'el' : 'en');
+    }
+
+    // Apply on load
+    applyLanguage(savedLang);
+    </script>
 
     <!-- Shared site JS -->
     <script>

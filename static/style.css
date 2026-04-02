@@ -308,6 +308,27 @@ footer a:hover {
     box-shadow: var(--shadow-sm) !important;
 }
 
+/* ── Language Toggle ── */
+/* Default: Greek is shown, English hidden */
+html[data-lang="el"] .lang-en { display: none !important; }
+html[data-lang="el"] .lang-el { display: inline !important; }
+html[data-lang="en"] .lang-el { display: none !important; }
+html[data-lang="en"] .lang-en { display: inline !important; }
+
+/* Ensure both are hidden until lang is set (prevents flash) */
+.lang-en, .lang-el { display: none; }
+
+.lang-toggle-btn {
+    font-size: 0.78rem;
+    padding: 4px 10px;
+    border-radius: 999px;
+    white-space: nowrap;
+}
+.lang-toggle-wrap {
+    display: flex;
+    align-items: center;
+}
+
 /* Responsive */
 @media (max-width: 991.98px) {
     .navbar-brand img {

@@ -1,7 +1,6 @@
 {% extends 'base.html' %}
-{% block title %}Contact & Location | Iris Rooms Trigona{% endblock %}
+{% block title %}<span class="lang-en">Contact & Location | Iris Rooms Trigona</span><span class="lang-el">Επικοινωνία & Τοποθεσία | Iris Rooms Τρίγωνα</span>{% endblock %}
 {% block description %}
-Find Iris Rooms Trigona in Trigona near Kalambaka and Meteora. Phone number, address and directions.
 {% endblock %}
 {% block extra_css %}
 <link rel="stylesheet" href="{{ url_for('static', filename='contact.css') }}">
@@ -10,8 +9,14 @@ Find Iris Rooms Trigona in Trigona near Kalambaka and Meteora. Phone number, add
 
 <div class="container contact-page py-5">
     <div class="section-heading text-center mb-5 scroll-reveal">
-        <span class="section-kicker">Contact & Location</span>
-        <h1 class="display-5 text-dark-gray mb-3">Contact Us</h1>
+        <span class="section-kicker">
+            <span class="lang-en">Contact & Location</span>
+            <span class="lang-el">Επικοινωνία & Τοποθεσία</span>
+        </span>
+        <h1 class="display-5 text-dark-gray mb-3">
+            <span class="lang-en">Contact Us</span>
+            <span class="lang-el">Επικοινωνήστε Μαζί Μας</span>
+        </h1>
     </div>
 
     <div class="row g-4 align-items-stretch">
@@ -19,9 +24,13 @@ Find Iris Rooms Trigona in Trigona near Kalambaka and Meteora. Phone number, add
         <div class="col-lg-5">
             <div class="card contact-card shadow-sm border-0 h-100 scroll-reveal" data-delay="1">
                 <div class="card-body p-4 p-md-5">
-                    <h3 class="card-title mb-3">Get in Touch</h3>
+                    <h3 class="card-title mb-3">
+                        <span class="lang-en">Get in Touch</span>
+                        <span class="lang-el">Επικοινωνήστε Μαζί Μας</span>
+                    </h3>
                     <p class="card-text text-muted-custom mb-4">
-                        Reach out to us for bookings, directions, or any information you may need before your stay.
+                        <span class="lang-en">Reach out to us for bookings, directions, or any information you may need before your stay.</span>
+                        <span class="lang-el">Επικοινωνήστε μαζί μας για κρατήσεις, οδηγίες ή οποιαδήποτε πληροφορία χρειάζεστε πριν τη διαμονή σας.</span>
                     </p>
 
                     <div class="contact-info-list">
@@ -30,8 +39,13 @@ Find Iris Rooms Trigona in Trigona near Kalambaka and Meteora. Phone number, add
                                 <i class="fas fa-map-marker-alt"></i>
                             </div>
                             <div>
-                                <span class="contact-label">Address</span>
-                                <p class="mb-0">Trigona, Kalambaka, 42200</p>
+                                <span class="contact-label">
+                                    <span class="lang-en">Address</span>
+                                    <span class="lang-el">Διεύθυνση</span>
+                                </span>
+                                <p class="mb-0 lang-en">Trigona, Kalambaka, 42200</p>
+                                <p class="mb-0  lang-el">Τρυγόνα, Καλαμπάκα, 42200</p>
+
                             </div>
                         </div>
 
@@ -40,7 +54,10 @@ Find Iris Rooms Trigona in Trigona near Kalambaka and Meteora. Phone number, add
                                 <i class="fas fa-phone-alt"></i>
                             </div>
                             <div>
-                                <span class="contact-label">Phone</span>
+                                <span class="contact-label">
+                                    <span class="lang-en">Phone</span>
+                                    <span class="lang-el">Τηλέφωνο</span>
+                                </span>
                                 <p class="mb-0">
                                     <a href="tel:+302432070119">+30 2432070119</a>
                                 </p>
@@ -51,32 +68,36 @@ Find Iris Rooms Trigona in Trigona near Kalambaka and Meteora. Phone number, add
                     <hr class="my-4">
 
                     <div>
-                        <h4 class="contact-subheading mb-3">Nearby Attractions</h4>
+                        <h4 class="contact-subheading mb-3">
+                            <span class="lang-en">Nearby Attractions</span>
+                            <span class="lang-el">Κοντινά Αξιοθέατα</span>
+                        </h4>
 
                         <div class="access-list">
                             <div class="access-item">
-                                <span><i class="fas fa-map-signs text-primary me-2"></i>Meteora</span>
+                                <span><i class="fas fa-map-signs text-primary me-2"></i><span class="lang-en">Meteora</span><span class="lang-el">Μετέωρα</span></span>
                                 <strong>30 min</strong>
                             </div>
 
                             <div class="access-item">
-                                <span><i class="fas fa-map-signs text-primary me-2"></i>Trikala</span>
+                                <span><i class="fas fa-map-signs text-primary me-2"></i><span class="lang-en">Trikala</span><span class="lang-el">Τρίκαλα</span></span>
                                 <strong>50 min</strong>
                             </div>
 
                             <div class="access-item">
-                                <span><i class="fas fa-map-signs text-primary me-2"></i>Valia Calda National Park</span>
+                                <span><i class="fas fa-map-signs text-primary me-2"></i><span class="lang-en">Valia Calda National Park</span><span class="lang-el">Εθνικό Πάρκο Βάλια Κάλντα</span></span>
                                 <strong>90 min</strong>
                             </div>
 
                             <div class="access-item">
-                                <span><i class="fas fa-map-signs text-primary me-2"></i>Metsovo</span>
+                                <span><i class="fas fa-map-signs text-primary me-2"></i><span class="lang-en">Metsovo</span><span class="lang-el">Μέτσοβο</span></span>
                                 <strong>40 min</strong>
                             </div>
                         </div>
 
                         <p class="small text-muted-custom mt-3 mb-0">
-                            Travel times are approximate and refer to access by car.
+                            <span class="lang-en">Travel times are approximate and refer to access by car.</span>
+                            <span class="lang-el">Οι χρόνοι ταξιδιού είναι κατά προσέγγιση και αναφέρονται σε πρόσβαση με αυτοκίνητο.</span>
                         </p>
                     </div>
                 </div>
@@ -89,8 +110,14 @@ Find Iris Rooms Trigona in Trigona near Kalambaka and Meteora. Phone number, add
                 <div class="card-body p-4 p-md-5">
                     <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-3">
                         <div>
-                            <h3 class="card-title mb-1">Find Us on the Map</h3>
-                            <p class="text-muted-custom mb-0">Plan your route to Iris Rooms Trigona.</p>
+                            <h3 class="card-title mb-1">
+                                <span class="lang-en">Find Us on the Map</span>
+                                <span class="lang-el">Βρείτε μας στον Χάρτη</span>
+                            </h3>
+                            <p class="text-muted-custom mb-0">
+                                <span class="lang-en">Plan your route our Guesthouse.</span>
+                                <span class="lang-el">Σχεδιάστε τη διαδρομή σας προς τον ξενώνα μας.</span>
+                            </p>
                         </div>
                     </div>
 
