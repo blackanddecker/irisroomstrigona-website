@@ -128,7 +128,7 @@
 .split-title {
     font-size: clamp(1.6rem, 3vw, 2.4rem);
     font-weight: 700;
-    color: var(--color-text, #4F4A46);
+    color: var(--color-text, #3A3A2E);
     margin-bottom: 1.2rem;
     line-height: 1.15;
 }
@@ -136,7 +136,7 @@
 .section-kicker {
     display: inline-block;
     margin-bottom: 0.6rem;
-    color: var(--color-primary, #D87A56);
+    color: var(--color-primary, #8B7A3D);
     font-size: 0.85rem;
     font-weight: 700;
     letter-spacing: 0.1em;
@@ -275,15 +275,15 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(216, 122, 86, 0.10);
-    color: var(--color-primary, #D87A56);
+    background: rgba(139, 122, 61, 0.10);
+    color: var(--color-primary, #8B7A3D);
     font-size: 1.25rem;
     margin-bottom: 1rem;
     transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
 }
 
 .split-compact:hover .ideal-icon-badge {
-    background: var(--color-primary, #D87A56);
+    background: var(--color-primary, #8B7A3D);
     color: #fff;
     transform: scale(1.08);
 }
@@ -324,13 +324,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(216, 122, 86, 0.10);
-    color: var(--color-primary, #D87A56);
+    background: rgba(139, 122, 61, 0.10);
+    color: var(--color-primary, #8B7A3D);
     transition: background 0.3s ease, transform 0.3s ease;
 }
 
 .feature-card:hover .feature-icon {
-    background: var(--color-primary, #D87A56);
+    background: var(--color-primary, #8B7A3D);
     color: #fff;
     transform: scale(1.08);
 }
@@ -353,8 +353,8 @@
     font-style: italic;
     font-size: 1.05rem;
     line-height: 1.85;
-    color: var(--color-muted, #7B746C);
-    border-left: 3px solid var(--color-primary, #D87A56);
+    color: var(--color-muted, #7A7A60);
+    border-left: 3px solid var(--color-primary, #8B7A3D);
     padding-left: 1.2rem;
     margin-bottom: 1.5rem;
 }
@@ -369,8 +369,8 @@
     width: 44px;
     height: 44px;
     border-radius: 50%;
-    background: rgba(216, 122, 86, 0.10);
-    color: var(--color-primary, #D87A56);
+    background: rgba(139, 122, 61, 0.10);
+    color: var(--color-primary, #8B7A3D);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -381,13 +381,13 @@
 .review-author strong {
     display: block;
     font-size: 0.95rem;
-    color: var(--color-text, #4F4A46);
+    color: var(--color-text, #3A3A2E);
 }
 
 .review-source {
     display: block;
     font-size: 0.82rem;
-    color: var(--color-muted, #7B746C);
+    color: var(--color-muted, #7A7A60);
     letter-spacing: 0.02em;
 }
 

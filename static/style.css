@@ -1,13 +1,13 @@
 :root {
-    --color-bg: #F3E9D5;
+    --color-bg: #F0EDE4;
     --color-surface: #FFFFFF;
-    --color-text: #4F4A46;
-    --color-muted: #7B746C;
-    --color-primary: #D87A56;
-    --color-primary-hover: #C96B48;
-    --color-accent: #A5C16A;
-    --color-accent-hover: #8FAA57;
-    --color-border: #E7DCCB;
+    --color-text: #3A3A2E;
+    --color-muted: #7A7A60;
+    --color-primary: #8B7A3D;
+    --color-primary-hover: #786830;
+    --color-accent: #C4A94A;
+    --color-accent-hover: #B09840;
+    --color-border: #DDD8C4;
 
     --shadow-sm: 0 4px 15px rgba(0, 0, 0, 0.08);
     --shadow-md: 0 8px 25px rgba(0, 0, 0, 0.12);
@@ -83,7 +83,7 @@ a:hover {
 }
 
 .navbar.scrolled {
-    background-color: rgba(243, 233, 213, 0.92) !important;
+    background-color: rgba(240, 237, 228, 0.92) !important;
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
@@ -235,7 +235,7 @@ iframe:hover {
 
 /* Footer */
 footer {
-    background-color: #f7efe2;
+    background-color: #e9e5da;
     border-top: 1px solid var(--color-border);
 }
 
@@ -287,9 +287,6 @@ footer a:hover {
 .scroll-reveal[data-delay="3"] { transition-delay: 0.3s; }
 .scroll-reveal[data-delay="4"] { transition-delay: 0.4s; }
 
-footer a:hover {
-    color: var(--color-accent) !important;
-}
 
 /* Bootstrap helpers override */
 .bg-primary {
@@ -301,7 +298,7 @@ footer a:hover {
 }
 
 .bg-light {
-    background-color: #f9f4eb !important;
+    background-color: #f0ede4 !important;
 }
 
 .shadow-sm {
