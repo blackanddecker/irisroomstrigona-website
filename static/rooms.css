@@ -36,6 +36,16 @@
     border-radius: 18px;
     background: #fff;
     overflow: hidden;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.room-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.12);
+}
+
+.room-image-wrap {
+    overflow: hidden;
 }
 
 .room-image {
@@ -43,6 +53,11 @@
     height: 280px;
     object-fit: cover;
     display: block;
+    transition: transform 0.5s ease;
+}
+
+.room-card:hover .room-image {
+    transform: scale(1.06);
 }
 
 .room-card .card-title {

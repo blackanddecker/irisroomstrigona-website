@@ -3,11 +3,13 @@
 {% block description %}
 Discover Meteora monasteries, Valia Calda national park, Metsovo village and more activities near Iris Rooms Trigona.
 {% endblock %}
-{% block content %}
+{% block extra_css %}
 <link rel="stylesheet" href="{{ url_for('static', filename='activities.css') }}">
+{% endblock %}
+{% block content %}
 
 <div class="container activities-page py-5">
-    <div class="section-heading text-center mb-5">
+    <div class="section-heading text-center mb-5 scroll-reveal">
         <span class="section-kicker">Experiences & Excursions</span>
         <h1 class="display-5 text-dark-gray mb-3">Our Activities</h1>
         <p class="section-intro mx-auto">
@@ -18,7 +20,7 @@ Discover Meteora monasteries, Valia Calda national park, Metsovo village and mor
     <div class="row g-4">
         <!-- Meteora -->
         <div class="col-lg-6">
-            <div class="card activity-card shadow-sm border-0 h-100">
+            <div class="card activity-card shadow-sm border-0 h-100 scroll-reveal">
                 <img src="{{ url_for('static', filename='activities/meteora.jpg') }}" class="card-img-top activity-image" alt="Visit Meteora">
                 <div class="card-body p-4">
                     <div class="activity-meta mb-3">
@@ -37,7 +39,7 @@ Discover Meteora monasteries, Valia Calda national park, Metsovo village and mor
 
         <!-- Valia Calda -->
         <div class="col-lg-6">
-            <div class="card activity-card shadow-sm border-0 h-100">
+            <div class="card activity-card shadow-sm border-0 h-100 scroll-reveal">
                 <img src="{{ url_for('static', filename='activities/ValiaKalda.jpg') }}" class="card-img-top activity-image" alt="Valia Calda National Park">
                 <div class="card-body p-4">
                     <div class="activity-meta mb-3">
@@ -56,7 +58,7 @@ Discover Meteora monasteries, Valia Calda national park, Metsovo village and mor
 
         <!-- Hiking Meteora -->
         <div class="col-lg-6">
-            <div class="card activity-card shadow-sm border-0 h-100">
+            <div class="card activity-card shadow-sm border-0 h-100 scroll-reveal">
                 <img src="{{ url_for('static', filename='activities/hiking.jpeg') }}" class="card-img-top activity-image" alt="Hiking in Meteora">
                 <div class="card-body p-4">
                     <div class="activity-meta mb-3">
@@ -75,7 +77,7 @@ Discover Meteora monasteries, Valia Calda national park, Metsovo village and mor
 
         <!-- Museum -->
         <div class="col-lg-6">
-            <div class="card activity-card shadow-sm border-0 h-100">
+            <div class="card activity-card shadow-sm border-0 h-100 scroll-reveal">
                 <img src="{{ url_for('static', filename='activities/museum.jpg') }}" class="card-img-top activity-image" alt="Meteora Natural History Museum and Mushroom Museum">
                 <div class="card-body p-4">
                     <div class="activity-meta mb-3">
@@ -94,7 +96,7 @@ Discover Meteora monasteries, Valia Calda national park, Metsovo village and mor
 
         <!-- Metsovo -->
         <div class="col-lg-6">
-            <div class="card activity-card shadow-sm border-0 h-100">
+            <div class="card activity-card shadow-sm border-0 h-100 scroll-reveal">
                 <img src="{{ url_for('static', filename='activities/Metsovo.jpg') }}" class="card-img-top activity-image" alt="Metsovo Village">
                 <div class="card-body p-4">
                     <div class="activity-meta mb-3">
@@ -113,7 +115,7 @@ Discover Meteora monasteries, Valia Calda national park, Metsovo village and mor
 
         <!-- Trikala Christmas Park -->
         <div class="col-lg-6">
-            <div class="card activity-card shadow-sm border-0 h-100">
+            <div class="card activity-card shadow-sm border-0 h-100 scroll-reveal">
                 <img src="{{ url_for('static', filename='activities/miloskswtikwn.jpeg') }}" class="card-img-top activity-image" alt="The Mill of the Elves in Trikala">
                 <div class="card-body p-4">
                     <div class="activity-meta mb-3">
@@ -132,7 +134,7 @@ Discover Meteora monasteries, Valia Calda national park, Metsovo village and mor
 
         <!-- Ioannina -->
         <div class="col-lg-6">
-            <div class="card activity-card shadow-sm border-0 h-100">
+            <div class="card activity-card shadow-sm border-0 h-100 scroll-reveal">
                 <img src="{{ url_for('static', filename='activities/ioannina.jpg') }}" class="card-img-top activity-image" alt="Explore Ioannina">
                 <div class="card-body p-4">
                     <div class="activity-meta mb-3">
@@ -151,7 +153,7 @@ Discover Meteora monasteries, Valia Calda national park, Metsovo village and mor
 
         <!-- Climbing Meteora -->
         <div class="col-lg-6">
-            <div class="card activity-card shadow-sm border-0 h-100">
+            <div class="card activity-card shadow-sm border-0 h-100 scroll-reveal">
                 <img src="{{ url_for('static', filename='activities/anarixisi.jpg') }}" class="card-img-top activity-image" alt="Climbing in Meteora">
                 <div class="card-body p-4">
                     <div class="activity-meta mb-3">

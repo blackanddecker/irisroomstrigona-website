@@ -4,11 +4,13 @@
 Comfortable apartments in Trigona near Meteora. Private balconies, mountain views and easy access to Kalambaka.
 {% endblock %}
 {% block canonical %}https://irisroomstrigona.gr/rooms{% endblock %}
-{% block content %}
+{% block extra_css %}
 <link rel="stylesheet" href="{{ url_for('static', filename='rooms.css') }}">
+{% endblock %}
+{% block content %}
 
 <div class="container rooms-page py-5">
-    <div class="section-heading text-center mb-5">
+    <div class="section-heading text-center mb-5 scroll-reveal">
         <span class="section-kicker">Stay With Us</span>
         <h1 class="display-5 text-dark-gray mb-3">Our Rooms</h1>
         <p class="section-intro mx-auto">
@@ -16,15 +18,17 @@ Comfortable apartments in Trigona near Meteora. Private balconies, mountain view
         </p>
     </div>
 
-    <div class="booking-note text-center mb-5">
+    <div class="booking-note text-center mb-5 scroll-reveal">
         All bookings are made through Airbnb. Click on a button below to view details and reserve your stay.
     </div>
 
     <div class="row g-4">
         <!-- Iris Apartments Trigona 4 -->
         <div class="col-lg-4 col-md-6">
-            <div class="card room-card shadow-sm border-0 h-100">
-                <img src="{{ url_for('static', filename='room4.jpeg') }}" class="card-img-top room-image" alt="Iris Apartments Trigona 4">
+            <div class="card room-card shadow-sm border-0 h-100 scroll-reveal" data-delay="1">
+                <div class="room-image-wrap">
+                    <img src="{{ url_for('static', filename='room4.jpeg') }}" class="card-img-top room-image" alt="Iris Apartments Trigona 4">
+                </div>
                 <div class="card-body p-4">
                     <h5 class="card-title">Iris Apartments Trigona 4</h5>
                     <p class="card-text">
@@ -46,8 +50,10 @@ Comfortable apartments in Trigona near Meteora. Private balconies, mountain view
 
         <!-- Iris Apartments Trigona 5 -->
         <div class="col-lg-4 col-md-6">
-            <div class="card room-card shadow-sm border-0 h-100">
-                <img src="{{ url_for('static', filename='room5.jpeg') }}" class="card-img-top room-image" alt="Iris Apartments Trigona 5">
+            <div class="card room-card shadow-sm border-0 h-100 scroll-reveal" data-delay="2">
+                <div class="room-image-wrap">
+                    <img src="{{ url_for('static', filename='room5.jpeg') }}" class="card-img-top room-image" alt="Iris Apartments Trigona 5">
+                </div>
                 <div class="card-body p-4">
                     <h5 class="card-title">Iris Apartments Trigona 5</h5>
                     <p class="card-text">
@@ -70,8 +76,10 @@ Comfortable apartments in Trigona near Meteora. Private balconies, mountain view
 
         <!-- Iris Apartments Trigona 6 -->
         <div class="col-lg-4 col-md-6">
-            <div class="card room-card shadow-sm border-0 h-100">
-                <img src="{{ url_for('static', filename='room6.jpeg') }}" class="card-img-top room-image" alt="Iris Apartments Trigona 6">
+            <div class="card room-card shadow-sm border-0 h-100 scroll-reveal" data-delay="3">
+                <div class="room-image-wrap">
+                    <img src="{{ url_for('static', filename='room6.jpeg') }}" class="card-img-top room-image" alt="Iris Apartments Trigona 6">
+                </div>
                 <div class="card-body p-4">
                     <h5 class="card-title">Iris Apartments Trigona 6</h5>
                     <p class="card-text">
@@ -96,7 +104,7 @@ Comfortable apartments in Trigona near Meteora. Private balconies, mountain view
 
     <!-- Policies Section -->
     <div class="policies-section mt-5 pt-3">
-        <div class="section-heading text-center mb-4">
+        <div class="section-heading text-center mb-4 scroll-reveal">
             <span class="section-kicker">Guest Information</span>
             <h2 class="text-dark-gray mb-2">Check-in, Check-out & Policies</h2>
             <p class="section-intro mx-auto">

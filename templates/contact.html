@@ -3,11 +3,13 @@
 {% block description %}
 Find Iris Rooms Trigona in Trigona near Kalambaka and Meteora. Phone number, address and directions.
 {% endblock %}
-{% block content %}
+{% block extra_css %}
 <link rel="stylesheet" href="{{ url_for('static', filename='contact.css') }}">
+{% endblock %}
+{% block content %}
 
 <div class="container contact-page py-5">
-    <div class="section-heading text-center mb-5">
+    <div class="section-heading text-center mb-5 scroll-reveal">
         <span class="section-kicker">Contact & Location</span>
         <h1 class="display-5 text-dark-gray mb-3">Contact Us</h1>
     </div>
@@ -15,7 +17,7 @@ Find Iris Rooms Trigona in Trigona near Kalambaka and Meteora. Phone number, add
     <div class="row g-4 align-items-stretch">
         <!-- Left Section -->
         <div class="col-lg-5">
-            <div class="card contact-card shadow-sm border-0 h-100">
+            <div class="card contact-card shadow-sm border-0 h-100 scroll-reveal" data-delay="1">
                 <div class="card-body p-4 p-md-5">
                     <h3 class="card-title mb-3">Get in Touch</h3>
                     <p class="card-text text-muted-custom mb-4">
@@ -83,7 +85,7 @@ Find Iris Rooms Trigona in Trigona near Kalambaka and Meteora. Phone number, add
 
         <!-- Right Section: Map -->
         <div class="col-lg-7">
-            <div class="card map-card shadow-sm border-0 h-100">
+            <div class="card map-card shadow-sm border-0 h-100 scroll-reveal" data-delay="2">
                 <div class="card-body p-4 p-md-5">
                     <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-3">
                         <div>
@@ -107,4 +109,5 @@ Find Iris Rooms Trigona in Trigona near Kalambaka and Meteora. Phone number, add
         </div>
     </div>
 </div>
+
 {% endblock %}
