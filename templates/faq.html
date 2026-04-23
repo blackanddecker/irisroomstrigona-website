@@ -1,0 +1,123 @@
+{% extends 'base.html' %}
+
+{% block title %}FAQ - Συχνές Ερωτήσεις{% endblock %}
+
+{% block content %}
+<section class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-10">
+      <header class="mb-4 text-center">
+        <h1 class="display-5">Ερωτήσεις &amp; Απαντήσεις <span class="text-muted">/ FAQ</span></h1>
+        <p class="lead mt-2">Βρείτε απαντήσεις στις πιο συνηθισμένες απορίες για την επίσκεψή σας. <span class="text-muted">Find answers to the most common questions about your stay.</span></p>
+      </header>
+
+      <div class="card mb-4">
+        <div class="card-body">
+          <h3 class="h5">Έχετε Απορίες; / Have Questions?</h3>
+          <p>Παρακάτω θα βρείτε χρήσιμες πληροφορίες. Αν δεν βρείτε την απάντηση που χρειάζεστε, επικοινωνήστε μαζί μας.</p>
+        </div>
+      </div>
+
+      <!-- Single FAQ: Parking -->
+      <div class="card mb-3">
+        <div class="card-body">
+          <h4 class="h6">Πού μπορώ να παρκάρω; <span class="text-muted">/ Where can I park?</span></h4>
+          <p>
+            Υπάρχει δημόσιος χώρος στάθμευσης κοντά στο κατάλυμα και συνήθως υπάρχει διαθέσιμος χώρος στο δρόμο μπροστά από το σπίτι. Σε περίπτωση που χρειάζεστε βοήθεια με τις αποσκευές, ενημερώστε μας και θα βοηθήσουμε.
+            <br>
+            There is public parking nearby and on-street parking in front of the property. If you need help with luggage, let us know and we'll assist.
+          </p>
+        </div>
+      </div>
+
+      <!-- Policies accordion -->
+      <div class="accordion policies-accordion" id="policiesAccordion">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingCheckin">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCheckin" aria-expanded="false" aria-controls="collapseCheckin">
+              <i class="fas fa-clock text-primary me-2"></i>
+              <span class="lang-en">Check-in &amp; Check-out Time</span>
+              <span class="lang-el">Ώρες Check-in &amp; Check-out</span>
+            </button>
+          </h2>
+          <div id="collapseCheckin" class="accordion-collapse collapse" aria-labelledby="headingCheckin" data-bs-parent="#policiesAccordion">
+            <div class="accordion-body">
+              <span class="lang-en">
+                Check-in time is from <strong>15:00</strong>.<br>
+                Check-out is until <strong>12:00 noon</strong>.
+              </span>
+              <span class="lang-el">
+                Το check-in γίνεται από τις <strong>15:00</strong>.<br>
+                Το check-out πραγματοποιείται έως τις <strong>12:00 το μεσημέρι</strong>.
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingLuggage">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseLuggage" aria-expanded="false" aria-controls="collapseLuggage">
+              <i class="fas fa-suitcase text-primary me-2"></i>
+              <span class="lang-en">Luggage Storage</span>
+              <span class="lang-el">Φύλαξη Αποσκευών</span>
+            </button>
+          </h2>
+          <div id="collapseLuggage" class="accordion-collapse collapse" aria-labelledby="headingLuggage" data-bs-parent="#policiesAccordion">
+            <div class="accordion-body">
+              <span class="lang-en">
+                We can store your luggage until the time you are ready to depart.
+              </span>
+              <span class="lang-el">
+                Μπορούμε να φυλάξουμε τις αποσκευές σας μέχρι την ώρα που θα είστε έτοιμοι για την αναχώρησή σας.
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingSmoking">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSmoking" aria-expanded="false" aria-controls="collapseSmoking">
+              <i class="fas fa-smoking-ban text-danger me-2"></i>
+              <span class="lang-en">Smoking Policy</span>
+              <span class="lang-el">Πολιτική Καπνίσματος</span>
+            </button>
+          </h2>
+          <div id="collapseSmoking" class="accordion-collapse collapse" aria-labelledby="headingSmoking" data-bs-parent="#policiesAccordion">
+            <div class="accordion-body">
+              <span class="lang-en">
+                Smoking is <strong>not allowed</strong>.
+              </span>
+              <span class="lang-el">
+                Το κάπνισμα <strong>δεν επιτρέπεται</strong>.
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingPets">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePets" aria-expanded="false" aria-controls="collapsePets">
+              <i class="fas fa-paw text-primary me-2"></i>
+              <span class="lang-en">Pets Policy</span>
+              <span class="lang-el">Πολιτική για Κατοικίδια</span>
+            </button>
+          </h2>
+          <div id="collapsePets" class="accordion-collapse collapse" aria-labelledby="headingPets" data-bs-parent="#policiesAccordion">
+            <div class="accordion-body">
+              <span class="lang-en">
+                Pets are <strong>not allowed</strong>.
+              </span>
+              <span class="lang-el">
+                Τα κατοικίδια <strong>δεν επιτρέπονται</strong>.
+              </span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+{% endblock %}
+

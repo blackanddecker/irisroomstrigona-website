@@ -18,6 +18,10 @@ def contact():
 def activities():
     return render_template('activities.html')
 
+@app.route('/faq')
+def faq():
+    return render_template('faq.html')
+
 # @app.route("/sitemap.xml")
 # def sitemap():
 #     pages = []
