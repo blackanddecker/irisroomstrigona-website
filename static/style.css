@@ -1,13 +1,26 @@
 :root {
-    --color-bg: #F0EDE4;
+    /* Base */
+    --color-bg: #E9ECE8; #F0EDE4
     --color-surface: #FFFFFF;
-    --color-text: #3A3A2E;
-    --color-muted: #7A7A60;
-    --color-primary: #8B7A3D;
-    --color-primary-hover: #786830;
-    --color-accent: #C4A94A;
-    --color-accent-hover: #B09840;
-    --color-border: #DDD8C4;
+
+    /* Text */
+    --color-text: #2A2E2B;        /* slightly cooler dark */
+    --color-muted: #6B716C;
+
+    /* Primary (forest tone adapted to cool bg) */
+    --color-primary: #3A463F;
+    --color-primary-hover: #2C3530;
+
+    /* Accent (refined wood/bronze, slightly desaturated) */
+    --color-accent: #A3926B;
+    --color-accent-hover: #8A7B59;
+
+    /* UI */
+    --color-border: #D6DBD5;
+
+    /* Overlays (important for your image sections) */
+    --color-overlay-dark: rgba(20, 30, 25, 0.45);
+    --color-overlay-light: rgba(255, 255, 255, 0.6);
 
     --shadow-sm: 0 4px 15px rgba(0, 0, 0, 0.08);
     --shadow-md: 0 8px 25px rgba(0, 0, 0, 0.12);
@@ -18,6 +31,40 @@
     --radius-pill: 999px;
 
     --transition: 0.3s ease;
+}
+
+/* ── GLOBAL TYPOGRAPHY ───────────────────────────────────── */
+body {
+    font-family: "Inter", sans-serif;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--color-text, #2A2E2B);
+    background-color: var(--color-bg, #E9ECE8);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6,
+.hero-title,
+.split-title,
+.cta-banner-title,
+.parallax-quote {
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    line-height: 1.15;
+}
+
+/* Inter for UI labels, kickers, buttons — keep them sharp */
+.hero-kicker,
+.section-kicker,
+.btn-hero-primary,
+.btn-hero-secondary,
+.btn-outline-primary-custom,
+.nav-link,
+.navbar-brand,
+.review-source {
+    font-family: "Cormorant Garamond", sans-serif;
 }
 
 /* Smooth scrolling */
@@ -298,7 +345,7 @@ footer a:hover {
 }
 
 .bg-light {
-    background-color: #f0ede4 !important;
+    background-color: #E9ECE8 !important;
 }
 
 .shadow-sm {

@@ -4,23 +4,35 @@
 {% endblock %}
 {% block content %}
 
-<!-- Hero Section with Ken Burns zoom -->
+<!-- ══════════════════════════════════════════════════════
+     1. HERO — full-screen cinematic opening
+     ══════════════════════════════════════════════════════ -->
 <div class="hero-section">
     <div class="hero-bg" style="background-image: url('{{ url_for('static', filename='guesthouse/hotel_site_010.jpg') }}');"></div>
     <div class="hero-overlay"></div>
     <div class="hero-content text-center">
+        <span class="hero-kicker">
+            <span class="lang-en">Since 1988</span>
+            <span class="lang-el">Από το 1988</span>
+        </span>
         <h1 class="hero-title">
-            <span class="lang-en">Welcome to our Guesthouse</span>
-            <span class="lang-el">Καλωσήρθατε στον Ξενώνα μας</span>
+            <span class="lang-en">A Warm Stay in Trigona</span>
+            <span class="lang-el">Ζεστή Φιλοξενία στην Τρυγόνα</span>
         </h1>
         <p class="hero-subtitle">
             <span class="lang-en">Traditional hospitality, peaceful mountain views, and easy access to Kalambaka and Meteora.</span>
             <span class="lang-el">Παραδοσιακή φιλοξενία, ήρεμη θέα στα βουνά και εύκολη πρόσβαση στην Καλαμπάκα και τα Μετέωρα.</span>
         </p>
-        <span class="hero-kicker">
-            <span class="lang-en">Since 1988</span>
-            <span class="lang-el">Από το 1988</span>
-        </span>
+        <div class="hero-cta-group mt-3">
+            <a href="{{ url_for('rooms') }}" class="btn-hero-primary">
+                <span class="lang-en">Explore Rooms</span>
+                <span class="lang-el">Δείτε τα Δωμάτια</span>
+            </a>
+            <a href="{{ url_for('contact') }}" class="btn-hero-secondary">
+                <span class="lang-en">Book Now</span>
+                <span class="lang-el">Κάντε Κράτηση</span>
+            </a>
+        </div>
         <div class="hero-scroll-hint">
             <i class="fas fa-chevron-down"></i>
         </div>
@@ -30,96 +42,105 @@
 <!-- Main Content -->
 <div class="guesthouse-page">
 
-    <!-- ── About: Split Section (Image Left / Text Right) ── -->
-    <section class="split-section">
-        <div class="container">
-            <div class="row align-items-center g-5">
-                <div class="col-lg-6">
-                    <div class="reveal-image from-left">
-                        <img src="{{ url_for('static', filename='guesthouse/exterior1.jpeg') }}" alt="Exterior of Iris Guesthouse" loading="lazy">
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="reveal-text from-right">
-                        <span class="section-kicker">
-                            <span class="lang-en">Our Story</span>
-                            <span class="lang-el">Η Ιστορία μας</span>
-                        </span>
-                        <h2 class="split-title">
-                            <span class="lang-en">Welcome to our Guesthouse</span>
-                            <span class="lang-el">Καλωσήρθατε στον Ξενώνα μας</span>
-                        </h2>
-                        <p>
-                            <span class="lang-en">Established in 1988 along the main road from Igoumenitsa to Athens, Hotel Trigona has been part of countless guests' journeys. Today, more than 35 years later, that legacy continues through Iris Rooms.</span>
-                            <span class="lang-el">Ιδρύθηκε το 1988 στον κεντρικό δρόμο από την Ηγουμενίτσα προς την Αθήνα, το Hotel Trigona έχει γίνει μέρος αμέτρητων ταξιδιών. Σήμερα, πάνω από 35 χρόνια αργότερα, αυτή η κληρονομιά συνεχίζεται μέσα από το Iris Rooms.</span>
-                        </p>
-                        <p>
-                            <span class="lang-en">What began as a humble, family-run hotel has evolved into a welcoming retreat for travelers from around the world. We combine traditional Greek hospitality with modern comfort.</span>
-                            <span class="lang-el">Αυτό που ξεκίνησε ως ένα μικρό οικογενειακό ξενοδοχείο εξελίχθηκε σε ένα φιλόξενο καταφύγιο για ταξιδιώτες από όλο τον κόσμο. Συνδυάζουμε την παραδοσιακή ελληνική φιλοξενία με τη σύγχρονη άνεση.</span>
-                        </p>
-                    </div>
-                </div>
+    <!-- ══════════════════════════════════════════════════════
+         2. SPLIT — Image (left, full-bleed) / Story (right)
+         ══════════════════════════════════════════════════════ -->
+    <section class="intro-halves">
+        <!-- Left: image fills exactly 50vw, no container wrapping -->
+        <div class="intro-halves__image-col reveal-image from-left">
+            <div class="intro-halves__img">
+                <img src="{{ url_for('static', filename='guesthouse/exterior1.jpeg') }}" alt="Exterior of Iris Guesthouse" loading="lazy">
             </div>
         </div>
-    </section>
-
-    <!-- ── Parallax Image Break ── -->
-    <div class="parallax-break" style="background-image: url('{{ url_for('static', filename='guesthouse/winter_mountains.jpg') }}');">
-        <div class="parallax-overlay"></div>
-        <div class="parallax-text">
-            <span class="parallax-quote">
-                <span class="lang-en">"Not just a short stay, but an unforgettable experience."</span>
-                <span class="lang-el">«Όχι απλώς μια σύντομη διαμονή, αλλά μια αξέχαστη εμπειρία.»</span>
+        <!-- Right: text occupies the other 50vw — dark/inverted colour scheme -->
+        <div class="intro-halves__text-col intro-halves__text-col--dark reveal-text from-right">
+            <span class="section-kicker">
+                <span class="lang-en">Our Story</span>
+                <span class="lang-el">Η Ιστορία μας</span>
             </span>
-        </div>
-    </div>
-
-    <!-- ── About: Split Section (Text Left / Image Right) ── -->
-    <section class="split-section">
-        <div class="container">
-            <div class="row align-items-center g-5">
-                <div class="col-lg-6 order-lg-2">
-                    <div class="reveal-image from-right">
-                        <img src="{{ url_for('static', filename='guesthouse/Hotel_236.jpg') }}" alt="Guesthouse kitchen" loading="lazy">
-                    </div>
-                </div>
-                <div class="col-lg-6 order-lg-1">
-                    <div class="reveal-text from-left">
-                        <span class="section-kicker">
-                            <span class="lang-en">Our Place</span>
-                            <span class="lang-el">Ο Τόπος μας</span>
-                        </span>
-                        <h2 class="split-title">
-                            <span class="lang-en">A Peaceful Mountain Retreat</span>
-                            <span class="lang-el">Ένα Ήρεμο Ορεινό Καταφύγιο</span>
-                        </h2>
-                        <p>
-                            <span class="lang-en">Nestled in the tranquil village of Trigona and surrounded by beautiful natural landscapes, our guesthouse is ideal for visitors seeking relaxation, outdoor adventure, or cultural exploration in the wider Kalambaka, Meteora and Pindus region.</span>
-                            <span class="lang-el">Bρίσκεται στο χωριό Τρυγόνα, περιτριγυρισμένο από όμορφο φυσικό τοπίο, το κατάλυμά μας είναι ιδανικό για επισκέπτες που αναζητούν χαλάρωση, υπαίθριες δραστηριότητες ή πολιτιστική εξερεύνηση στην ευρύτερη περιοχή Καλαμπάκας και Μετεώρων.</span>
-                        </p>
-                        <p>
-                            <span class="lang-en">Every room is designed to feel like home — spacious, clean, and equipped with everything you need for a comfortable stay.</span>
-                            <span class="lang-el">Κάθε δωμάτιο είναι σχεδιασμένο να νιώθεις σαν σπίτι — ευρύχωρο, καθαρό, με τον απαραίτητο εξοπλισμένο και με όλα όσα χρειάζεσαι για άνετη διαμονή.</span>
-                        </p>
-                    </div>
-                </div>
-            </div>
+            <h2 class="split-title">
+                <span class="lang-en">Welcome to our Guesthouse</span>
+                <span class="lang-el">Καλωσήρθατε στον Ξενώνα μας</span>
+            </h2>
+            <p>
+                <span class="lang-en">Established in 1988 along the main road from Igoumenitsa to Athens, Hotel Trigona has been part of countless guests' journeys. Today, more than 35 years later, that legacy continues through Iris Rooms.</span>
+                <span class="lang-el">Ιδρύθηκε το 1988 στον κεντρικό δρόμο από την Ηγουμενίτσα προς την Αθήνα, το Hotel Trigona έχει γίνει μέρος αμέτρητων ταξιδιών. Σήμερα, πάνω από 35 χρόνια αργότερα, αυτή η κληρονομιά συνεχίζεται μέσα από το Iris Rooms.</span>
+            </p>
+            <p>
+                <span class="lang-en">What began as a humble, family-run hotel has evolved into a welcoming retreat for travellers from around the world. Traditional Greek hospitality meets modern comfort.</span>
+                <span class="lang-el">Αυτό που ξεκίνησε ως ένα μικρό οικογενειακό ξενοδοχείο εξελίχθηκε σε ένα φιλόξενο καταφύγιο για ταξιδιώτες από όλο τον κόσμο. Συνδυάζουμε την παραδοσιακή ελληνική φιλοξενία με τη σύγχρονη άνεση.</span>
+            </p>
         </div>
     </section>
 
-        <!-- ── Parallax Image Break — Quote ── -->
-    <div class="parallax-break" style="background-image: url('{{ url_for('static', filename='guesthouse.jpeg') }}');">
-        <div class="parallax-overlay"></div>
-        <div class="parallax-text">
-            <span class="lang-en parallax-quote">"The atmosphere of the house and the hospitality were very warm and welcoming." <br>Αnnette, May 2025</span>
-            <span class="lang-el parallax-quote">"Η ατμόσφαιρα του σπιτιού και η φιλοξενία ήταν πολύ ζεστή και φιλόξενη.." <br>Αnnette, Μάϊος 2025</span>
-        </div>
-    </div>
 
-    <!-- ── Ideal For — Section Header ── -->
-    <section class="ideal-for-header">
+    <!-- ══════════════════════════════════════════════════════
+         4. ROOMS & SUITES — text left / image right (full-bleed)
+         ══════════════════════════════════════════════════════ -->
+    <section class="intro-halves intro-halves--reverse">
+        <!-- Right: image fills exactly 50vw -->
+        <div class="intro-halves__image-col reveal-image from-right">
+            <div class="intro-halves__img">
+                <img src="{{ url_for('static', filename='room5/room5_1.jpeg') }}" alt="Cozy room interior" loading="lazy">
+            </div>
+        </div>
+        <!-- Left: text -->
+        <div class="intro-halves__text-col reveal-text from-left">
+            <span class="section-kicker">
+                <span class="lang-en">Rooms & Suites</span>
+                <span class="lang-el">Δωμάτια & Σουίτες</span>
+            </span>
+            <h2 class="split-title">
+                <span class="lang-en">Spaces Designed for Comfort</span>
+                <span class="lang-el">Χώροι Σχεδιασμένοι για Άνεση</span>
+            </h2>
+            <p>
+                <span class="lang-en">Each room is carefully arranged to feel like home — spacious, clean, and fully equipped. Wake up to mountain air, enjoy a private balcony, and rest in rooms that blend warmth with practicality.</span>
+                <span class="lang-el">Κάθε δωμάτιο είναι σχεδιασμένο να νιώθεις σαν στο σπίτι σου — ευρύχωρο, καθαρό και πλήρως εξοπλισμένο. Ξυπνήστε με αέρα βουνού, απολαύστε το ιδιωτικό μπαλκόνι και ξεκουραστείτε σε δωμάτια που συνδυάζουν ζεστασιά με λειτουργικότητα.</span>
+            </p>
+            <a href="{{ url_for('rooms') }}" class="btn-outline-primary-custom mt-3">
+                <span class="lang-en">View All Rooms</span>
+                <span class="lang-el">Όλα τα Δωμάτια</span>
+            </a>
+        </div>
+    </section>
+    <!-- ══════════════════════════════════════════════════════
+         6. EXPERIENCE / AMENITIES — image left / text right (full-bleed)
+         ══════════════════════════════════════════════════════ -->
+    <section class="intro-halves">
+        <!-- Left: image fills exactly 50vw -->
+        <div class="intro-halves__image-col reveal-image from-left">
+            <div class="intro-halves__img">
+                <img src="{{ url_for('static', filename='guesthouse/outdoor1.jpg') }}" alt="Outdoor garden area" loading="lazy">
+            </div>
+        </div>
+        <!-- Right: dark/inverted text column -->
+        <div class="intro-halves__text-col intro-halves__text-col--dark reveal-text from-right">
+            <span class="section-kicker">
+                <span class="lang-en">The Experience</span>
+                <span class="lang-el">Η Εμπειρία</span>
+            </span>
+            <h2 class="split-title">
+                <span class="lang-en">A Peaceful Mountain Retreat</span>
+                <span class="lang-el">Ένα Ήρεμο Ορεινό Καταφύγιο</span>
+            </h2>
+            <p>
+                <span class="lang-en">Nestled in the tranquil village of Trigona, surrounded by beautiful natural landscapes, our guesthouse is ideal for visitors seeking relaxation, outdoor adventure, or cultural exploration in the wider Kalambaka and Meteora region.</span>
+                <span class="lang-el">Βρίσκεται στο ήσυχο χωριό Τρυγόνα, περιτριγυρισμένο από όμορφο φυσικό τοπίο. Ιδανικό για επισκέπτες που αναζητούν χαλάρωση, υπαίθριες δραστηριότητες ή πολιτιστική εξερεύνηση στην ευρύτερη περιοχή Καλαμπάκας και Μετεώρων.</span>
+            </p>
+            <a href="{{ url_for('activities') }}" class="btn-outline-primary-custom mt-3">
+                <span class="lang-en">Explore Activities</span>
+                <span class="lang-el">Δραστηριότητες</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+         7. WHO IT'S FOR — image background cards
+         ══════════════════════════════════════════════════════ -->
+    <section class="ideal-for-section">
         <div class="container">
-            <div class="text-center">
+            <div class="text-center mb-5">
                 <span class="section-kicker reveal-text from-bottom">
                     <span class="lang-en">Perfect For</span>
                     <span class="lang-el">Εξαιρετικό Για</span>
@@ -129,124 +150,157 @@
                     <span class="lang-el">Για Ποιους Είναι Ιδανικό</span>
                 </h2>
             </div>
-        </div>
-    </section>
 
-    <!-- ── Adventure Seekers (Image Left / Text Right) ── -->
-    <section class="split-section split-compact">
-        <div class="container">
-            <div class="row align-items-center g-5">
-                <div class="col-lg-6">
-                    <div class="reveal-image from-left">
-                        <img src="{{ url_for('static', filename='activities/climbing_2.jpg') }}" alt="Hiking near Meteora" loading="lazy">
+            <div class="ideal-cards-row">
+                <!-- Card 1: Adventure Seekers -->
+                <div class="ideal-card stagger-card" data-delay="1"
+                     style="background-image: url('{{ url_for('static', filename='activities/climbing_2.jpg') }}');">
+                    <div class="ideal-card__overlay"></div>
+                    <div class="ideal-card__body">
+                        <div class="ideal-card__icon"><i class="fas fa-hiking"></i></div>
+                        <h3 class="ideal-card__title">
+                            <span class="lang-en">Adventure Seekers</span>
+                            <span class="lang-el">Λάτρεις της Περιπέτειας</span>
+                        </h3>
+                        <p class="ideal-card__text">
+                            <span class="lang-en">Perfect for those who love hiking, climbing, and exploring the natural beauty of Meteora and the surrounding mountains.</span>
+                            <span class="lang-el">Ιδανικό για όσους αγαπούν την πεζοπορία, την αναρρίχηση και την εξερεύνηση της φυσικής ομορφιάς των Μετεώρων.</span>
+                        </p>
                     </div>
                 </div>
-                <div class="col-lg-6">
-                    <div class="reveal-text from-right">
 
-                        <div class="d-flex align-items-center mb-2">
-                            <div class="ideal-icon-badge me-2">
-                                <i class="fas fa-hiking"></i>
-                            </div>
-
-                            <h3 class="split-title mb-0">
-                                <span class="lang-en">Adventure Seekers</span>
-                                <span class="lang-el">Λάτρεις της Περιπέτειας</span>
-                            </h3>
-                        </div>
-
-                        <p>
-                            <span class="lang-en">
-                                Perfect for those who love hiking, climbing, and exploring the natural beauty of Meteora and the surrounding mountains. Our location offers direct access to trails, rock formations, and outdoor experiences that will take your breath away.
-                            </span>
-                            <span class="lang-el">
-                                Ιδανικό για όσους αγαπούν την πεζοπορία, την αναρρίχηση και την εξερεύνηση της φυσικής ομορφιάς των Μετεώρων και των γύρω βουνών. Η τοποθεσία μας προσφέρει άμεση πρόσβαση σε μονοπάτια, βουνοκορφές και υπαίθριες εμπειρίες που θα σε αφήσουν άφωνο.
-                            </span>
+                <!-- Card 2: Couples -->
+                <div class="ideal-card stagger-card" data-delay="2"
+                     style="background-image: url('{{ url_for('static', filename='guesthouse/balkon1.jpeg') }}');">
+                    <div class="ideal-card__overlay"></div>
+                    <div class="ideal-card__body">
+                        <div class="ideal-card__icon"><i class="fas fa-heart"></i></div>
+                        <h3 class="ideal-card__title">
+                            <span class="lang-en">Couples</span>
+                            <span class="lang-el">Ζευγάρια</span>
+                        </h3>
+                        <p class="ideal-card__text">
+                            <span class="lang-en">An ideal romantic escape with cozy rooms, serene views, and a peaceful atmosphere for rest and reconnection.</span>
+                            <span class="lang-el">Μια ιδανική ρομαντική απόδραση με άνετα δωμάτια, όμορφη θέα και ήρεμη ατμόσφαιρα για ξεκούραση.</span>
                         </p>
+                    </div>
+                </div>
 
+                <!-- Card 3: Families -->
+                <div class="ideal-card stagger-card" data-delay="3"
+                     style="background-image: url('{{ url_for('static', filename='guesthouse/Hotel007.jpg') }}');">
+                    <div class="ideal-card__overlay"></div>
+                    <div class="ideal-card__body">
+                        <div class="ideal-card__icon"><i class="fas fa-child"></i></div>
+                        <h3 class="ideal-card__title">
+                            <span class="lang-en">Families</span>
+                            <span class="lang-el">Οικογένειες</span>
+                        </h3>
+                        <p class="ideal-card__text">
+                            <span class="lang-en">A safe and family-friendly stay with spacious apartments, equipped kitchens, and comfortable outdoor spaces.</span>
+                            <span class="lang-el">Μια ασφαλής οικογενειακή διαμονή με ευρύχωρα διαμερίσματα και εξοπλισμένες κουζίνες.</span>
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ── Couples (Text Left / Image Right) ── -->
+    <!-- ══════════════════════════════════════════════════════
+         8. TESTIMONIALS
+         ══════════════════════════════════════════════════════ -->
+    <section class="ideal-for-header">
+        <div class="container text-center">
+            <span class="section-kicker reveal-text from-bottom">
+                <span class="lang-en">Testimonials</span>
+                <span class="lang-el">Αξιολογήσεις</span>
+            </span>
+            <h2 class="split-title reveal-text from-bottom">
+                <span class="lang-en">What Our Guests Say</span>
+                <span class="lang-el">Τι Λένε οι Επισκέπτες μας</span>
+            </h2>
+        </div>
+    </section>
+
+    <!-- Review 1 -->
+    <section class="split-section split-compact">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6">
+                    <div class="reveal-image from-left">
+                        <img src="{{ url_for('static', filename='room5/room5_2.jpeg') }}" alt="Cozy room interior" loading="lazy">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="reveal-text from-right">
+                        <div class="review-stars-inline mb-2">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <h3 class="split-title">
+                            <span class="lang-en">Incredible Experience</span>
+                            <span class="lang-el">Εξαιρετική Εμπειρία</span>
+                        </h3>
+                        <p class="review-quote-text">
+                            <span class="lang-en">"The accommodation was truly amazing. The atmosphere and hospitality were very warm and welcoming, making us feel at home. All room services were exceptional."</span>
+                            <span class="lang-el">"Η διαμονή ήταν πραγματικά εξαιρετική. Η ατμόσφαιρα και η φιλοξενία ήταν πολύ ζεστή και φιλόξενη. Όλες οι παροχές ήταν άψογες."</span>
+                        </p>
+                        <div class="review-author">
+                            <div class="review-author-avatar"><i class="fas fa-user"></i></div>
+                            <div>
+                                <strong>Dimitrios</strong>
+                                <span class="review-source">
+                                    <span class="lang-en">Airbnb · December 2024</span>
+                                    <span class="lang-el">Airbnb · Δεκέμβριος 2024</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Review 2 -->
     <section class="split-section split-compact">
         <div class="container">
             <div class="row align-items-center g-5">
                 <div class="col-lg-6 order-lg-2">
                     <div class="reveal-image from-right">
-                        <img src="{{ url_for('static', filename='guesthouse/balkon1.jpeg') }}" alt="Romantic balcony view" loading="lazy">
+                        <img src="{{ url_for('static', filename='guesthouse/hotelsite036.jpg') }}" alt="Garden and outdoor area" loading="lazy">
                     </div>
                 </div>
                 <div class="col-lg-6 order-lg-1">
                     <div class="reveal-text from-left">
-
-                        <div class="d-flex align-items-center mb-2">
-                            <div class="ideal-icon-badge me-2">
-                                <i class="fas fa-heart"></i>
-                            </div>
-
-                            <h3 class="split-title mb-0">
-                                <span class="lang-en">Couples</span>
-                                <span class="lang-el">Ζευγάρια</span>
-                            </h3>
+                        <div class="review-stars-inline mb-2">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                         </div>
-
-                        <p>
-                            <span class="lang-en">
-                                An ideal romantic escape with cozy rooms, serene views, and a peaceful atmosphere for rest and reconnection. Wake up to mountain mornings, enjoy coffee on your private balcony, and let the natural sounds bring you closer together.
-                            </span>
-                            <span class="lang-el">
-                                Μια ιδανική ρομαντική απόδραση με άνετα δωμάτια, όμορφη θέα και ήρεμη ατμόσφαιρα για ξεκούραση και επανασύνδεση. Ξυπνήστε με θέα στο βουνό, απολαύστε τον καφέ σας στο ιδιωτικό μπαλκόνι και αφήστε τους ήχους της φύσης να σας φέρουν πιο κοντά.
-                            </span>
+                        <h3 class="split-title">
+                            <span class="lang-en">Unforgettable Memory</span>
+                            <span class="lang-el">Αξέχαστη Εμπειρία</span>
+                        </h3>
+                        <p class="review-quote-text">
+                            <span class="lang-en">"The host was very kind and made us feel at home. The garden is beautifully cared for. It was not just a short stay, but an unforgettable memory for us."</span>
+                            <span class="lang-el">"Ο οικοδεσπότης ήταν πολύ ευγενικός. Ο κήπος είναι περιποιημένος και το γλυκό μικρό σκυλάκι έκανε τη διαμονή ακόμα πιο ξεχωριστή. Μια αξέχαστη εμπειρία."</span>
                         </p>
-
+                        <div class="review-author">
+                            <div class="review-author-avatar"><i class="fas fa-user"></i></div>
+                            <div>
+                                <strong>Zhen</strong>
+                                <span class="review-source">
+                                    <span class="lang-en">Airbnb · June 2024</span>
+                                    <span class="lang-el">Airbnb · Ιούνιος 2024</span>
+                                </span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ── Families (Image Left / Text Right) ── -->
-    <section class="split-section split-compact">
-        <div class="container">
-            <div class="row align-items-center g-5">
-                <div class="col-lg-6">
-                    <div class="reveal-image from-left">
-                        <img src="{{ url_for('static', filename='guesthouse/Hotel007.jpg') }}" alt="Outdoor family space" loading="lazy">
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="reveal-text from-right">
-
-                        <div class="d-flex align-items-center mb-2">
-                            <div class="ideal-icon-badge me-2">
-                                <i class="fas fa-child"></i>
-                            </div>
-
-                            <h3 class="split-title mb-0">
-                                <span class="lang-en">Families</span>
-                                <span class="lang-el">Οικογένειες</span>
-                            </h3>
-                        </div>
-
-                        <p>
-                            <span class="lang-en">
-                                A safe and family-friendly stay with spacious apartments, equipped kitchens, and comfortable outdoor spaces. Children can play freely in the garden while parents relax — everything you need for a worry-free family getaway.
-                            </span>
-                            <span class="lang-el">
-                                Μια ασφαλής και οικογενειακή διαμονή με ευρύχωρα διαμερίσματα, πλήρως εξοπλισμένες κουζίνες και άνετους εξωτερικούς χώρους. Τα παιδιά μπορούν να παίζουν ελεύθερα στον κήπο ενώ οι γονείς χαλαρώνουν — ό,τι χρειάζεστε για ξέγνοιαστες οικογενειακές διακοπές.
-                            </span>
-                        </p>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ── Gallery — Masonry-style with reveals ── -->
+    <!-- ══════════════════════════════════════════════════════
+         9. GALLERY — masonry
+         ══════════════════════════════════════════════════════ -->
     <section class="gallery-section">
         <div class="container">
             <div class="text-center mb-5">
@@ -259,8 +313,7 @@
                     <span class="lang-el">Το Κατάλυμά μας</span>
                 </h2>
             </div>
-
-            <div class="row g-4">
+            <div class="row g-3">
                 <div class="col-md-8">
                     <div class="gallery-item tall reveal-image from-left">
                         <img src="{{ url_for('static', filename='guesthouse/hotel_site_010.jpg') }}" alt="Guesthouse overview" loading="lazy">
@@ -270,15 +323,15 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="gallery-item reveal-image from-right" style="margin-bottom: 1.5rem;">
-                        <img src="{{ url_for('static', filename='guesthouse/Hotel_236.jpg') }}" alt="Private balcony" loading="lazy">
+                <div class="col-md-4 d-flex flex-column g-3" style="gap:0.75rem;">
+                    <div class="gallery-item reveal-image from-right" style="flex:1;">
+                        <img src="{{ url_for('static', filename='guesthouse/Hotel_236.jpg') }}" alt="Spring view" loading="lazy">
                         <div class="gallery-label">
                             <span class="lang-en">Spring 2018</span>
                             <span class="lang-el">Άνοιξη 2018</span>
                         </div>
                     </div>
-                    <div class="gallery-item reveal-image from-right">
+                    <div class="gallery-item reveal-image from-right" style="flex:1;">
                         <img src="{{ url_for('static', filename='guesthouse/snow.jpg') }}" alt="Winter view" loading="lazy">
                         <div class="gallery-label">
                             <span class="lang-en">Winter 2007</span>
@@ -290,126 +343,42 @@
         </div>
     </section>
 
-    <!-- ── Testimonials — Section Header ── -->
-    <section class="ideal-for-header">
-        <div class="container">
-            <div class="text-center">
-                <span class="section-kicker reveal-text from-bottom">
-                    <span class="lang-en">Testimonials</span>
-                    <span class="lang-el">Αξιολογήσεις</span>
-                </span>
-
-                <h2 class="split-title reveal-text from-bottom">
-                    <span class="lang-en">What Our Guests Say</span>
-                    <span class="lang-el">Τι Λένε οι Επισκέπτες μας</span>
-                </h2>
-            </div>
-        </div>
-    </section>
-<!-- ── Review 1: Dimitrios (Image Left / Text Right) ── -->
-<section class="split-section split-compact">
-    <div class="container">
-        <div class="row align-items-center g-5">
-            <div class="col-lg-6">
-                <div class="reveal-image from-left">
-                    <img src="{{ url_for('static', filename='room5/room5_1.jpeg') }}" alt="Cozy room interior" loading="lazy">
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <div class="reveal-text from-right">
-                    <div class="review-stars-inline mb-2">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-
-                    <h3 class="split-title">
-                        <span class="lang-en">Incredible Experience</span>
-                        <span class="lang-el">Εξαιρετική Εμπειρία</span>
-                    </h3>
-
-                    <p class="review-quote-text">
-                        <span class="lang-en">
-                            "The accommodation was truly amazing. The atmosphere of the house and the hospitality of the host were very warm and welcoming, making us feel at home. The cleaning service was immediate and all room services were exceptional. Thank you very much for everything."
-                        </span>
-                        <span class="lang-el">
-                            "Η διαμονή ήταν πραγματικά εξαιρετική. Η ατμόσφαιρα του σπιτιού και η φιλοξενία του οικοδεσπότη ήταν πολύ ζεστή και φιλόξενη, κάνοντάς μας να νιώθουμε σαν στο σπίτι μας. Η καθαριότητα ήταν άμεση και όλες οι παροχές του δωματίου ήταν άψογες. Σας ευχαριστούμε πολύ για όλα."
-                        </span>
-                    </p>
-
-                    <div class="review-author">
-                        <div class="review-author-avatar">
-                            <i class="fas fa-user"></i>
-                        </div>
-                        <div>
-                            <strong>Dimitrios</strong>
-                            <span class="review-source">
-                                <span class="lang-en">Airbnb · December 2024</span>
-                                <span class="lang-el">Airbnb · Δεκέμβριος 2024</span>
-                            </span>
-                        </div>
-                    </div>
-                </div>
+    <!-- ══════════════════════════════════════════════════════
+         10. FINAL CTA BANNER — immersive booking call-to-action
+         ══════════════════════════════════════════════════════ -->
+    <div class="cta-banner parallax-break parallax--dark-overlay"
+         style="background-image: url('{{ url_for('static', filename='guesthouse/Hotel_236.jpg') }}');">
+        <div class="parallax-overlay"></div>
+        <div class="cta-banner-content text-center">
+            <span class="section-kicker" style="color:rgba(255,255,255,0.75);">
+                <span class="lang-en">Ready to Visit?</span>
+                <span class="lang-el">Έτοιμοι να Έρθετε;</span>
+            </span>
+            <h2 class="cta-banner-title">
+                <span class="lang-en">Book Your Stay in Trigona</span>
+                <span class="lang-el">Κλείστε τη Διαμονή σας στην Τρυγόνα</span>
+            </h2>
+            <p class="cta-banner-sub">
+                <span class="lang-en">Elegant rooms, warm hospitality, and timeless comfort — just minutes from Meteora.</span>
+                <span class="lang-el">Άνετα δωμάτια, ζεστή φιλοξενία και διαχρονική άνεση — λίγα λεπτά από τα Μετέωρα.</span>
+            </p>
+            <div class="hero-cta-group mt-4">
+                <a href="{{ url_for('contact') }}" class="btn-hero-primary">
+                    <span class="lang-en">Contact Us</span>
+                    <span class="lang-el">Επικοινωνία</span>
+                </a>
+                <a href="{{ url_for('rooms') }}" class="btn-hero-secondary">
+                    <span class="lang-en">View Rooms</span>
+                    <span class="lang-el">Δείτε Δωμάτια</span>
+                </a>
             </div>
         </div>
     </div>
-</section>
 
-<!-- ── Review 2: Zhen (Text Left / Image Right) ── -->
-<section class="split-section split-compact">
-    <div class="container">
-        <div class="row align-items-center g-5">
-            <div class="col-lg-6 order-lg-2">
-                <div class="reveal-image from-right">
-                    <img src="{{ url_for('static', filename='guesthouse/hotelsite036.jpg') }}" alt="Garden and outdoor area" loading="lazy">
-                </div>
-            </div>
-            <div class="col-lg-6 order-lg-1">
-                <div class="reveal-text from-left">
-                    <div class="review-stars-inline mb-2">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-
-                    <h3 class="split-title">
-                        <span class="lang-en">Unforgettable Memory</span>
-                        <span class="lang-el">Αξέχαστη Εμπειρία</span>
-                    </h3>
-
-                    <p class="review-quote-text">
-                        <span class="lang-en">
-                            "The host was very kind and made us feel at home. The room is set in the courtyard away from the main road, the garden is beautifully cared for, and the lovely little dog made the stay even more special. It was not just a short stay, but an unforgettable memory for us."
-                        </span>
-                        <span class="lang-el">
-                            "Ο οικοδεσπότης ήταν πολύ ευγενικός και μας έκανε να νιώσουμε σαν στο σπίτι μας. Το δωμάτιο βρίσκεται στην αυλή, μακριά από τον κεντρικό δρόμο, ο κήπος είναι περιποιημένος και το γλυκό μικρό σκυλάκι έκανε τη διαμονή ακόμα πιο ξεχωριστή. Δεν ήταν απλώς μια σύντομη διαμονή, αλλά μια αξέχαστη εμπειρία για εμάς."
-                        </span>
-                    </p>
-
-                    <div class="review-author">
-                        <div class="review-author-avatar">
-                            <i class="fas fa-user"></i>
-                        </div>
-                        <div>
-                            <strong>Zhen</strong>
-                            <span class="review-source">
-                                <span class="lang-en">Airbnb · June 2024</span>
-                                <span class="lang-el">Airbnb · Ιούνιος 2024</span>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-</div>
+</div><!-- /.guesthouse-page -->
 
 <script>
-// ── Intersection Observer for all animated elements ──
-const observerOptions = { threshold: 0.12, rootMargin: '0px 0px -40px 0px' };
-
+// ── Intersection Observer for reveal animations ──
 const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -417,22 +386,20 @@ const revealObserver = new IntersectionObserver((entries) => {
             revealObserver.unobserve(entry.target);
         }
     });
-}, observerOptions);
+}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
 
-// Observe all reveal elements
 document.querySelectorAll('.reveal-image, .reveal-text, .stagger-card').forEach(el => {
     revealObserver.observe(el);
 });
 
-// ── Simple parallax on scroll ──
+// ── Subtle parallax on scroll ──
 const parallaxBreaks = document.querySelectorAll('.parallax-break');
 window.addEventListener('scroll', () => {
     const scrollY = window.pageYOffset;
     parallaxBreaks.forEach(el => {
         const rect = el.getBoundingClientRect();
-        const speed = 0.35;
         if (rect.top < window.innerHeight && rect.bottom > 0) {
-            const offset = (scrollY - el.offsetTop + window.innerHeight) * speed;
+            const offset = (scrollY - el.offsetTop + window.innerHeight) * 0.3;
             el.style.backgroundPositionY = offset + 'px';
         }
     });
