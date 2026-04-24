@@ -1,0 +1,273 @@
+/* ================================================================
+   ROOMS-MODAL.CSS — Rich room detail modals
+   ================================================================ */
+
+/* ── Modal backdrop & container ─────────────────────────── */
+.room-modal .modal-dialog {
+    max-width: 860px;
+    margin: 1.5rem auto;
+}
+
+.room-modal .modal-content {
+    border: none;
+    border-radius: 0;
+    background: var(--color-bg, #F0EDE4);
+    overflow: hidden;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.25);
+}
+
+/* ── Close button ────────────────────────────────────────── */
+.room-modal .modal-close-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 10;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.45);
+    border: none;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.25s ease, transform 0.2s ease;
+    backdrop-filter: blur(4px);
+}
+.room-modal .modal-close-btn:hover {
+    background: rgba(0, 0, 0, 0.7);
+    transform: scale(1.1);
+}
+
+/* ── Hero image strip ────────────────────────────────────── */
+.modal-hero {
+    position: relative;
+    width: 100%;
+    height: 340px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.modal-hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    transition: transform 0.6s ease;
+}
+
+.room-modal:hover .modal-hero img {
+    transform: scale(1.03);
+}
+
+/* Gradient fade from image into body */
+.modal-hero::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 120px;
+    background: linear-gradient(to bottom, transparent, var(--color-bg, #F0EDE4));
+    pointer-events: none;
+}
+
+/* ── Thumbnail strip ─────────────────────────────────────── */
+.modal-thumbs {
+    display: flex;
+    gap: 8px;
+    padding: 0 1.8rem 1.2rem;
+}
+
+.modal-thumb {
+    width: 72px;
+    height: 52px;
+    border-radius: 6px;
+    overflow: hidden;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: border-color 0.2s ease, transform 0.2s ease;
+    flex-shrink: 0;
+}
+
+.modal-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.modal-thumb:hover,
+.modal-thumb.active {
+    border-color: var(--color-accent, #C4A94A);
+    transform: translateY(-2px);
+}
+
+/* ── Modal body ──────────────────────────────────────────── */
+.modal-body-inner {
+    padding: 0.5rem 1.8rem 2rem;
+}
+
+/* Room title */
+.modal-room-title {
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 700;
+    color: var(--color-text, #3A3A2E);
+    margin-bottom: 0.3rem;
+    line-height: 1.15;
+}
+
+.modal-room-title::after {
+    content: "";
+    display: block;
+    width: 40px;
+    height: 2px;
+    background: var(--color-accent, #C4A94A);
+    margin-top: 8px;
+    border-radius: 2px;
+}
+
+/* Short description */
+.modal-room-desc {
+    color: var(--color-muted, #7A7A60);
+    font-size: 0.97rem;
+    line-height: 1.8;
+    margin: 1rem 0 1.4rem;
+}
+
+/* ── Quick stats bar ─────────────────────────────────────── */
+.modal-stats {
+    display: flex;
+    gap: 1.2rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.6rem;
+    padding: 1rem 1.2rem;
+    background: var(--color-surface, #fff);
+    border: 1px solid var(--color-border, #DDD8C4);
+    border-radius: 10px;
+}
+
+.modal-stat {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.88rem;
+    color: var(--color-text, #3A3A2E);
+    font-weight: 500;
+}
+
+.modal-stat i {
+    color: var(--color-primary, #8B7A3D);
+    font-size: 1rem;
+    width: 18px;
+    text-align: center;
+}
+
+/* ── Amenities grid ──────────────────────────────────────── */
+.modal-amenities-title {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--color-text, #3A3A2E);
+    margin-bottom: 0.9rem;
+    letter-spacing: 0.02em;
+}
+
+.modal-amenities {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.6rem 1.5rem;
+    margin-bottom: 1.8rem;
+}
+
+.modal-amenity {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.9rem;
+    color: var(--color-text, #3A3A2E);
+    line-height: 1.5;
+}
+
+.modal-amenity i {
+    color: var(--color-primary, #8B7A3D);
+    font-size: 0.95rem;
+    width: 18px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+/* ── CTA buttons row ─────────────────────────────────────── */
+.modal-cta-row {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    padding-top: 1.2rem;
+    border-top: 1px solid var(--color-border, #DDD8C4);
+}
+
+.modal-btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.8rem;
+    background: var(--color-primary, #8B7A3D);
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.88rem;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 2px solid var(--color-primary, #8B7A3D);
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+.modal-btn-primary:hover {
+    background: var(--color-primary-hover, #786830);
+    border-color: var(--color-primary-hover, #786830);
+    transform: translateY(-2px);
+    color: #fff;
+}
+
+.modal-btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.8rem;
+    background: transparent;
+    color: var(--color-primary, #8B7A3D);
+    font-weight: 700;
+    font-size: 0.88rem;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 2px solid var(--color-primary, #8B7A3D);
+    transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+.modal-btn-secondary:hover {
+    background: var(--color-primary, #8B7A3D);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+/* ── Mobile ──────────────────────────────────────────────── */
+@media (max-width: 767.98px) {
+    .room-modal .modal-dialog {
+        margin: 0;
+        max-width: 100%;
+    }
+    .room-modal .modal-content {
+        border-radius: 0;
+        min-height: 100dvh;
+    }
+    .modal-hero { height: 240px; }
+    .modal-amenities { grid-template-columns: 1fr; }
+    .modal-cta-row { flex-direction: column; }
+    .modal-btn-primary,
+    .modal-btn-secondary { text-align: center; justify-content: center; }
+    .modal-stats { gap: 0.8rem; }
+}
+

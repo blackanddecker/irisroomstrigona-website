@@ -28,66 +28,207 @@
     line-height: 1.8;
 }
 
-/* ── Room card ──────────────────────────────────────────── */
+/* ══════════════════════════════════════════════════════════
+   ROOM CARD — modern cinematic style
+   ══════════════════════════════════════════════════════════ */
 .room-card {
-    border-radius: 18px;
+    position: relative;
     background: var(--color-surface, #fff);
     border: 1px solid var(--color-border, #DDD8C4);
+    border-radius: 0;                      /* sharp edges = premium */
     overflow: hidden;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.07);
+    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+                box-shadow 0.4s ease;
+    cursor: pointer;
 }
 
 .room-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.12);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.14);
 }
 
+/* ── Image wrapper ──────────────────────────────────────── */
 .room-image-wrap {
+    position: relative;
     overflow: hidden;
+    height: 260px;
 }
 
 .room-image {
     width: 100%;
-    height: 280px;
+    height: 100%;
     object-fit: cover;
     display: block;
-    transition: transform 0.5s ease;
+    transform: scale(1.04);
+    transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .room-card:hover .room-image {
-    transform: scale(1.06);
+    transform: scale(1.1);
 }
 
-/* ── Card text ──────────────────────────────────────────── */
+/* "View Details" overlay that appears on hover */
+.room-image-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(10, 14, 12, 0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.35s ease;
+}
+
+.room-card:hover .room-image-overlay {
+    background: rgba(10, 14, 12, 0.42);
+}
+
+.room-overlay-label {
+    color: #fff;
+    font-family: "Inter", sans-serif;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    border: 1.5px solid rgba(255,255,255,0.8);
+    padding: 0.5rem 1.3rem;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease 0.05s, transform 0.3s ease 0.05s;
+    backdrop-filter: blur(4px);
+}
+
+.room-card:hover .room-overlay-label {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ── Card body ──────────────────────────────────────────── */
+.room-card .card-body {
+    padding: 1.6rem 1.8rem 1.8rem;
+}
+
 .room-card .card-title {
     font-family: "Cormorant Garamond", serif;
+    font-size: 1.35rem;
+    font-weight: 700;
     color: var(--color-text, #3A3A2E);
-    margin-bottom: 0.9rem;
+    margin-bottom: 0.25rem;
+    line-height: 1.2;
+}
+
+/* Accent underline under title */
+.room-card .card-title::after {
+    content: "";
+    display: block;
+    width: 32px;
+    height: 2px;
+    background: var(--color-accent, #C4A94A);
+    margin-top: 6px;
+    border-radius: 2px;
+    transition: width 0.35s ease;
+}
+.room-card:hover .card-title::after {
+    width: 50px;
 }
 
 .room-card .card-text {
     color: var(--color-muted, #7A7A60);
+    font-size: 0.9rem;
     line-height: 1.8;
-    margin-bottom: 1rem;
+    margin: 0.9rem 0 1.1rem;
 }
 
-/* ── Features list ──────────────────────────────────────── */
+/* ── Quick amenity pills ────────────────────────────────── */
+.room-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 1.4rem;
+}
+
+.room-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: rgba(139, 122, 61, 0.08);
+    border: 1px solid rgba(139, 122, 61, 0.18);
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--color-primary, #8B7A3D);
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+}
+
+.room-pill i {
+    font-size: 0.75rem;
+}
+
+/* ── Card footer buttons ────────────────────────────────── */
+.room-card-actions {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.btn-room-details {
+    flex: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    padding: 0.65rem 1rem;
+    background: var(--color-primary, #8B7A3D);
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.82rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 2px solid var(--color-primary, #8B7A3D);
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+.btn-room-details:hover {
+    background: var(--color-primary-hover, #786830);
+    border-color: var(--color-primary-hover, #786830);
+    transform: translateY(-2px);
+    color: #fff;
+}
+
+.btn-room-airbnb {
+    flex: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    padding: 0.65rem 1rem;
+    background: transparent;
+    color: var(--color-primary, #8B7A3D);
+    font-weight: 700;
+    font-size: 0.82rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 2px solid var(--color-primary, #8B7A3D);
+    transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+.btn-room-airbnb:hover {
+    background: var(--color-primary, #8B7A3D);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+/* ── Features list (inside modal only) ─────────────────── */
 .room-features {
     display: flex;
     flex-direction: column;
     gap: 0.85rem;
 }
-
-.room-features li {
-    color: var(--color-text, #3A3A2E);
-    line-height: 1.6;
-}
-
-.room-features .fas,
-.room-features .fa {
-    color: var(--color-primary, #8B7A3D);
-}
+.room-features li { color: var(--color-text, #3A3A2E); line-height: 1.6; }
+.room-features .fas, .room-features .fa { color: var(--color-primary, #8B7A3D); }
 
 /* ── Policies accordion ─────────────────────────────────── */
 .policies-section {
@@ -98,11 +239,11 @@
 
 .policies-accordion .accordion-item {
     border: 1px solid var(--color-border, #DDD8C4);
-    border-radius: 16px;
+    border-radius: 10px;
     overflow: hidden;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
     background: var(--color-surface, #fff);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.04);
 }
 
 .policies-accordion .accordion-button {
@@ -134,34 +275,23 @@
     background: var(--color-surface, #fff);
 }
 
-/* ── Page heading ───────────────────────────────────────── */
-.rooms-page h1,
-.rooms-page h2 {
+/* ── Page headings ──────────────────────────────────────── */
+.rooms-page h1, .rooms-page h2 {
     font-family: "Cormorant Garamond", serif;
     color: var(--color-text, #3A3A2E);
 }
-
-/* text-primary used in accordion icons */
-.rooms-page .text-primary {
-    color: var(--color-primary, #8B7A3D) !important;
-}
-
-.rooms-page .text-danger {
-    color: #b04040 !important;
-}
+.rooms-page .text-primary { color: var(--color-primary, #8B7A3D) !important; }
+.rooms-page .text-danger  { color: #b04040 !important; }
 
 /* ── Responsive ─────────────────────────────────────────── */
 @media (max-width: 991.98px) {
-    .room-card { border-radius: 16px; }
-    .room-image { height: 240px; }
-    .policies-accordion .accordion-item { border-radius: 14px; }
+    .room-image-wrap { height: 220px; }
+    .policies-accordion .accordion-item { border-radius: 10px; }
 }
 
 @media (max-width: 767.98px) {
-    .rooms-page {
-        padding-top: 2rem !important;
-        padding-bottom: 2rem !important;
-    }
-    .room-image { height: 220px; }
+    .rooms-page { padding-top: 2rem !important; padding-bottom: 2rem !important; }
+    .room-image-wrap { height: 200px; }
     .booking-note { font-size: 1rem; }
+    .room-card-actions { flex-direction: column; }
 }

@@ -1,308 +1,513 @@
 {% extends 'base.html' %}
 {% block title %}Rooms | Iris Rooms Trigona{% endblock %}
-{% block description %}
-Comfortable apartments in Trigona near Meteora. Private balconies, mountain views and easy access to Kalambaka.
-{% endblock %}
+{% block description %}Comfortable apartments in Trigona near Meteora. Private balconies, mountain views and easy access to Kalambaka.{% endblock %}
 {% block canonical %}https://irisroomstrigona.gr/rooms{% endblock %}
 {% block extra_css %}
 <link rel="stylesheet" href="{{ url_for('static', filename='rooms.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='rooms-modal.css') }}">
 {% endblock %}
 {% block content %}
 
 <div class="container rooms-page py-5">
+
+    <!-- ── Page Header ── -->
     <div class="section-heading text-center mb-5 scroll-reveal">
         <span class="section-kicker">
             <span class="lang-en">Stay With Us</span>
             <span class="lang-el">Μείνετε Μαζί Μας</span>
         </span>
-        <h1 class="display-5 text-dark-gray mb-3">
+        <h1 class="display-5 mb-3">
             <span class="lang-en">Our Rooms</span>
             <span class="lang-el">Τα Δωμάτιά Μας</span>
         </h1>
         <p class="section-intro mx-auto">
-            <span class="lang-en">
-                Discover comfortable apartments in Trigona with warm hospitality, modern amenities, and direct Airbnb booking.
-            </span>
-            <span class="lang-el">
-                Ανακαλύψτε άνετα διαμερίσματα στην Τριγώνα με ζεστή φιλοξενία, σύγχρονες παροχές και άμεση κράτηση μέσω Airbnb.
-            </span>
+            <span class="lang-en">Three carefully designed apartments in Trigona — each with its own character, all with warm hospitality and mountain views.</span>
+            <span class="lang-el">Τρία προσεκτικά σχεδιασμένα διαμερίσματα στην Τρυγόνα — το καθένα με τη δική του προσωπικότητα, όλα με ζεστή φιλοξενία και θέα στα βουνά.</span>
         </p>
     </div>
 
-    <div class="booking-note text-center mb-5 scroll-reveal">
-        <span class="lang-en">
-            All bookings are made through Airbnb. Click on a button below to view details and reserve your stay.
-        </span>
-        <span class="lang-el">
-            Όλες οι κρατήσεις πραγματοποιούνται μέσω Airbnb. Πατήστε σε ένα από τα παρακάτω κουμπιά για να δείτε λεπτομέρειες και να κάνετε την κράτησή σας.
-        </span>
-    </div>
+    <!-- ── Room Cards Grid ── -->
+    <div class="row g-4 mb-5">
 
-    <div class="row g-4">
-        <!-- Iris Apartments Trigona 4 -->
-        <div class="col-lg-4 col-md-6">
-            <div class="card room-card shadow-sm border-0 h-100 scroll-reveal" data-delay="1">
+        <!-- ══ ROOM 4 ══ -->
+        <div class="col-lg-4 col-md-6 scroll-reveal" data-delay="1">
+            <div class="card room-card h-100" onclick="openRoomModal('modal-room4')">
                 <div class="room-image-wrap">
-                    <img src="{{ url_for('static', filename='room4.jpeg') }}" class="card-img-top room-image" alt="Iris Apartments Trigona 4">
+                    <img src="{{ url_for('static', filename='room4.jpeg') }}" class="room-image" alt="Iris Apartments Trigona 4">
+                    <div class="room-image-overlay">
+                        <span class="room-overlay-label">
+                            <span class="lang-en">View Details</span>
+                            <span class="lang-el">Δείτε Λεπτομέρειες</span>
+                        </span>
+                    </div>
                 </div>
-                <div class="card-body p-4">
+                <div class="card-body d-flex flex-column">
                     <h5 class="card-title">Iris Apartments Trigona 4</h5>
                     <p class="card-text">
-                        <span class="lang-en">
-                            Located in the serene village of Trigona, this cozy apartment offers a peaceful retreat with beautiful views of the surrounding landscape. Ideal for couples and solo travelers.
-                        </span>
-                        <span class="lang-el">
-                            Ένα γοητευτικό διαμέρισμα στο χωριό της Τρυγόνα, αυτό το ζεστό διαμέρισμα προσφέρει μια γαλήνια απόδραση με όμορφη θέα στο γύρω τοπίο. Ιδανικό και για ζευγάρια και για μεμονωμένους ταξιδιώτες.
-                        </span>
+                        <span class="lang-en">A peaceful retreat with beautiful views. Ideal for couples and solo travellers seeking quiet mountain mornings.</span>
+                        <span class="lang-el">Ένα γαλήνιο καταφύγιο με όμορφη θέα. Ιδανικό για ζευγάρια και μεμονωμένους ταξιδιώτες.</span>
                     </p>
-
-                    <ul class="room-features list-unstyled mt-4 mb-4">
-                        <li>
-                            <i class="fas fa-bed text-primary me-2"></i>
-                            <span class="lang-en">2 Single Beds · 1 Bathroom</span>
-                            <span class="lang-el">2 Μονά Κρεβάτια · 1 Μπάνιο</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-wifi text-primary me-2"></i>Wi-Fi ·
-                            <i class="fas fa-tv text-primary mx-2"></i>TV ·
-                        </li>
-                        <li>
-                            <i class="fas fa-fire-alt text-primary me-2"></i>
-                            <span class="lang-en">Hot Water</span>
-                            <span class="lang-el">Ζεστό Νερό</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-utensils text-primary me-2"></i>
-                            <span class="lang-en">Fully Equipped Kitchen</span>
-                            <span class="lang-el">Πλήρως Εξοπλισμένη Κουζίνα</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-tree text-primary me-2"></i>
-                            <span class="lang-en">Private Balcony</span>
-                            <span class="lang-el">Ιδιωτικό Μπαλκόνι</span>
-                        </li>
-                    </ul>
-                    <a href="https://www.airbnb.com/rooms/1135680475926315700" class="btn btn-primary mt-2" target="_blank">
-                        <span class="lang-en">View Details on Airbnb</span>
-                        <span class="lang-el">Δείτε Λεπτομέρειες στο Airbnb</span>
-                    </a>
+                    <div class="room-pills">
+                        <span class="room-pill"><i class="fas fa-bed"></i> <span class="lang-en">2 Singles</span><span class="lang-el">2 Μονά</span></span>
+                        <span class="room-pill"><i class="fas fa-bath"></i> 1 Bath</span>
+                        <span class="room-pill"><i class="fas fa-wifi"></i> Wi-Fi</span>
+                        <span class="room-pill"><i class="fas fa-utensils"></i> <span class="lang-en">Kitchen</span><span class="lang-el">Κουζίνα</span></span>
+                        <span class="room-pill"><i class="fas fa-tree"></i> <span class="lang-en">Balcony</span><span class="lang-el">Μπαλκόνι</span></span>
+                    </div>
+                    <div class="room-card-actions mt-auto">
+                        <button class="btn-room-details" onclick="event.stopPropagation(); openRoomModal('modal-room4')">
+                            <i class="fas fa-expand-alt"></i>
+                            <span class="lang-en">Details</span>
+                            <span class="lang-el">Λεπτομέρειες</span>
+                        </button>
+                        <a href="https://www.airbnb.com/rooms/1135680475926315700" target="_blank" class="btn-room-airbnb" onclick="event.stopPropagation()">
+                            <i class="fab fa-airbnb"></i> Airbnb
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <!-- Iris Apartments Trigona 5 -->
-        <div class="col-lg-4 col-md-6">
-            <div class="card room-card shadow-sm border-0 h-100 scroll-reveal" data-delay="2">
+        <!-- ══ ROOM 5 ══ -->
+        <div class="col-lg-4 col-md-6 scroll-reveal" data-delay="2">
+            <div class="card room-card h-100" onclick="openRoomModal('modal-room5')">
                 <div class="room-image-wrap">
-                    <img src="{{ url_for('static', filename='room5.jpeg') }}" class="card-img-top room-image" alt="Iris Apartments Trigona 5">
+                    <img src="{{ url_for('static', filename='room5.jpeg') }}" class="room-image" alt="Iris Apartments Trigona 5">
+                    <div class="room-image-overlay">
+                        <span class="room-overlay-label">
+                            <span class="lang-en">View Details</span>
+                            <span class="lang-el">Δείτε Λεπτομέρειες</span>
+                        </span>
+                    </div>
                 </div>
-                <div class="card-body p-4">
+                <div class="card-body d-flex flex-column">
                     <h5 class="card-title">Iris Apartments Trigona 5</h5>
                     <p class="card-text">
-                        <span class="lang-en">
-                            A charming apartment in Trigona with modern comforts and a warm atmosphere, perfect for couples who want to relax and enjoy mountain views with their morning coffee.
-                        </span>
-                        <span class="lang-el">
-                            Ένα γοητευτικό διαμέρισμα στην Τριγώνα με σύγχρονες ανέσεις και ζεστή ατμόσφαιρα, ιδανικό για ζευγάρια που θέλουν να χαλαρώσουν και να απολαύσουν τη θέα στο βουνό με τον πρωινό τους καφέ.
-                        </span>
+                        <span class="lang-en">Modern comforts and a warm atmosphere. Perfect for couples who want to wake up to mountain air and coffee on the balcony.</span>
+                        <span class="lang-el">Σύγχρονες ανέσεις και ζεστή ατμόσφαιρα. Ιδανικό για ζευγάρια με καφέ στο μπαλκόνι με θέα στο βουνό.</span>
                     </p>
-
-                    <ul class="room-features list-unstyled mt-4 mb-4">
-                        <li>
-                            <i class="fas fa-bed text-primary me-2"></i>
-                            <span class="lang-en">1 Double Bed · 1 Bathroom</span>
-                            <span class="lang-el">1 Διπλό Κρεβάτι · 1 Μπάνιο</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-wifi text-primary me-2"></i>Wi-Fi ·
-                            <i class="fas fa-tv text-primary mx-2"></i>TV ·
-                        </li>
-                        <li>
-                            <i class="fas fa-fire-alt text-primary me-2"></i>
-                            <span class="lang-en">Hot Water</span>
-                            <span class="lang-el">Ζεστό Νερό</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-utensils text-primary me-2"></i>
-                            <span class="lang-en">Fully Equipped Kitchen</span>
-                            <span class="lang-el">Πλήρως Εξοπλισμένη Κουζίνα</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-tree text-primary me-2"></i>
-                            <span class="lang-en">Private Balcony</span>
-                            <span class="lang-el">Ιδιωτικό Μπαλκόνι</span>
-                        </li>
-                    </ul>
-
-                    <a href="https://www.airbnb.com/rooms/1134810135090425245" class="btn btn-primary mt-2" target="_blank">
-                        <span class="lang-en">View Details on Airbnb</span>
-                        <span class="lang-el">Δείτε Λεπτομέρειες στο Airbnb</span>
-                    </a>
+                    <div class="room-pills">
+                        <span class="room-pill"><i class="fas fa-bed"></i> <span class="lang-en">1 Double</span><span class="lang-el">1 Διπλό</span></span>
+                        <span class="room-pill"><i class="fas fa-bath"></i> 1 Bath</span>
+                        <span class="room-pill"><i class="fas fa-wifi"></i> Wi-Fi</span>
+                        <span class="room-pill"><i class="fas fa-utensils"></i> <span class="lang-en">Kitchen</span><span class="lang-el">Κουζίνα</span></span>
+                        <span class="room-pill"><i class="fas fa-tree"></i> <span class="lang-en">Balcony</span><span class="lang-el">Μπαλκόνι</span></span>
+                    </div>
+                    <div class="room-card-actions mt-auto">
+                        <button class="btn-room-details" onclick="event.stopPropagation(); openRoomModal('modal-room5')">
+                            <i class="fas fa-expand-alt"></i>
+                            <span class="lang-en">Details</span>
+                            <span class="lang-el">Λεπτομέρειες</span>
+                        </button>
+                        <a href="https://www.airbnb.com/rooms/1134810135090425245" target="_blank" class="btn-room-airbnb" onclick="event.stopPropagation()">
+                            <i class="fab fa-airbnb"></i> Airbnb
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <!-- Iris Apartments Trigona 6 -->
-        <div class="col-lg-4 col-md-6">
-            <div class="card room-card shadow-sm border-0 h-100 scroll-reveal" data-delay="3">
+        <!-- ══ ROOM 6 ══ -->
+        <div class="col-lg-4 col-md-6 scroll-reveal" data-delay="3">
+            <div class="card room-card h-100" onclick="openRoomModal('modal-room6')">
                 <div class="room-image-wrap">
-                    <img src="{{ url_for('static', filename='room6.jpeg') }}" class="card-img-top room-image" alt="Iris Apartments Trigona 6">
+                    <img src="{{ url_for('static', filename='room6.jpeg') }}" class="room-image" alt="Iris Apartments Trigona 6">
+                    <div class="room-image-overlay">
+                        <span class="room-overlay-label">
+                            <span class="lang-en">View Details</span>
+                            <span class="lang-el">Δείτε Λεπτομέρειες</span>
+                        </span>
+                    </div>
                 </div>
-                <div class="card-body p-4">
+                <div class="card-body d-flex flex-column">
                     <h5 class="card-title">Iris Apartments Trigona 6</h5>
                     <p class="card-text">
-                        <span class="lang-en">
-                            Another inviting apartment in Trigona, offering comfort, mountain views, a private balcony, and a fireplace for guests who want an especially cozy stay.
-                        </span>
-                        <span class="lang-el">
-                            Ένα ακόμη φιλόξενο διαμέρισμα στην Τριγώνα, που προσφέρει άνεση, θέα στο βουνό, ιδιωτικό μπαλκόνι και τζάκι για επισκέπτες που θέλουν μια ιδιαίτερα ζεστή διαμονή.
-                        </span>
+                        <span class="lang-en">Mountain views, a private balcony, and a fireplace. For guests who want an especially cozy and memorable stay.</span>
+                        <span class="lang-el">Θέα στο βουνό, ιδιωτικό μπαλκόνι και τζάκι. Για επισκέπτες που θέλουν μια ιδιαίτερα ζεστή διαμονή.</span>
                     </p>
-
-                    <ul class="room-features list-unstyled mt-4 mb-4">
-                        <li>
-                            <i class="fas fa-bed text-primary me-2"></i>
-                            <span class="lang-en">1 Double Bed · 1 Bathroom</span>
-                            <span class="lang-el">1 Διπλό Κρεβάτι · 1 Μπάνιο</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-wifi text-primary me-2"></i>Wi-Fi ·
-                            <i class="fas fa-tv text-primary mx-2"></i>TV ·
-                            <i class="fas fa-fire-alt text-primary mx-2"></i>
-                            <span class="lang-en">Hot Water</span>
-                            <span class="lang-el">Ζεστό Νερό</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-utensils text-primary me-2"></i>
-                            <span class="lang-en">Fully Equipped Kitchen</span>
-                            <span class="lang-el">Πλήρως Εξοπλισμένη Κουζίνα</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-fire text-primary me-2"></i>
-                            <span class="lang-en">Fireplace</span>
-                            <span class="lang-el">Τζάκι</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-tree text-primary me-2"></i>
-                            <span class="lang-en">Private Balcony</span>
-                            <span class="lang-el">Ιδιωτικό Μπαλκόνι</span>
-                        </li>
-                    </ul>
-
-                    <a href="https://www.airbnb.com/rooms/1139212536056596157?source_impression_id=p3_1736526255_P3GxvqSus9ncaane" class="btn btn-primary mt-2" target="_blank">
-                        <span class="lang-en">View Details on Airbnb</span>
-                        <span class="lang-el">Δείτε Λεπτομέρειες στο Airbnb</span>
-                    </a>
+                    <div class="room-pills">
+                        <span class="room-pill"><i class="fas fa-bed"></i> <span class="lang-en">1 Double</span><span class="lang-el">1 Διπλό</span></span>
+                        <span class="room-pill"><i class="fas fa-bath"></i> 1 Bath</span>
+                        <span class="room-pill"><i class="fas fa-wifi"></i> Wi-Fi</span>
+                        <span class="room-pill"><i class="fas fa-fire"></i> <span class="lang-en">Fireplace</span><span class="lang-el">Τζάκι</span></span>
+                        <span class="room-pill"><i class="fas fa-tree"></i> <span class="lang-en">Balcony</span><span class="lang-el">Μπαλκόνι</span></span>
+                    </div>
+                    <div class="room-card-actions mt-auto">
+                        <button class="btn-room-details" onclick="event.stopPropagation(); openRoomModal('modal-room6')">
+                            <i class="fas fa-expand-alt"></i>
+                            <span class="lang-en">Details</span>
+                            <span class="lang-el">Λεπτομέρειες</span>
+                        </button>
+                        <a href="https://www.airbnb.com/rooms/1139212536056596157" target="_blank" class="btn-room-airbnb" onclick="event.stopPropagation()">
+                            <i class="fab fa-airbnb"></i> Airbnb
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- Policies Section -->
+    </div><!-- /.row -->
+
+    <!-- ── Policies Section ── -->
     <div class="policies-section mt-5 pt-3">
         <div class="section-heading text-center mb-4 scroll-reveal">
             <span class="section-kicker">
                 <span class="lang-en">Guest Information</span>
                 <span class="lang-el">Πληροφορίες Επισκεπτών</span>
             </span>
-            <h2 class="text-dark-gray mb-2">
+            <h2 class="mb-2">
                 <span class="lang-en">Check-in, Check-out & Policies</span>
-                <span class="lang-el">Ώρες Άφιξης, Αναχώρησης & Πολιτικές Διαμονής</span>
+                <span class="lang-el">Ώρες Άφιξης, Αναχώρησης & Πολιτικές</span>
             </h2>
             <p class="section-intro mx-auto">
-                <span class="lang-en">
-                    Useful information to help you plan your stay comfortably and smoothly.
-                </span>
-                <span class="lang-el">
-                    Χρήσιμες πληροφορίες για να οργανώσετε τη διαμονή σας άνετα και ομαλά.
-                </span>
+                <span class="lang-en">Useful information to help you plan your stay comfortably and smoothly.</span>
+                <span class="lang-el">Χρήσιμες πληροφορίες για να οργανώσετε τη διαμονή σας άνετα και ομαλά.</span>
             </p>
         </div>
 
         <div class="accordion policies-accordion" id="policiesAccordion">
             <div class="accordion-item">
                 <h2 class="accordion-header" id="headingCheckin">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCheckin" aria-expanded="false" aria-controls="collapseCheckin">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCheckin">
                         <i class="fas fa-clock text-primary me-2"></i>
                         <span class="lang-en">Check-in & Check-out Time</span>
                         <span class="lang-el">Ώρες Check-in & Check-out</span>
                     </button>
                 </h2>
-                <div id="collapseCheckin" class="accordion-collapse collapse" aria-labelledby="headingCheckin" data-bs-parent="#policiesAccordion">
+                <div id="collapseCheckin" class="accordion-collapse collapse" data-bs-parent="#policiesAccordion">
                     <div class="accordion-body">
-                        <span class="lang-en">
-                            Check-in time is from <strong>15:00</strong>.<br>
-                            Check-out is until <strong>12:00 noon</strong>.
-                        </span>
-                        <span class="lang-el">
-                            Το check-in γίνεται από τις <strong>15:00</strong>.<br>
-                            Το check-out πραγματοποιείται έως τις <strong>12:00 το μεσημέρι</strong>.
-                        </span>
+                        <span class="lang-en">Check-in from <strong>15:00</strong>. Check-out until <strong>12:00 noon</strong>.</span>
+                        <span class="lang-el">Check-in από τις <strong>15:00</strong>. Check-out έως τις <strong>12:00 το μεσημέρι</strong>.</span>
                     </div>
                 </div>
             </div>
-
             <div class="accordion-item">
                 <h2 class="accordion-header" id="headingLuggage">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseLuggage" aria-expanded="false" aria-controls="collapseLuggage">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseLuggage">
                         <i class="fas fa-suitcase text-primary me-2"></i>
                         <span class="lang-en">Luggage Storage</span>
                         <span class="lang-el">Φύλαξη Αποσκευών</span>
                     </button>
                 </h2>
-                <div id="collapseLuggage" class="accordion-collapse collapse" aria-labelledby="headingLuggage" data-bs-parent="#policiesAccordion">
+                <div id="collapseLuggage" class="accordion-collapse collapse" data-bs-parent="#policiesAccordion">
                     <div class="accordion-body">
-                        <span class="lang-en">
-                            We can store your luggage until the time you are ready to depart.
-                        </span>
-                        <span class="lang-el">
-                            Μπορούμε να φυλάξουμε τις αποσκευές σας μέχρι την ώρα που θα είστε έτοιμοι για την αναχώρησή σας.
-                        </span>
+                        <span class="lang-en">We can store your luggage until you are ready to depart.</span>
+                        <span class="lang-el">Μπορούμε να φυλάξουμε τις αποσκευές σας μέχρι την αναχώρησή σας.</span>
                     </div>
                 </div>
             </div>
-
             <div class="accordion-item">
                 <h2 class="accordion-header" id="headingSmoking">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSmoking" aria-expanded="false" aria-controls="collapseSmoking">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSmoking">
                         <i class="fas fa-smoking-ban text-danger me-2"></i>
                         <span class="lang-en">Smoking Policy</span>
                         <span class="lang-el">Πολιτική Καπνίσματος</span>
                     </button>
                 </h2>
-                <div id="collapseSmoking" class="accordion-collapse collapse" aria-labelledby="headingSmoking" data-bs-parent="#policiesAccordion">
+                <div id="collapseSmoking" class="accordion-collapse collapse" data-bs-parent="#policiesAccordion">
                     <div class="accordion-body">
-                        <span class="lang-en">
-                            Smoking is <strong>not allowed</strong>.
-                        </span>
-                        <span class="lang-el">
-                            Το κάπνισμα <strong>δεν επιτρέπεται</strong>.
-                        </span>
+                        <span class="lang-en">Smoking is <strong>not allowed</strong>.</span>
+                        <span class="lang-el">Το κάπνισμα <strong>δεν επιτρέπεται</strong>.</span>
                     </div>
                 </div>
             </div>
-
             <div class="accordion-item">
                 <h2 class="accordion-header" id="headingPets">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePets" aria-expanded="false" aria-controls="collapsePets">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePets">
                         <i class="fas fa-paw text-primary me-2"></i>
                         <span class="lang-en">Pets Policy</span>
                         <span class="lang-el">Πολιτική για Κατοικίδια</span>
                     </button>
                 </h2>
-                <div id="collapsePets" class="accordion-collapse collapse" aria-labelledby="headingPets" data-bs-parent="#policiesAccordion">
+                <div id="collapsePets" class="accordion-collapse collapse" data-bs-parent="#policiesAccordion">
                     <div class="accordion-body">
-                        <span class="lang-en">
-                            Pets are <strong>not allowed</strong>.
-                        </span>
-                        <span class="lang-el">
-                            Τα κατοικίδια <strong>δεν επιτρέπονται</strong>.
-                        </span>
+                        <span class="lang-en">Pets are <strong>not allowed</strong>.</span>
+                        <span class="lang-el">Τα κατοικίδια <strong>δεν επιτρέπονται</strong>.</span>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div><!-- /.rooms-page -->
+
+
+<!-- ══════════════════════════════════════════════════════════
+     ROOM MODALS
+     ══════════════════════════════════════════════════════════ -->
+
+<!-- ── Modal: Room 4 ── -->
+<div id="modal-room4" class="room-modal" role="dialog" aria-modal="true" aria-label="Iris Apartments Trigona 4">
+    <div class="modal-dialog">
+        <div class="modal-content" role="document">
+            <button class="modal-close-btn" onclick="closeRoomModal('modal-room4')" aria-label="Close">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-hero">
+                <img id="modal-room4-hero" src="{{ url_for('static', filename='room4.jpeg') }}" alt="Room 4 main image">
+            </div>
+            <div class="modal-thumbs">
+                <div class="modal-thumb active" onclick="switchThumb('modal-room4', this, '{{ url_for('static', filename='room4.jpeg') }}')">
+                    <img src="{{ url_for('static', filename='room4.jpeg') }}" alt="thumb">
+                </div>
+                <div class="modal-thumb" onclick="switchThumb('modal-room4', this, '{{ url_for('static', filename='room4/room4_1.jpeg') }}')">
+                    <img src="{{ url_for('static', filename='room4/room4_1.jpeg') }}" alt="thumb">
+                </div>
+            </div>
+            <div class="modal-body-inner">
+                <h2 class="modal-room-title">Iris Apartments Trigona 4</h2>
+                <p class="modal-room-desc">
+                    <span class="lang-en">Located in the serene village of Trigona, this apartment offers a peaceful retreat with beautiful views of the surrounding landscape. Ideal for couples and solo travellers who enjoy a quiet mountain stay.</span>
+                    <span class="lang-el">Στο ήσυχο χωριό Τρυγόνα, αυτό το διαμέρισμα προσφέρει μια γαλήνια απόδραση με όμορφη θέα στο γύρω τοπίο. Ιδανικό για ζευγάρια και μεμονωμένους ταξιδιώτες.</span>
+                </p>
+                <div class="modal-stats">
+                    <div class="modal-stat"><i class="fas fa-bed"></i> <span class="lang-en">2 Single Beds</span><span class="lang-el">2 Μονά Κρεβάτια</span></div>
+                    <div class="modal-stat"><i class="fas fa-bath"></i> <span class="lang-en">1 Bathroom</span><span class="lang-el">1 Μπάνιο</span></div>
+                    <div class="modal-stat"><i class="fas fa-users"></i> <span class="lang-en">Up to 2 guests</span><span class="lang-el">Έως 2 άτομα</span></div>
+                    <div class="modal-stat"><i class="fas fa-mountain"></i> <span class="lang-en">Mountain view</span><span class="lang-el">Θέα βουνό</span></div>
+                </div>
+                <p class="modal-amenities-title">
+                    <span class="lang-en">What's included</span>
+                    <span class="lang-el">Τι περιλαμβάνεται</span>
+                </p>
+                <div class="modal-amenities">
+                    <div class="modal-amenity"><i class="fas fa-wifi"></i> Wi-Fi</div>
+                    <div class="modal-amenity"><i class="fas fa-tv"></i> <span class="lang-en">Smart TV</span><span class="lang-el">Smart TV</span></div>
+                    <div class="modal-amenity"><i class="fas fa-utensils"></i> <span class="lang-en">Fully equipped kitchen</span><span class="lang-el">Πλήρης κουζίνα</span></div>
+                    <div class="modal-amenity"><i class="fas fa-fire-alt"></i> <span class="lang-en">Hot water</span><span class="lang-el">Ζεστό νερό</span></div>
+                    <div class="modal-amenity"><i class="fas fa-tree"></i> <span class="lang-en">Private balcony</span><span class="lang-el">Ιδιωτικό μπαλκόνι</span></div>
+                    <div class="modal-amenity"><i class="fas fa-snowflake"></i> <span class="lang-en">Air conditioning</span><span class="lang-el">Κλιματισμός</span></div>
+                    <div class="modal-amenity"><i class="fas fa-parking"></i> <span class="lang-en">Free parking</span><span class="lang-el">Δωρεάν πάρκινγκ</span></div>
+                    <div class="modal-amenity"><i class="fas fa-tshirt"></i> <span class="lang-en">Washing machine</span><span class="lang-el">Πλυντήριο</span></div>
+                </div>
+                <div class="modal-cta-row">
+                    <a href="https://www.airbnb.com/rooms/1135680475926315700" target="_blank" class="modal-btn-primary">
+                        <i class="fab fa-airbnb"></i>
+                        <span class="lang-en">Book on Airbnb</span>
+                        <span class="lang-el">Κράτηση στο Airbnb</span>
+                    </a>
+                    <a href="{{ url_for('contact') }}" class="modal-btn-secondary">
+                        <i class="fas fa-envelope"></i>
+                        <span class="lang-en">Ask a question</span>
+                        <span class="lang-el">Ρωτήστε μας</span>
+                    </a>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
+<!-- ── Modal: Room 5 ── -->
+<div id="modal-room5" class="room-modal" role="dialog" aria-modal="true" aria-label="Iris Apartments Trigona 5">
+    <div class="modal-dialog">
+        <div class="modal-content" role="document">
+            <button class="modal-close-btn" onclick="closeRoomModal('modal-room5')" aria-label="Close">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-hero">
+                <img id="modal-room5-hero" src="{{ url_for('static', filename='room5.jpeg') }}" alt="Room 5 main image">
+            </div>
+            <div class="modal-thumbs">
+                <div class="modal-thumb active" onclick="switchThumb('modal-room5', this, '{{ url_for('static', filename='room5.jpeg') }}')">
+                    <img src="{{ url_for('static', filename='room5.jpeg') }}" alt="thumb">
+                </div>
+                <div class="modal-thumb" onclick="switchThumb('modal-room5', this, '{{ url_for('static', filename='room5/room5_1.jpeg') }}')">
+                    <img src="{{ url_for('static', filename='room5/room5_1.jpeg') }}" alt="thumb">
+                </div>
+                <div class="modal-thumb" onclick="switchThumb('modal-room5', this, '{{ url_for('static', filename='room5/room5_2.jpeg') }}')">
+                    <img src="{{ url_for('static', filename='room5/room5_2.jpeg') }}" alt="thumb">
+                </div>
+            </div>
+            <div class="modal-body-inner">
+                <h2 class="modal-room-title">Iris Apartments Trigona 5</h2>
+                <p class="modal-room-desc">
+                    <span class="lang-en">A charming apartment with modern comforts and a warm atmosphere. Perfect for couples who want to relax and enjoy mountain views with their morning coffee on the balcony.</span>
+                    <span class="lang-el">Ένα γοητευτικό διαμέρισμα με σύγχρονες ανέσεις και ζεστή ατμόσφαιρα. Ιδανικό για ζευγάρια που θέλουν να χαλαρώσουν και να απολαύσουν τη θέα με τον πρωινό καφέ.</span>
+                </p>
+                <div class="modal-stats">
+                    <div class="modal-stat"><i class="fas fa-bed"></i> <span class="lang-en">1 Double Bed</span><span class="lang-el">1 Διπλό Κρεβάτι</span></div>
+                    <div class="modal-stat"><i class="fas fa-bath"></i> <span class="lang-en">1 Bathroom</span><span class="lang-el">1 Μπάνιο</span></div>
+                    <div class="modal-stat"><i class="fas fa-users"></i> <span class="lang-en">Up to 2 guests</span><span class="lang-el">Έως 2 άτομα</span></div>
+                    <div class="modal-stat"><i class="fas fa-mountain"></i> <span class="lang-en">Mountain view</span><span class="lang-el">Θέα βουνό</span></div>
+                </div>
+                <p class="modal-amenities-title">
+                    <span class="lang-en">What's included</span>
+                    <span class="lang-el">Τι περιλαμβάνεται</span>
+                </p>
+                <div class="modal-amenities">
+                    <div class="modal-amenity"><i class="fas fa-wifi"></i> Wi-Fi</div>
+                    <div class="modal-amenity"><i class="fas fa-tv"></i> <span class="lang-en">Smart TV</span><span class="lang-el">Smart TV</span></div>
+                    <div class="modal-amenity"><i class="fas fa-utensils"></i> <span class="lang-en">Fully equipped kitchen</span><span class="lang-el">Πλήρης κουζίνα</span></div>
+                    <div class="modal-amenity"><i class="fas fa-fire-alt"></i> <span class="lang-en">Hot water</span><span class="lang-el">Ζεστό νερό</span></div>
+                    <div class="modal-amenity"><i class="fas fa-tree"></i> <span class="lang-en">Private balcony</span><span class="lang-el">Ιδιωτικό μπαλκόνι</span></div>
+                    <div class="modal-amenity"><i class="fas fa-snowflake"></i> <span class="lang-en">Air conditioning</span><span class="lang-el">Κλιματισμός</span></div>
+                    <div class="modal-amenity"><i class="fas fa-parking"></i> <span class="lang-en">Free parking</span><span class="lang-el">Δωρεάν πάρκινγκ</span></div>
+                    <div class="modal-amenity"><i class="fas fa-tshirt"></i> <span class="lang-en">Washing machine</span><span class="lang-el">Πλυντήριο</span></div>
+                </div>
+                <div class="modal-cta-row">
+                    <a href="https://www.airbnb.com/rooms/1134810135090425245" target="_blank" class="modal-btn_primary">
+                        <i class="fab fa-airbnb"></i>
+                        <span class="lang-en">Book on Airbnb</span>
+                        <span class="lang-el">Κράτηση στο Airbnb</span>
+                    </a>
+                    <a href="{{ url_for('contact') }}" class="modal-btn_secondary">
+                        <i class="fas fa-envelope"></i>
+                        <span class="lang-en">Ask a question</span>
+                        <span class="lang-el">Ρωτήστε μας</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ── Modal: Room 6 ── -->
+<div id="modal-room6" class="room-modal" role="dialog" aria-modal="true" aria-label="Iris Apartments Trigona 6">
+    <div class="modal-dialog">
+        <div class="modal-content" role="document">
+            <button class="modal-close-btn" onclick="closeRoomModal('modal-room6')" aria-label="Close">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-hero">
+                <img id="modal-room6-hero" src="{{ url_for('static', filename='room6.jpeg') }}" alt="Room 6 main image">
+            </div>
+            <div class="modal-thumbs">
+                <div class="modal-thumb active" onclick="switchThumb('modal-room6', this, '{{ url_for('static', filename='room6.jpeg') }}')">
+                    <img src="{{ url_for('static', filename='room6.jpeg') }}" alt="thumb">
+                </div>
+                <div class="modal-thumb" onclick="switchThumb('modal-room6', this, '{{ url_for('static', filename='room6/room6_1.jpeg') }}')">
+                    <img src="{{ url_for('static', filename='room6/room6_1.jpeg') }}" alt="thumb">
+                </div>
+            </div>
+            <div class="modal-body-inner">
+                <h2 class="modal-room-title">Iris Apartments Trigona 6</h2>
+                <p class="modal-room-desc">
+                    <span class="lang-en">Mountain views, a private balcony, and a wood-burning fireplace. This apartment is for guests who want an especially cozy and memorable stay — perfect for autumn and winter visits.</span>
+                    <span class="lang-el">Θέα στο βουνό, ιδιωτικό μπαλκόνι και τζάκι. Αυτό το διαμέρισμα είναι για επισκέπτες που θέλουν μια ιδιαίτερα ζεστή και αξέχαστη διαμονή — ιδανικό για φθινόπωρο και χειμώνα.</span>
+                </p>
+                <div class="modal-stats">
+                    <div class="modal-stat"><i class="fas fa-bed"></i> <span class="lang-en">1 Double Bed</span><span class="lang-el">1 Διπλό Κρεβάτι</span></div>
+                    <div class="modal-stat"><i class="fas fa-bath"></i> <span class="lang-en">1 Bathroom</span><span class="lang-el">1 Μπάνιο</span></div>
+                    <div class="modal-stat"><i class="fas fa-users"></i> <span class="lang-en">Up to 2 guests</span><span class="lang-el">Έως 2 άτομα</span></div>
+                    <div class="modal-stat"><i class="fas fa-fire"></i> <span class="lang-en">Fireplace</span><span class="lang-el">Τζάκι</span></div>
+                </div>
+                <p class="modal-amenities-title">
+                    <span class="lang-en">What's included</span>
+                    <span class="lang-el">Τι περιλαμβάνεται</span>
+                </p>
+                <div class="modal-amenities">
+                    <div class="modal-amenity"><i class="fas fa-wifi"></i> Wi-Fi</div>
+                    <div class="modal-amenity"><i class="fas fa-tv"></i> <span class="lang-en">Smart TV</span><span class="lang-el">Smart TV</span></div>
+                    <div class="modal-amenity"><i class="fas fa-utensils"></i> <span class="lang-en">Fully equipped kitchen</span><span class="lang-el">Πλήρης κουζίνα</span></div>
+                    <div class="modal-amenity"><i class="fas fa-fire-alt"></i> <span class="lang-en">Hot water</span><span class="lang-el">Ζεστό νερό</span></div>
+                    <div class="modal-amenity"><i class="fas fa-fire"></i> <span class="lang-en">Fireplace</span><span class="lang-el">Τζάκι</span></div>
+                    <div class="modal-amenity"><i class="fas fa-tree"></i> <span class="lang-en">Private balcony</span><span class="lang-el">Ιδιωτικό μπαλκόνι</span></div>
+                    <div class="modal-amenity"><i class="fas fa-snowflake"></i> <span class="lang-en">Air conditioning</span><span class="lang-el">Κλιματισμός</span></div>
+                    <div class="modal-amenity"><i class="fas fa-parking"></i> <span class="lang-en">Free parking</span><span class="lang-el">Δωρεάν πάρκινγκ</span></div>
+                </div>
+                <div class="modal-cta-row">
+                    <a href="https://www.airbnb.com/rooms/1139212536056596157" target="_blank" class="modal-btn_primary">
+                        <i class="fab fa-airbnb"></i>
+                        <span class="lang-en">Book on Airbnb</span>
+                        <span class="lang-el">Κράτηση στο Airbnb</span>
+                    </a>
+                    <a href="{{ url_for('contact') }}" class="modal-btn_secondary">
+                        <i class="fas fa-envelope"></i>
+                        <span class="lang-en">Ask a question</span>
+                        <span class="lang-el">Ρωτήστε μας</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ── Modal backdrop ── -->
+<div id="modal-backdrop" class="modal-backdrop-custom" onclick="closeAllModals()"></div>
+
+
+<!-- ── Modal JS ── -->
+<script>
+function openRoomModal(id) {
+    closeAllModals();
+    const modal = document.getElementById(id);
+    const backdrop = document.getElementById('modal-backdrop');
+    if (!modal) return;
+    modal.classList.add('is-open');
+    backdrop.classList.add('is-visible');
+    document.body.style.overflow = 'hidden';
+    modal.querySelector('.modal-content').focus?.();
+}
+
+function closeRoomModal(id) {
+    const modal = document.getElementById(id);
+    if (modal) modal.classList.remove('is-open');
+    document.getElementById('modal-backdrop').classList.remove('is-visible');
+    document.body.style.overflow = '';
+}
+
+function closeAllModals() {
+    document.querySelectorAll('.room-modal.is-open').forEach(m => m.classList.remove('is-open'));
+    document.getElementById('modal-backdrop').classList.remove('is-visible');
+    document.body.style.overflow = '';
+}
+
+function switchThumb(modalId, thumbEl, src) {
+    const hero = document.getElementById(modalId + '-hero');
+    if (hero) {
+        hero.style.opacity = '0';
+        setTimeout(() => { hero.src = src; hero.style.opacity = '1'; }, 180);
+    }
+    document.querySelectorAll('#' + modalId + ' .modal-thumb').forEach(t => t.classList.remove('active'));
+    thumbEl.classList.add('active');
+}
+
+// Close on Escape key
+document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeAllModals();
+});
+</script>
+
+<!-- ── Modal global styles (backdrop + open state) ── -->
+<style>
+.room-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 1055;
+    overflow-y: auto;
+    padding: 2rem 1rem;
+}
+.room-modal.is-open { display: block; animation: modalFadeIn 0.3s ease; }
+
+@keyframes modalFadeIn {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.modal-backdrop-custom {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 1050;
+    background: rgba(10, 14, 12, 0.65);
+    backdrop-filter: blur(3px);
+}
+.modal-backdrop-custom.is-visible { display: block; animation: backdropFadeIn 0.25s ease; }
+
+@keyframes backdropFadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+.modal-hero img {
+    transition: opacity 0.18s ease;
+}
+
+@media (max-width: 767.98px) {
+    .room-modal { padding: 0; }
+}
+</style>
+
 {% endblock %}
+
