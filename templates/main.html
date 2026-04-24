@@ -207,48 +207,48 @@
     </section>
 
     <!-- ══════════════════════════════════════════════════════
-         8. TESTIMONIALS
+         8. TESTIMONIALS — dark inverted section, quote cards
          ══════════════════════════════════════════════════════ -->
-    <section class="ideal-for-header">
-        <div class="container text-center">
-            <span class="section-kicker reveal-text from-bottom">
-                <span class="lang-en">Testimonials</span>
-                <span class="lang-el">Αξιολογήσεις</span>
-            </span>
-            <h2 class="split-title reveal-text from-bottom">
-                <span class="lang-en">What Our Guests Say</span>
-                <span class="lang-el">Τι Λένε οι Επισκέπτες μας</span>
-            </h2>
-        </div>
-    </section>
-
-    <!-- Review 1 -->
-    <section class="split-section split-compact">
+    <section class="testimonials-section">
         <div class="container">
-            <div class="row align-items-center g-5">
-                <div class="col-lg-6">
-                    <div class="reveal-image from-left">
+
+            <!-- Header -->
+            <div class="text-center mb-5">
+                <span class="section-kicker testimonials-kicker reveal-text from-bottom">
+                    <span class="lang-en">Testimonials</span>
+                    <span class="lang-el">Αξιολογήσεις</span>
+                </span>
+                <h2 class="split-title testimonials-title reveal-text from-bottom">
+                    <span class="lang-en">What Our Guests Say</span>
+                    <span class="lang-el">Τι Λένε οι Επισκέπτες μας</span>
+                </h2>
+            </div>
+
+            <!-- Cards row -->
+            <div class="testimonials-row">
+
+                <!-- Card 1 -->
+                <div class="testi-card stagger-card" data-delay="1">
+                    <div class="testi-card__img">
                         <img src="{{ url_for('static', filename='room5/room5_2.jpeg') }}" alt="Cozy room interior" loading="lazy">
                     </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="reveal-text from-right">
-                        <div class="review-stars-inline mb-2">
+                    <div class="testi-card__body">
+                        <div class="testi-card__stars">
                             <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                         </div>
-                        <h3 class="split-title">
+                        <h3 class="testi-card__title">
                             <span class="lang-en">Incredible Experience</span>
                             <span class="lang-el">Εξαιρετική Εμπειρία</span>
                         </h3>
-                        <p class="review-quote-text">
+                        <blockquote class="testi-card__quote">
                             <span class="lang-en">"The accommodation was truly amazing. The atmosphere and hospitality were very warm and welcoming, making us feel at home. All room services were exceptional."</span>
                             <span class="lang-el">"Η διαμονή ήταν πραγματικά εξαιρετική. Η ατμόσφαιρα και η φιλοξενία ήταν πολύ ζεστή και φιλόξενη. Όλες οι παροχές ήταν άψογες."</span>
-                        </p>
-                        <div class="review-author">
-                            <div class="review-author-avatar"><i class="fas fa-user"></i></div>
+                        </blockquote>
+                        <div class="testi-card__author">
+                            <div class="testi-card__avatar"><i class="fas fa-user"></i></div>
                             <div>
-                                <strong>Dimitrios</strong>
-                                <span class="review-source">
+                                <strong class="testi-card__name">Dimitrios</strong>
+                                <span class="testi-card__source">
                                     <span class="lang-en">Airbnb · December 2024</span>
                                     <span class="lang-el">Airbnb · Δεκέμβριος 2024</span>
                                 </span>
@@ -256,37 +256,29 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Review 2 -->
-    <section class="split-section split-compact">
-        <div class="container">
-            <div class="row align-items-center g-5">
-                <div class="col-lg-6 order-lg-2">
-                    <div class="reveal-image from-right">
+                <!-- Card 2 -->
+                <div class="testi-card stagger-card" data-delay="2">
+                    <div class="testi-card__img">
                         <img src="{{ url_for('static', filename='guesthouse/hotelsite036.jpg') }}" alt="Garden and outdoor area" loading="lazy">
                     </div>
-                </div>
-                <div class="col-lg-6 order-lg-1">
-                    <div class="reveal-text from-left">
-                        <div class="review-stars-inline mb-2">
+                    <div class="testi-card__body">
+                        <div class="testi-card__stars">
                             <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                         </div>
-                        <h3 class="split-title">
+                        <h3 class="testi-card__title">
                             <span class="lang-en">Unforgettable Memory</span>
                             <span class="lang-el">Αξέχαστη Εμπειρία</span>
                         </h3>
-                        <p class="review-quote-text">
+                        <blockquote class="testi-card__quote">
                             <span class="lang-en">"The host was very kind and made us feel at home. The garden is beautifully cared for. It was not just a short stay, but an unforgettable memory for us."</span>
-                            <span class="lang-el">"Ο οικοδεσπότης ήταν πολύ ευγενικός. Ο κήπος είναι περιποιημένος και το γλυκό μικρό σκυλάκι έκανε τη διαμονή ακόμα πιο ξεχωριστή. Μια αξέχαστη εμπειρία."</span>
-                        </p>
-                        <div class="review-author">
-                            <div class="review-author-avatar"><i class="fas fa-user"></i></div>
+                            <span class="lang-el">"Ο οικοδεσπότης ήταν πολύ ευγενικός. Ο κήπος είναι περιποιημένος και το σκυλάκι έκανε τη διαμονή ακόμα πιο ξεχωριστή. Μια αξέχαστη εμπειρία."</span>
+                        </blockquote>
+                        <div class="testi-card__author">
+                            <div class="testi-card__avatar"><i class="fas fa-user"></i></div>
                             <div>
-                                <strong>Zhen</strong>
-                                <span class="review-source">
+                                <strong class="testi-card__name">Zhen</strong>
+                                <span class="testi-card__source">
                                     <span class="lang-en">Airbnb · June 2024</span>
                                     <span class="lang-el">Airbnb · Ιούνιος 2024</span>
                                 </span>
@@ -294,7 +286,8 @@
                         </div>
                     </div>
                 </div>
-            </div>
+
+            </div><!-- /.testimonials-row -->
         </div>
     </section>
 
