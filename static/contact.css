@@ -1,4 +1,4 @@
-/* CONTACT.CSS */
+/* CONTACT.CSS — aligned with the project design system */
 
 .contact-page {
     position: relative;
@@ -10,37 +10,38 @@
     margin-right: auto;
 }
 
-.section-kicker {
-    display: inline-block;
-    margin-bottom: 0.75rem;
-    color: #D87A56;
-    font-size: 0.9rem;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
+/* Override kicker colour to match main.css */
+.contact-page .section-kicker {
+    color: var(--color-primary, #8B7A3D);
 }
 
 .section-intro {
     max-width: 640px;
-    color: #7B746C;
+    color: var(--color-muted, #7A7A60);
 }
 
 .text-muted-custom {
-    color: #7B746C;
+    color: var(--color-muted, #7A7A60);
 }
 
+/* ── Cards ─────────────────────────────────────────────── */
 .contact-card,
 .map-card {
     border-radius: 18px;
-    background: #fff;
+    background: var(--color-surface, #fff);
+    border: 1px solid var(--color-border, #DDD8C4) !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06) !important;
 }
 
 .contact-subheading {
-    font-size: 1.1rem;
-    color: #4F4A46;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--color-text, #3A3A2E);
     margin-bottom: 1rem;
 }
 
+/* ── Contact info list ──────────────────────────────────── */
 .contact-info-list {
     display: flex;
     flex-direction: column;
@@ -58,28 +59,35 @@
     height: 46px;
     flex-shrink: 0;
     border-radius: 50%;
-    background: rgba(216, 122, 86, 0.12);
-    color: #D87A56;
+    background: rgba(139, 122, 61, 0.10);
+    color: var(--color-primary, #8B7A3D);
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 1rem;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.contact-info-item:hover .contact-info-icon {
+    background: var(--color-primary, #8B7A3D);
+    color: #fff;
 }
 
 .contact-label {
     display: block;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     font-weight: 700;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.06em;
     text-transform: uppercase;
-    color: #D87A56;
+    color: var(--color-primary, #8B7A3D);
     margin-bottom: 0.2rem;
 }
 
+/* ── Nearby attractions list ────────────────────────────── */
 .access-list {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 10px;
 }
 
 .access-item {
@@ -87,49 +95,70 @@
     justify-content: space-between;
     align-items: center;
     gap: 16px;
-    padding: 14px 16px;
-    border-radius: 14px;
-    background: #f9f4eb;
-    border: 1px solid rgba(216, 122, 86, 0.08);
-    color: #4F4A46;
+    padding: 12px 16px;
+    border-radius: 10px;
+    background: var(--color-bg, #F0EDE4);
+    border: 1px solid var(--color-border, #DDD8C4);
+    color: var(--color-text, #3A3A2E);
+    transition: background 0.25s ease, border-color 0.25s ease;
+}
+
+.access-item:hover {
+    background: rgba(139, 122, 61, 0.08);
+    border-color: rgba(139, 122, 61, 0.25);
+}
+
+.access-item .fas {
+    color: var(--color-primary, #8B7A3D);
 }
 
 .access-item strong {
-    color: #D87A56;
+    color: var(--color-accent, #C4A94A);
     font-weight: 700;
     white-space: nowrap;
 }
 
+/* ── Map ────────────────────────────────────────────────── */
 .map-frame-wrap {
     overflow: hidden;
-    border-radius: 18px;
+    border-radius: 14px;
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
 }
 
 .map-frame-wrap iframe {
     display: block;
     width: 100%;
-    border-radius: 18px;
+    border-radius: 14px;
 }
 
+/* ── Links ──────────────────────────────────────────────── */
 .contact-card a {
-    color: #D87A56;
+    color: var(--color-primary, #8B7A3D);
     font-weight: 600;
+    text-decoration: none;
+    transition: color 0.25s ease;
 }
 
 .contact-card a:hover {
-    color: #A5C16A;
+    color: var(--color-accent, #C4A94A);
+    text-decoration: underline;
 }
 
+/* ── Page heading h1 ────────────────────────────────────── */
+.contact-page h1 {
+    font-family: "Cormorant Garamond", serif;
+    color: var(--color-text, #3A3A2E);
+}
+
+/* ── Responsive ─────────────────────────────────────────── */
 @media (max-width: 991.98px) {
     .contact-card,
     .map-card {
         border-radius: 16px;
     }
-
     .map-frame-wrap,
     .map-frame-wrap iframe {
-        border-radius: 16px;
+        border-radius: 12px;
     }
 }
 

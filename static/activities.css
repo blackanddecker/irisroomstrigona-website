@@ -1,3 +1,5 @@
+/* ACTIVITIES.CSS — aligned with the project design system */
+
 .activities-page {
     position: relative;
 }
@@ -8,25 +10,22 @@
     margin-right: auto;
 }
 
-.section-kicker {
-    display: inline-block;
-    margin-bottom: 0.75rem;
-    color: #D87A56;
-    font-size: 0.9rem;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
+.activities-page .section-kicker {
+    color: var(--color-primary, #8B7A3D);
 }
 
 .section-intro {
     max-width: 640px;
-    color: #7B746C;
+    color: var(--color-muted, #7A7A60);
 }
 
+/* ── Activity card ──────────────────────────────────────── */
 .activity-card {
     border-radius: 18px;
-    background: #fff;
+    background: var(--color-surface, #fff);
+    border: 1px solid var(--color-border, #DDD8C4);
     overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
     transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
@@ -47,6 +46,7 @@
     transform: scale(1.06);
 }
 
+/* ── Meta / badge ───────────────────────────────────────── */
 .activity-meta {
     display: flex;
     align-items: center;
@@ -56,20 +56,31 @@
 .activity-badge {
     display: inline-flex;
     align-items: center;
-    padding: 8px 14px;
+    padding: 6px 14px;
     border-radius: 999px;
-    background: rgba(216, 122, 86, 0.12);
-    color: #D87A56;
-    font-size: 0.9rem;
+    background: rgba(139, 122, 61, 0.10);
+    color: var(--color-primary, #8B7A3D);
+    font-size: 0.85rem;
     font-weight: 700;
+    letter-spacing: 0.04em;
+    border: 1px solid rgba(139, 122, 61, 0.18);
+    transition: background 0.25s ease, color 0.25s ease;
 }
 
+.activity-card:hover .activity-badge {
+    background: var(--color-primary, #8B7A3D);
+    color: #fff;
+}
+
+/* ── Card text ──────────────────────────────────────────── */
 .activity-card .card-title {
+    font-family: "Cormorant Garamond", serif;
+    color: var(--color-text, #3A3A2E);
     margin-bottom: 0.85rem;
 }
 
 .activity-card .card-text {
-    color: #5f5954;
+    color: var(--color-muted, #7A7A60);
     margin-bottom: 1.2rem;
     line-height: 1.8;
 }
@@ -78,14 +89,17 @@
     width: 100%;
 }
 
-@media (max-width: 991.98px) {
-    .activity-card {
-        border-radius: 16px;
-    }
+/* ── Page heading ───────────────────────────────────────── */
+.activities-page h1,
+.activities-page h2 {
+    font-family: "Cormorant Garamond", serif;
+    color: var(--color-text, #3A3A2E);
+}
 
-    .activity-image {
-        height: 240px;
-    }
+/* ── Responsive ─────────────────────────────────────────── */
+@media (max-width: 991.98px) {
+    .activity-card { border-radius: 16px; }
+    .activity-image { height: 240px; }
 }
 
 @media (max-width: 767.98px) {
@@ -93,8 +107,5 @@
         padding-top: 2rem !important;
         padding-bottom: 2rem !important;
     }
-
-    .activity-image {
-        height: 220px;
-    }
+    .activity-image { height: 220px; }
 }

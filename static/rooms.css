@@ -1,3 +1,5 @@
+/* ROOMS.CSS — aligned with the project design system */
+
 .rooms-page {
     position: relative;
 }
@@ -8,34 +10,31 @@
     margin-right: auto;
 }
 
-.section-kicker {
-    display: inline-block;
-    margin-bottom: 0.75rem;
-    color: #D87A56;
-    font-size: 0.9rem;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
+.rooms-page .section-kicker {
+    color: var(--color-primary, #8B7A3D);
 }
 
 .section-intro {
     max-width: 640px;
-    color: #7B746C;
+    color: var(--color-muted, #7A7A60);
 }
 
 .booking-note {
     max-width: 760px;
     margin-left: auto;
     margin-right: auto;
-    color: #5f5954;
+    color: var(--color-muted, #7A7A60);
     font-size: 1.05rem;
     line-height: 1.8;
 }
 
+/* ── Room card ──────────────────────────────────────────── */
 .room-card {
     border-radius: 18px;
-    background: #fff;
+    background: var(--color-surface, #fff);
+    border: 1px solid var(--color-border, #DDD8C4);
     overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
     transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
@@ -60,16 +59,20 @@
     transform: scale(1.06);
 }
 
+/* ── Card text ──────────────────────────────────────────── */
 .room-card .card-title {
+    font-family: "Cormorant Garamond", serif;
+    color: var(--color-text, #3A3A2E);
     margin-bottom: 0.9rem;
 }
 
 .room-card .card-text {
-    color: #5f5954;
+    color: var(--color-muted, #7A7A60);
     line-height: 1.8;
     margin-bottom: 1rem;
 }
 
+/* ── Features list ──────────────────────────────────────── */
 .room-features {
     display: flex;
     flex-direction: column;
@@ -77,10 +80,16 @@
 }
 
 .room-features li {
-    color: #4F4A46;
+    color: var(--color-text, #3A3A2E);
     line-height: 1.6;
 }
 
+.room-features .fas,
+.room-features .fa {
+    color: var(--color-primary, #8B7A3D);
+}
+
+/* ── Policies accordion ─────────────────────────────────── */
 .policies-section {
     max-width: 920px;
     margin-left: auto;
@@ -88,51 +97,64 @@
 }
 
 .policies-accordion .accordion-item {
-    border: 1px solid rgba(216, 122, 86, 0.12);
+    border: 1px solid var(--color-border, #DDD8C4);
     border-radius: 16px;
     overflow: hidden;
     margin-bottom: 12px;
-    background: #fff;
+    background: var(--color-surface, #fff);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
 
 .policies-accordion .accordion-button {
     font-weight: 600;
-    color: #4F4A46;
-    background: #fff;
+    color: var(--color-text, #3A3A2E);
+    background: var(--color-surface, #fff);
     padding: 1rem 1.25rem;
     box-shadow: none;
 }
 
 .policies-accordion .accordion-button:not(.collapsed) {
-    background: #f9f4eb;
-    color: #4F4A46;
+    background: var(--color-bg, #F0EDE4);
+    color: var(--color-text, #3A3A2E);
     box-shadow: none;
 }
 
 .policies-accordion .accordion-button:focus {
     box-shadow: none;
-    border-color: rgba(216, 122, 86, 0.2);
+    border-color: rgba(139, 122, 61, 0.2);
+}
+
+.policies-accordion .accordion-button::after {
+    filter: brightness(0.5) sepia(1) hue-rotate(5deg);
 }
 
 .policies-accordion .accordion-body {
-    color: #5f5954;
+    color: var(--color-muted, #7A7A60);
     line-height: 1.8;
-    background: #fff;
+    background: var(--color-surface, #fff);
 }
 
+/* ── Page heading ───────────────────────────────────────── */
+.rooms-page h1,
+.rooms-page h2 {
+    font-family: "Cormorant Garamond", serif;
+    color: var(--color-text, #3A3A2E);
+}
+
+/* text-primary used in accordion icons */
+.rooms-page .text-primary {
+    color: var(--color-primary, #8B7A3D) !important;
+}
+
+.rooms-page .text-danger {
+    color: #b04040 !important;
+}
+
+/* ── Responsive ─────────────────────────────────────────── */
 @media (max-width: 991.98px) {
-    .room-card {
-        border-radius: 16px;
-    }
-
-    .room-image {
-        height: 240px;
-    }
-
-    .policies-accordion .accordion-item {
-        border-radius: 14px;
-    }
+    .room-card { border-radius: 16px; }
+    .room-image { height: 240px; }
+    .policies-accordion .accordion-item { border-radius: 14px; }
 }
 
 @media (max-width: 767.98px) {
@@ -140,12 +162,6 @@
         padding-top: 2rem !important;
         padding-bottom: 2rem !important;
     }
-
-    .room-image {
-        height: 220px;
-    }
-
-    .booking-note {
-        font-size: 1rem;
-    }
+    .room-image { height: 220px; }
+    .booking-note { font-size: 1rem; }
 }
