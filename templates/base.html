@@ -4,18 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>{% block title %}Iris Rooms Trigona{% endblock %}</title>
+    <title>{% block title %}Terra Petra{% endblock %}</title>
 
     <meta name="description" content="{% block description %}Comfortable apartments in Trigona near Kalambaka and Meteora. Peaceful mountain stay with modern amenities.{% endblock %}">
 
     <meta name="keywords" content="Meteora accommodation, Kalambaka guesthouse, Trigona rooms, Meteora apartments, Trigona Hotel, Kalambaka lodging, Meteora stay, Trigona accommodation, Kalambaka apartments, Meteora guesthouse">
 
-    <meta name="author" content="Iris Rooms Trigona">
+    <meta name="author" content="Terra Petra Meteora">
 
     <link rel="canonical" href="{% block canonical %}https://irisroomstrigona.gr{% endblock %}">
 
-    <title>Iris Rooms Trigona</title>
-    <link rel="icon" href="{{ url_for('static', filename='logo-iris-rooms.jpg') }}" type="image/x-icon">
+    <title>Terra Petra Meteora</title>
+    <link rel="icon" href="{{ url_for('static', filename='terra-petra/logo.png') }}" type="image/x-icon">
 
     <!-- Google Fonts: Inter (body) + Cormorant Garamond (titles) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -40,17 +40,17 @@
     {
      "@context": "https://schema.org",
      "@type": "LodgingBusiness",
-     "name": "Iris Rooms Trigona",
-     "image": "https://irisroomstrigona.gr/static/hotel-trigona.jpeg",
+     "name": "Terra Petra Meteora",
+     "image": "",
      "address": {
        "@type": "PostalAddress",
-       "streetAddress": "Trigona",
+       "streetAddress": "Kommatea G.",
        "addressLocality": "Kalambaka",
        "postalCode": "42200",
        "addressCountry": "GR"
      },
-     "telephone": "+302432070119",
-     "url": "https://irisroomstrigona.gr",
+     "telephone": "+306985711351",
+     "url": "https://terrapetrameteora.com",
      "priceRange": "€"
     }
     </script>
@@ -61,7 +61,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light py-3 border-bottom">
         <div class="container">
             <a class="navbar-brand d-flex align-items-center gap-2" href="/">
-                <img src="{{ url_for('static', filename='logo-iris-rooms.jpg') }}"
+                <img src="{{ url_for('static', filename='terra-petra/logo.png') }}"
                      alt="Iris Rooms Trigona Logo"
                      style="height: 50px;">
                 <span class="fw-semibold">Iris Rooms Trigona</span>
@@ -88,8 +88,8 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/activities">
-                            <span class="lang-en">Activities</span>
-                            <span class="lang-el">Δραστηριότητες</span>
+                            <span class="lang-en">FAQ</span>
+                            <span class="lang-el">FAQ</span>
                         </a>
                     </li>
                     <li class="nav-item">
@@ -104,13 +104,13 @@
                 <div class="d-flex flex-column flex-lg-row align-items-start align-items-lg-center ms-lg-4 mt-2 mt-lg-0 small">
                     <div class="me-lg-3 mb-2 mb-lg-0">
                         <i class="fas fa-map-marker-alt text-primary me-1"></i>
-                        <span class="lang-en">Trigona, Kalambaka, 42200</span>
-                        <span class="lang-el">Τρυγόνα, Καλαμπάκα, 42200</span>
+                        <span class="lang-en">Kommatea G., Kalambaka, 42200</span>
+                        <span class="lang-el">Koμματέα Γ., Καλαμπάκα, 42200</span>
                     </div>
                     <div class="me-lg-3">
                         <i class="fas fa-phone-alt text-primary me-1"></i>
-                        <a href="tel:+302432070119" class="text-dark text-decoration-none">
-                            +30 2432070119
+                        <a href="tel:+306985711351" class="text-dark text-decoration-none">
+                            +30 6985711351
                         </a>
                     </div>
                     <!-- Language Toggle -->
@@ -139,19 +139,19 @@
             <div class="col-12 col-md-4 mb-4">
 
                 <div class="d-flex align-items-center mb-2">
-                    <img src="{{ url_for('static', filename='logo-iris-rooms.jpg') }}"
-                         alt="Iris Rooms Trigona Logo"
+                    <img src="{{ url_for('static', filename='terra-petra/logo.png') }}"
+                         alt="Terra Petra Meteora Logo"
                          style="height: 45px; margin-right: 10px;">
 
-                    <h5 class="mb-0">Iris Rooms Trigona</h5>
+                    <h5 class="mb-0">Terra Petra Meteora</h5>
                 </div>
 
                 <p class="text-muted small mb-0">
                     <span class="lang-en">
-                        Cozy apartments located in Trigona near Kalambaka and Meteora. Enjoy a peaceful stay with mountain views and modern comforts.
+                        A new hotel in Kalambaka with view of Meteora, offering comfortable rooms, modern amenities, peaceful surroundings, and beautiful mountain views.
                     </span>
                     <span class="lang-el">
-                        Άνετα διαμερίσματα στο χωριό Τρυγόνα κοντά στην Καλαμπάκα και τα Μετέωρα. Απολαύστε μια ήρεμη διαμονή με θέα στα βουνά και σύγχρονες ανέσεις.
+                        Ένα νέο ξενοδοχείο στην Καλαμπάκα με θέα τα Μετέωρα, με άνετα δωμάτια, σύγχρονες παροχές, ήρεμο περιβάλλον και όμορφη θέα στο βουνό.
                     </span>
                 </p>
 
@@ -176,12 +176,12 @@
                                 <span class="lang-el">Δωμάτια</span>
                             </a>
                         </li>
-                        <li class="mb-2">
-                            <a class="text-dark text-decoration-none" href="/activities">
-                                <span class="lang-en">Activities</span>
-                                <span class="lang-el">Δραστηριότητες</span>
-                            </a>
-                        </li>
+<!--                        <li class="mb-2">-->
+<!--                            <a class="text-dark text-decoration-none" href="/activities">-->
+<!--                                <span class="lang-en">Activities</span>-->
+<!--                                <span class="lang-el">Δραστηριότητες</span>-->
+<!--                            </a>-->
+<!--                        </li>-->
                         <li class="mb-2">
                             <a class="text-dark text-decoration-none" href="/contact">
                                 <span class="lang-en">Contact</span>
@@ -205,14 +205,14 @@
                     </h6>
                     <p class="mb-2">
                         <i class="fas fa-phone-alt text-primary me-2"></i>
-                        <a href="tel:+302432070119" class="text-dark text-decoration-none">
-                            +30 2432070119
+                        <a href="tel:+306985711351" class="text-dark text-decoration-none">
+                            +30 6985711351
                         </a>
                     </p>
                     <p class="mb-0">
                         <i class="fas fa-map-marker-alt text-primary me-2"></i>
-                        <span class="lang-en">Trigona, Kalambaka, 42200</span>
-                        <span class="lang-el">Tρυγόνα, Καλαμπάκα, 42200</span>
+                        <span class="lang-en">Kommatea G., Kalambaka, 42200 </span>
+                        <span class="lang-el">Κομματέα Γ., Καλαμπάκα, 42200</span>
                     </p>
                 </div>
 
@@ -222,8 +222,8 @@
                     <a href="https://www.airbnb.com/rooms/1139212536056596157?source_impression_id=p3_1736526255_P3GxvqSus9ncaane"
                        class="btn btn-primary btn-sm mb-2"
                        target="_blank">
-                        <span class="lang-en">View on Airbnb</span>
-                        <span class="lang-el">Δείτε στο Airbnb</span>
+                        <span class="lang-en">View on Booking</span>
+                        <span class="lang-el">Δείτε στο Booking</span>
                     </a>
 
                     <div>
@@ -237,8 +237,8 @@
             <hr>
 
             <div class="text-center small text-muted">
-                <span class="lang-en">© 2025 Iris Rooms Trigona · All rights reserved</span>
-                <span class="lang-el">© 2025 Iris Rooms Trigona · Όλα τα δικαιώματα διατηρούνται</span>
+                <span class="lang-en">© 2026 Terra Petra Meteora · All rights reserved</span>
+                <span class="lang-el">© 2026 Terra Petra Meteora · Όλα τα δικαιώματα διατηρούνται</span>
             </div>
         </div>
     </footer>

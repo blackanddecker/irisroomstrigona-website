@@ -8,20 +8,31 @@
      1. HERO — full-screen cinematic opening
      ══════════════════════════════════════════════════════ -->
 <div class="hero-section">
-    <div class="hero-bg" style="background-image: url('{{ url_for('static', filename='guesthouse/hotel_site_010.jpg') }}');"></div>
+    <div class="hero-bg" style="background-image: url('{{ url_for('static', filename='terra-petra/main.jpg') }}');"></div>
     <div class="hero-overlay"></div>
     <div class="hero-content text-center">
         <span class="hero-kicker">
-            <span class="lang-en">Since 1988</span>
-            <span class="lang-el">Από το 1988</span>
+            <span class="lang-en">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </span>
+            <span class="lang-el">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </span>
         </span>
         <h1 class="hero-title">
-            <span class="lang-en">A Warm Stay in Trigona</span>
-            <span class="lang-el">Ζεστή Φιλοξενία στην Τρυγόνα</span>
+            <span class="lang-en">Terra Petra Meteora</span>
+            <span class="lang-el">Διαμονή με Μαγευτική Θέα στα Μετέωρα</span>
         </h1>
         <p class="hero-subtitle">
-            <span class="lang-en">Traditional hospitality, peaceful mountain views, and easy access to Kalambaka and Meteora.</span>
-            <span class="lang-el">Παραδοσιακή φιλοξενία, ήρεμη θέα στα βουνά και εύκολη πρόσβαση στην Καλαμπάκα και τα Μετέωρα.</span>
+            <span class="lang-en">Wake up to peaceful Meteora scenery, warm Greek hospitality, and unforgettable views of the Meteora landscape.</span>
+            <span class="lang-el">Ξυπνήστε με μαγευτικό τοπί με  ζεστή ελληνική φιλοξενία και αξέχαστη θέα στο τοπίο των Μετεώρων.</span>
+        </p>
         </p>
         <div class="hero-cta-group mt-3">
             <a href="{{ url_for('rooms') }}" class="btn-hero-primary">
@@ -29,8 +40,8 @@
                 <span class="lang-el">Δείτε τα Δωμάτια</span>
             </a>
             <a href="{{ url_for('contact') }}" class="btn-hero-secondary">
-                <span class="lang-en">Book Now</span>
-                <span class="lang-el">Κάντε Κράτηση</span>
+                <span class="lang-en">Book Your Stay with a View of Meteora</span>
+                <span class="lang-el">Κλείστε τη Διαμονή σας με Θέα στα Μετέωρα</span>
             </a>
         </div>
         <div class="hero-scroll-hint">
@@ -49,28 +60,28 @@
         <!-- Left: image fills exactly 50vw, no container wrapping -->
         <div class="intro-halves__image-col reveal-image from-left">
             <div class="intro-halves__img">
-                <img src="{{ url_for('static', filename='guesthouse/exterior1.jpeg') }}" alt="Exterior of Iris Guesthouse" loading="lazy">
+                <img src="{{ url_for('static', filename='terra-petra/out1.jpg') }}" alt="Exterior of Terra Petra Meteora hotel" loading="lazy">
             </div>
         </div>
         <!-- Right: text occupies the other 50vw — dark/inverted colour scheme -->
-        <div class="intro-halves__text-col intro-halves__text-col--dark reveal-text from-right">
-            <span class="section-kicker">
-                <span class="lang-en">Our Story</span>
-                <span class="lang-el">Η Ιστορία μας</span>
-            </span>
-            <h2 class="split-title">
-                <span class="lang-en">Welcome to our Guesthouse</span>
-                <span class="lang-el">Καλωσήρθατε στον Ξενώνα μας</span>
-            </h2>
-            <p>
-                <span class="lang-en">Established in 1988 along the main road from Igoumenitsa to Athens, Hotel Trigona has been part of countless guests' journeys. Today, more than 35 years later, that legacy continues through Iris Rooms.</span>
-                <span class="lang-el">Ιδρύθηκε το 1988 στον κεντρικό δρόμο από την Ηγουμενίτσα προς την Αθήνα, το Hotel Trigona έχει γίνει μέρος αμέτρητων ταξιδιών. Σήμερα, πάνω από 35 χρόνια αργότερα, αυτή η κληρονομιά συνεχίζεται μέσα από το Iris Rooms.</span>
-            </p>
-            <p>
-                <span class="lang-en">What began as a humble, family-run hotel has evolved into a welcoming retreat for travellers from around the world. Traditional Greek hospitality meets modern comfort.</span>
-                <span class="lang-el">Αυτό που ξεκίνησε ως ένα μικρό οικογενειακό ξενοδοχείο εξελίχθηκε σε ένα φιλόξενο καταφύγιο για ταξιδιώτες από όλο τον κόσμο. Συνδυάζουμε την παραδοσιακή ελληνική φιλοξενία με τη σύγχρονη άνεση.</span>
-            </p>
-        </div>
+    <div class="intro-halves__text-col intro-halves__text-col--dark reveal-text from-right">
+        <span class="section-kicker">
+            <span class="lang-en">A New Stay Near Meteora</span>
+            <span class="lang-el">Μια Νέα Διαμονή κοντά στα Μετέωρα</span>
+        </span>
+        <h2 class="split-title">
+            <span class="lang-en">Welcome to Terra Petra Meteora</span>
+            <span class="lang-el">Καλωσήρθατε στο Terra Petra Meteora</span>
+        </h2>
+        <p>
+            <span class="lang-en">Terra Petra Meteora is a new hotel created for guests who want comfort, calm surroundings, and a beautiful view of the Meteora landscape.</span>
+            <span class="lang-el">Το Terra Petra Meteora είναι ένα νέο ξενοδοχείο, δημιουργημένο για επισκέπτες που αναζητούν άνεση, ηρεμία και όμορφη θέα στο τοπίο των Μετεώρων.</span>
+        </p>
+        <p>
+            <span class="lang-en">Designed with care and simplicity, our hotel offers a welcoming atmosphere, modern amenities, and easy access to Kalambaka and the iconic rocks of Meteora.</span>
+            <span class="lang-el">Σχεδιασμένο με φροντίδα και απλότητα, το ξενοδοχείο μας προσφέρει φιλόξενη ατμόσφαιρα, σύγχρονες παροχές και εύκολη πρόσβαση στην Καλαμπάκα και τους εμβληματικούς βράχους των Μετεώρων.</span>
+        </p>
+    </div>
     </section>
 
 
@@ -81,7 +92,7 @@
         <!-- Right: image fills exactly 50vw -->
         <div class="intro-halves__image-col reveal-image from-right">
             <div class="intro-halves__img">
-                <img src="{{ url_for('static', filename='room5/room5_1.jpeg') }}" alt="Cozy room interior" loading="lazy">
+                <img src="{{ url_for('static', filename='terra-petra/room1.jpg') }}" alt="Cozy room interior" loading="lazy">
             </div>
         </div>
         <!-- Left: text -->
@@ -95,8 +106,8 @@
                 <span class="lang-el">Χώροι Σχεδιασμένοι για Άνεση</span>
             </h2>
             <p>
-                <span class="lang-en">Each room is carefully arranged to feel like home — spacious, clean, and fully equipped. Wake up to mountain air, enjoy a private balcony, and rest in rooms that blend warmth with practicality.</span>
-                <span class="lang-el">Κάθε δωμάτιο είναι σχεδιασμένο να νιώθεις σαν στο σπίτι σου — ευρύχωρο, καθαρό και πλήρως εξοπλισμένο. Ξυπνήστε με αέρα βουνού, απολαύστε το ιδιωτικό μπαλκόνι και ξεκουραστείτε σε δωμάτια που συνδυάζουν ζεστασιά με λειτουργικότητα.</span>
+                <span class="lang-en">Our rooms are brand new, bright, and thoughtfully designed for a relaxing stay. Enjoy modern comfort, peaceful surroundings, and beautiful views that connect you with the unique landscape of Meteora.</span>
+                <span class="lang-el">Τα δωμάτιά μας είναι ολοκαίνουργια, φωτεινά και προσεκτικά σχεδιασμένα για μια ξεκούραστη διαμονή. Απολαύστε σύγχρονη άνεση, ήρεμο περιβάλλον και όμορφη θέα που σας συνδέει με το μοναδικό τοπίο των Μετεώρων.</span>
             </p>
             <a href="{{ url_for('rooms') }}" class="btn-outline-primary-custom mt-3">
                 <span class="lang-en">View All Rooms</span>
@@ -111,7 +122,7 @@
         <!-- Left: image fills exactly 50vw -->
         <div class="intro-halves__image-col reveal-image from-left">
             <div class="intro-halves__img">
-                <img src="{{ url_for('static', filename='guesthouse/outdoor1.jpg') }}" alt="Outdoor garden area" loading="lazy">
+                <img src="{{ url_for('static', filename='terra-petra/in1.jpg') }}" alt="Outdoor garden area" loading="lazy">
             </div>
         </div>
         <!-- Right: dark/inverted text column -->
@@ -121,90 +132,90 @@
                 <span class="lang-el">Η Εμπειρία</span>
             </span>
             <h2 class="split-title">
-                <span class="lang-en">A Peaceful Mountain Retreat</span>
-                <span class="lang-el">Ένα Ήρεμο Ορεινό Καταφύγιο</span>
+                <span class="lang-en">A Peaceful Retreat</span>
+                <span class="lang-el">Ένα Ήρεμο Καταφύγιο</span>
             </h2>
             <p>
-                <span class="lang-en">Nestled in the tranquil village of Trigona, surrounded by beautiful natural landscapes, our guesthouse is ideal for visitors seeking relaxation, outdoor adventure, or cultural exploration in the wider Kalambaka and Meteora region.</span>
-                <span class="lang-el">Βρίσκεται στο ήσυχο χωριό Τρυγόνα, περιτριγυρισμένο από όμορφο φυσικό τοπίο. Ιδανικό για επισκέπτες που αναζητούν χαλάρωση, υπαίθριες δραστηριότητες ή πολιτιστική εξερεύνηση στην ευρύτερη περιοχή Καλαμπάκας και Μετεώρων.</span>
+                <span class="lang-en">Terra Petra Meteora offers a calm and comfortable base for exploring the wider Kalambaka and Meteora region. From here, guests can enjoy nature, outdoor activities, local culture, and the unforgettable beauty of Meteora.</span>
+                <span class="lang-el">Το Terra Petra Meteora προσφέρει μια ήρεμη και άνετη βάση για να εξερευνήσετε την ευρύτερη περιοχή της Καλαμπάκας και των Μετεώρων. Από εδώ, οι επισκέπτες μπορούν να απολαύσουν τη φύση, υπαίθριες δραστηριότητες, τον τοπικό πολιτισμό και την αξέχαστη ομορφιά των Μετεώρων.</span>
             </p>
-            <a href="{{ url_for('activities') }}" class="btn-outline-primary-custom mt-3">
-                <span class="lang-en">Explore Activities</span>
-                <span class="lang-el">Δραστηριότητες</span>
-            </a>
+<!--            <a href="{{ url_for('activities') }}" class="btn-outline-primary-custom mt-3">-->
+<!--                <span class="lang-en">Explore Activities</span>-->
+<!--                <span class="lang-el">Δραστηριότητες</span>-->
+<!--            </a>-->
         </div>
     </section>
 
     <!-- ══════════════════════════════════════════════════════
          7. WHO IT'S FOR — image background cards
          ══════════════════════════════════════════════════════ -->
-    <section class="ideal-for-section">
-        <div class="container">
-            <div class="text-center mb-5">
-                <span class="section-kicker reveal-text from-bottom">
-                    <span class="lang-en">Perfect For</span>
-                    <span class="lang-el">Εξαιρετικό Για</span>
-                </span>
-                <h2 class="split-title reveal-text from-bottom">
-                    <span class="lang-en">Who It's Ideal For</span>
-                    <span class="lang-el">Για Ποιους Είναι Ιδανικό</span>
-                </h2>
-            </div>
+<!--    <section class="ideal-for-section">-->
+<!--        <div class="container">-->
+<!--            <div class="text-center mb-5">-->
+<!--                <span class="section-kicker reveal-text from-bottom">-->
+<!--                    <span class="lang-en">Perfect For</span>-->
+<!--                    <span class="lang-el">Εξαιρετικό Για</span>-->
+<!--                </span>-->
+<!--                <h2 class="split-title reveal-text from-bottom">-->
+<!--                    <span class="lang-en">Who It's Ideal For</span>-->
+<!--                    <span class="lang-el">Για Ποιους Είναι Ιδανικό</span>-->
+<!--                </h2>-->
+<!--            </div>-->
 
-            <div class="ideal-cards-row">
-                <!-- Card 1: Adventure Seekers -->
-                <div class="ideal-card stagger-card" data-delay="1"
-                     style="background-image: url('{{ url_for('static', filename='activities/climbing_2.jpg') }}');">
-                    <div class="ideal-card__overlay"></div>
-                    <div class="ideal-card__body">
-                        <div class="ideal-card__icon"><i class="fas fa-hiking"></i></div>
-                        <h3 class="ideal-card__title">
-                            <span class="lang-en">Adventure Seekers</span>
-                            <span class="lang-el">Λάτρεις της Περιπέτειας</span>
-                        </h3>
-                        <p class="ideal-card__text">
-                            <span class="lang-en">Perfect for those who love hiking, climbing, and exploring the natural beauty of Meteora and the surrounding mountains.</span>
-                            <span class="lang-el">Ιδανικό για όσους αγαπούν την πεζοπορία, την αναρρίχηση και την εξερεύνηση της φυσικής ομορφιάς των Μετεώρων.</span>
-                        </p>
-                    </div>
-                </div>
+<!--            <div class="ideal-cards-row">-->
+<!--                &lt;!&ndash; Card 1: Adventure Seekers &ndash;&gt;-->
+<!--                <div class="ideal-card stagger-card" data-delay="1"-->
+<!--                     style="background-image: url('{{ url_for('static', filename='activities/climbing_2.jpg') }}');">-->
+<!--                    <div class="ideal-card__overlay"></div>-->
+<!--                    <div class="ideal-card__body">-->
+<!--                        <div class="ideal-card__icon"><i class="fas fa-hiking"></i></div>-->
+<!--                        <h3 class="ideal-card__title">-->
+<!--                            <span class="lang-en">Adventure Seekers</span>-->
+<!--                            <span class="lang-el">Λάτρεις της Περιπέτειας</span>-->
+<!--                        </h3>-->
+<!--                        <p class="ideal-card__text">-->
+<!--                            <span class="lang-en">Perfect for those who love hiking, climbing, and exploring the natural beauty of Meteora and the surrounding mountains.</span>-->
+<!--                            <span class="lang-el">Ιδανικό για όσους αγαπούν την πεζοπορία, την αναρρίχηση και την εξερεύνηση της φυσικής ομορφιάς των Μετεώρων.</span>-->
+<!--                        </p>-->
+<!--                    </div>-->
+<!--                </div>-->
 
-                <!-- Card 2: Couples -->
-                <div class="ideal-card stagger-card" data-delay="2"
-                     style="background-image: url('{{ url_for('static', filename='guesthouse/balkon1.jpeg') }}');">
-                    <div class="ideal-card__overlay"></div>
-                    <div class="ideal-card__body">
-                        <div class="ideal-card__icon"><i class="fas fa-heart"></i></div>
-                        <h3 class="ideal-card__title">
-                            <span class="lang-en">Couples</span>
-                            <span class="lang-el">Ζευγάρια</span>
-                        </h3>
-                        <p class="ideal-card__text">
-                            <span class="lang-en">An ideal romantic escape with cozy rooms, serene views, and a peaceful atmosphere for rest and reconnection.</span>
-                            <span class="lang-el">Μια ιδανική ρομαντική απόδραση με άνετα δωμάτια, όμορφη θέα και ήρεμη ατμόσφαιρα για ξεκούραση.</span>
-                        </p>
-                    </div>
-                </div>
+<!--                &lt;!&ndash; Card 2: Couples &ndash;&gt;-->
+<!--                <div class="ideal-card stagger-card" data-delay="2"-->
+<!--                     style="background-image: url('{{ url_for('static', filename='guesthouse/balkon1.jpeg') }}');">-->
+<!--                    <div class="ideal-card__overlay"></div>-->
+<!--                    <div class="ideal-card__body">-->
+<!--                        <div class="ideal-card__icon"><i class="fas fa-heart"></i></div>-->
+<!--                        <h3 class="ideal-card__title">-->
+<!--                            <span class="lang-en">Couples</span>-->
+<!--                            <span class="lang-el">Ζευγάρια</span>-->
+<!--                        </h3>-->
+<!--                        <p class="ideal-card__text">-->
+<!--                            <span class="lang-en">An ideal romantic escape with cozy rooms, serene views, and a peaceful atmosphere for rest and reconnection.</span>-->
+<!--                            <span class="lang-el">Μια ιδανική ρομαντική απόδραση με άνετα δωμάτια, όμορφη θέα και ήρεμη ατμόσφαιρα για ξεκούραση.</span>-->
+<!--                        </p>-->
+<!--                    </div>-->
+<!--                </div>-->
 
-                <!-- Card 3: Families -->
-                <div class="ideal-card stagger-card" data-delay="3"
-                     style="background-image: url('{{ url_for('static', filename='guesthouse/Hotel007.jpg') }}');">
-                    <div class="ideal-card__overlay"></div>
-                    <div class="ideal-card__body">
-                        <div class="ideal-card__icon"><i class="fas fa-child"></i></div>
-                        <h3 class="ideal-card__title">
-                            <span class="lang-en">Families</span>
-                            <span class="lang-el">Οικογένειες</span>
-                        </h3>
-                        <p class="ideal-card__text">
-                            <span class="lang-en">A safe and family-friendly stay with spacious apartments, equipped kitchens, and comfortable outdoor spaces.</span>
-                            <span class="lang-el">Μια ασφαλής οικογενειακή διαμονή με ευρύχωρα διαμερίσματα και εξοπλισμένες κουζίνες.</span>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<!--                &lt;!&ndash; Card 3: Families &ndash;&gt;-->
+<!--                <div class="ideal-card stagger-card" data-delay="3"-->
+<!--                     style="background-image: url('{{ url_for('static', filename='guesthouse/Hotel007.jpg') }}');">-->
+<!--                    <div class="ideal-card__overlay"></div>-->
+<!--                    <div class="ideal-card__body">-->
+<!--                        <div class="ideal-card__icon"><i class="fas fa-child"></i></div>-->
+<!--                        <h3 class="ideal-card__title">-->
+<!--                            <span class="lang-en">Families</span>-->
+<!--                            <span class="lang-el">Οικογένειες</span>-->
+<!--                        </h3>-->
+<!--                        <p class="ideal-card__text">-->
+<!--                            <span class="lang-en">A safe and family-friendly stay with spacious apartments, equipped kitchens, and comfortable outdoor spaces.</span>-->
+<!--                            <span class="lang-el">Μια ασφαλής οικογενειακή διαμονή με ευρύχωρα διαμερίσματα και εξοπλισμένες κουζίνες.</span>-->
+<!--                        </p>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </section>-->
 
     <!-- ══════════════════════════════════════════════════════
          8. TESTIMONIALS — dark inverted section, quote cards
@@ -309,26 +320,26 @@
             <div class="row g-3">
                 <div class="col-md-8">
                     <div class="gallery-item tall reveal-image from-left">
-                        <img src="{{ url_for('static', filename='guesthouse/hotel_site_010.jpg') }}" alt="Guesthouse overview" loading="lazy">
+                        <img src="{{ url_for('static', filename='terra-petra/breakfast1.jpg') }}" alt="" loading="lazy">
                         <div class="gallery-label">
-                            <span class="lang-en">The Guesthouse</span>
-                            <span class="lang-el">Το Κατάλυμα</span>
+                            <span class="lang-en">Cafe</span>
+                            <span class="lang-el">Cafe</span>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4 d-flex flex-column g-3" style="gap:0.75rem;">
                     <div class="gallery-item reveal-image from-right" style="flex:1;">
-                        <img src="{{ url_for('static', filename='guesthouse/Hotel_236.jpg') }}" alt="Spring view" loading="lazy">
+                        <img src="{{ url_for('static', filename='terra-petra/loudge1.jpg') }}" alt="Lobby" loading="lazy">
                         <div class="gallery-label">
-                            <span class="lang-en">Spring 2018</span>
-                            <span class="lang-el">Άνοιξη 2018</span>
+                            <span class="lang-en">Lobby</span>
+                            <span class="lang-el">Lobby</span>
                         </div>
                     </div>
                     <div class="gallery-item reveal-image from-right" style="flex:1;">
-                        <img src="{{ url_for('static', filename='guesthouse/snow.jpg') }}" alt="Winter view" loading="lazy">
+                        <img src="{{ url_for('static', filename='terra-petra/reception.jpg') }}" alt="Winter view" loading="lazy">
                         <div class="gallery-label">
-                            <span class="lang-en">Winter 2007</span>
-                            <span class="lang-el">Χειμώνας 2007</span>
+                            <span class="lang-en">Reception</span>
+                            <span class="lang-el">Reception</span>
                         </div>
                     </div>
                 </div>
@@ -339,8 +350,8 @@
     <!-- ══════════════════════════════════════════════════════
          10. FINAL CTA BANNER — immersive booking call-to-action
          ══════════════════════════════════════════════════════ -->
-    <div class="cta-banner parallax-break parallax--dark-overlay"
-         style="background-image: url('{{ url_for('static', filename='guesthouse/Hotel_236.jpg') }}');">
+    <div class="cta-banner"
+         style="background-image: url('{{ url_for('static', filename='terra-petra/room2.jpg') }}');">
         <div class="parallax-overlay"></div>
         <div class="cta-banner-content text-center">
             <span class="section-kicker" style="color:rgba(255,255,255,0.75);">
@@ -348,12 +359,12 @@
                 <span class="lang-el">Έτοιμοι να Έρθετε;</span>
             </span>
             <h2 class="cta-banner-title">
-                <span class="lang-en">Book Your Stay in Trigona</span>
-                <span class="lang-el">Κλείστε τη Διαμονή σας στην Τρυγόνα</span>
+                <span class="lang-en">Book Your Stay with a View of Meteora</span>
+                <span class="lang-el">Κλείστε τη Διαμονή σας με Θέα στα Μετέωρα</span>
             </h2>
             <p class="cta-banner-sub">
-                <span class="lang-en">Elegant rooms, warm hospitality, and timeless comfort — just minutes from Meteora.</span>
-                <span class="lang-el">Άνετα δωμάτια, ζεστή φιλοξενία και διαχρονική άνεση — λίγα λεπτά από τα Μετέωρα.</span>
+                <span class="lang-en">Comfortable rooms, peaceful surroundings, and one of Greece’s most iconic views — just minutes from Meteora.</span>
+                <span class="lang-el">Άνετα δωμάτια, ήρεμο περιβάλλον και μία από τις πιο μαγευτικές θέες της Ελλάδας — λίγα λεπτά από τα Μετέωρα.</span>
             </p>
             <div class="hero-cta-group mt-4">
                 <a href="{{ url_for('contact') }}" class="btn-hero-primary">
