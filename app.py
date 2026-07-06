@@ -22,6 +22,18 @@ def activities():
 def faq():
     return render_template('faq.html')
 
+@app.route('/privacy')
+def privacy():
+    return render_template('privacy.html')
+
+@app.route('/cookies')
+def cookies():
+    return render_template('cookies.html')
+
+@app.route('/terms')
+def terms():
+    return render_template('terms.html')
+
 # @app.route("/sitemap.xml")
 # def sitemap():
 #     pages = []

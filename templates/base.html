@@ -136,26 +136,24 @@
             <div class="row text-center text-md-start align-items-start">
 
                 <!-- Brand -->
-            <div class="col-12 col-md-4 mb-4">
+                <div class="col-12 col-md-3 mb-4">
+                    <div class="d-flex align-items-center justify-content-center justify-content-md-start mb-2">
+                        <img src="{{ url_for('static', filename='terra-petra/logo.png') }}"
+                             alt="Terra Petra Meteora Logo"
+                             style="height: 45px; margin-right: 10px;">
 
-                <div class="d-flex align-items-center mb-2">
-                    <img src="{{ url_for('static', filename='terra-petra/logo.png') }}"
-                         alt="Terra Petra Meteora Logo"
-                         style="height: 45px; margin-right: 10px;">
+                        <h5 class="mb-0">Terra Petra Meteora</h5>
+                    </div>
 
-                    <h5 class="mb-0">Terra Petra Meteora</h5>
+                    <p class="text-muted small mb-0">
+                        <span class="lang-en">
+                            A new hotel in Kalambaka with view of Meteora, offering comfortable rooms, modern amenities, peaceful surroundings, and beautiful mountain views.
+                        </span>
+                        <span class="lang-el">
+                            Ένα νέο ξενοδοχείο στην Καλαμπάκα με θέα τα Μετέωρα, με άνετα δωμάτια, σύγχρονες παροχές, ήρεμο περιβάλλον και όμορφη θέα στο βουνό.
+                        </span>
+                    </p>
                 </div>
-
-                <p class="text-muted small mb-0">
-                    <span class="lang-en">
-                        A new hotel in Kalambaka with view of Meteora, offering comfortable rooms, modern amenities, peaceful surroundings, and beautiful mountain views.
-                    </span>
-                    <span class="lang-el">
-                        Ένα νέο ξενοδοχείο στην Καλαμπάκα με θέα τα Μετέωρα, με άνετα δωμάτια, σύγχρονες παροχές, ήρεμο περιβάλλον και όμορφη θέα στο βουνό.
-                    </span>
-                </p>
-
-            </div>
 
                 <!-- Navigation -->
                 <div class="col-12 col-md-3 mb-4">
@@ -163,31 +161,29 @@
                         <span class="lang-en">Explore Menu</span>
                         <span class="lang-el">Εξερεύνηστε</span>
                     </h6>
+
                     <ul class="list-unstyled mb-0">
                         <li class="mb-2">
                             <a class="text-dark text-decoration-none" href="/">
-                                <span class="lang-en">Guesthouse</span>
-                                <span class="lang-el">Κατάλυμα</span>
+                                <span class="lang-en">Hotel</span>
+                                <span class="lang-el">Ξενοδοχείο</span>
                             </a>
                         </li>
+
                         <li class="mb-2">
                             <a class="text-dark text-decoration-none" href="/rooms">
                                 <span class="lang-en">Rooms</span>
                                 <span class="lang-el">Δωμάτια</span>
                             </a>
                         </li>
-<!--                        <li class="mb-2">-->
-<!--                            <a class="text-dark text-decoration-none" href="/activities">-->
-<!--                                <span class="lang-en">Activities</span>-->
-<!--                                <span class="lang-el">Δραστηριότητες</span>-->
-<!--                            </a>-->
-<!--                        </li>-->
-                          <li class="mb-2">
+
+                        <li class="mb-2">
                             <a class="text-dark text-decoration-none" href="/faq">
                                 <span class="lang-en">FAQ</span>
                                 <span class="lang-el">FAQ</span>
                             </a>
                         </li>
+
                         <li class="mb-2">
                             <a class="text-dark text-decoration-none" href="/contact">
                                 <span class="lang-en">Contact</span>
@@ -197,41 +193,66 @@
                     </ul>
                 </div>
 
-                <!-- Contact -->
+                <!-- Legal -->
                 <div class="col-12 col-md-3 mb-4">
                     <h6 class="fw-bold mb-3">
-                        <span class="lang-en">Contact</span>
-                        <span class="lang-el">Επικοινωνία</span>
+                        <span class="lang-en">Legal</span>
+                        <span class="lang-el">Πολιτικές</span>
                     </h6>
+
+                    <ul class="list-unstyled mb-0">
+                        <li class="mb-2">
+                            <a class="text-dark text-decoration-none" href="{{ url_for('privacy') }}">
+                                <span class="lang-en">Privacy Policy</span>
+                                <span class="lang-el">Πολιτική Απορρήτου</span>
+                            </a>
+                        </li>
+
+                        <li class="mb-2">
+                            <a class="text-dark text-decoration-none" href="{{ url_for('cookies') }}">
+                                <span class="lang-en">Cookie Notice</span>
+                                <span class="lang-el">Πολιτική Cookies</span>
+                            </a>
+                        </li>
+
+                        <li class="mb-2">
+                            <a class="text-dark text-decoration-none" href="{{ url_for('terms') }}">
+                                <span class="lang-en">Terms & Conditions</span>
+                                <span class="lang-el">Όροι & Προϋποθέσεις</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Contact & Booking -->
+                <div class="col-12 col-md-3 mb-4">
+                    <h6 class="fw-bold mb-3">
+                        <span class="lang-en">Contact & Booking</span>
+                        <span class="lang-el">Επικοινωνία & Κράτηση</span>
+                    </h6>
+
                     <p class="mb-2">
                         <i class="fas fa-phone-alt text-primary me-2"></i>
                         <a href="tel:+306985711351" class="text-dark text-decoration-none">
                             +30 6985711351
                         </a>
                     </p>
-                    <p class="mb-0">
+
+                    <p class="mb-3">
                         <i class="fas fa-map-marker-alt text-primary me-2"></i>
-                        <span class="lang-en">Kommatea G., Kalambaka, 42200 </span>
+                        <span class="lang-en">Kommatea G., Kalambaka, 42200</span>
                         <span class="lang-el">Κομματέα Γ., Καλαμπάκα, 42200</span>
                     </p>
-                </div>
-
-                <!-- Airbnb -->
-                <div class="col-md-2 mb-4">
 
                     <a href="https://www.airbnb.com/rooms/1139212536056596157?source_impression_id=p3_1736526255_P3GxvqSus9ncaane"
-                       class="btn btn-primary btn-sm mb-2"
+                       class="btn btn-primary btn-sm mb-3"
                        target="_blank">
                         <span class="lang-en">View on Booking</span>
                         <span class="lang-el">Δείτε στο Booking</span>
                     </a>
 
-                    <div>
-                        <img src="{{ url_for('static', filename='airbnb-superhost.png') }}"
-                             alt="Airbnb Superhost"
-                             style="height:140px;">
-                    </div>
                 </div>
+
             </div>
 
             <hr>
