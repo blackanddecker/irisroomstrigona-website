@@ -10,3 +10,7 @@ The deployment is done using CICD on branch `heroku-deployment`.
 # Execution
 
     python app.py
+
+## Choose deployment 
+
+    heroku git:remote -a terra-petra-meteora
