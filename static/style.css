@@ -1,29 +1,56 @@
+/* ── TERRA PETRA METEORA THEME ───────────────────────────── */
 :root {
-    /* Base */
-    --color-bg: #E9ECE8; #F0EDE4
+    /* Base — warm Greek mountain stone */
+    --color-bg: #F0EDE4;
     --color-surface: #FFFFFF;
+    --color-surface-soft: #F8F6F0;
+
+    /* Meteora rocks — black, grey, white */
+    --color-rock-black: #111111;
+    --color-rock-dark: #242624;
+    --color-rock-grey: #6D716D;
+    --color-rock-light: #D9D9D4;
+    --color-rock-white: #FAFAF7;
 
     /* Text */
-    --color-text: #2A2E2B;        /* slightly cooler dark */
-    --color-muted: #6B716C;
+    --color-text: #242624;
+    --color-muted: #6D6B63;
 
-    /* Primary (forest tone adapted to cool bg) */
-    --color-primary: #3A463F;
-    --color-primary-hover: #2C3530;
+    /* Primary — dark Meteora rock */
+    --color-primary: #242624;
+    --color-primary-hover: #111111;
 
-    /* Accent (refined wood/bronze, slightly desaturated) */
-    --color-accent: #A3926B;
-    --color-accent-hover: #8A7B59;
+    /* Accent — Greek earth / mountain brown */
+    --color-accent: #9A7B4F;
+    --color-accent-hover: #7C603A;
+
+    /* Secondary natural olive-brown */
+    --color-earth: #5F6048;
+    --color-earth-hover: #4A4B38;
 
     /* UI */
-    --color-border: #D6DBD5;
+    --color-border: #D8D4C8;
 
-    /* Overlays (important for your image sections) */
-    --color-overlay-dark: rgba(20, 30, 25, 0.45);
-    --color-overlay-light: rgba(255, 255, 255, 0.6);
+    /* Footer */
+    --color-footer-bg: #FFFFFF;
+    --color-footer-text: #242624;
+    --color-footer-muted: #6D6B63;
+    --color-footer-border: #E7E2D6;
 
-    --shadow-sm: 0 4px 15px rgba(0, 0, 0, 0.08);
-    --shadow-md: 0 8px 25px rgba(0, 0, 0, 0.12);
+    /* Navbar states */
+    --color-nav-top-bg: #FFFFFF;
+    --color-nav-top-text: #242624;
+    --color-nav-scrolled-bg: #111111;
+    --color-nav-scrolled-text: #FFFFFF;
+
+    /* Overlays */
+    --color-overlay-dark: rgba(17, 17, 17, 0.55);
+    --color-overlay-rock: rgba(17, 17, 17, 0.66);
+    --color-overlay-light: rgba(255, 255, 255, 0.68);
+
+    /* Effects */
+    --shadow-sm: 0 4px 15px rgba(17, 17, 17, 0.08);
+    --shadow-md: 0 8px 25px rgba(17, 17, 17, 0.14);
 
     --radius-sm: 10px;
     --radius-md: 15px;
@@ -34,17 +61,30 @@
 }
 
 /* ── GLOBAL TYPOGRAPHY ───────────────────────────────────── */
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: "Inter", sans-serif;
     font-size: 1rem;
     line-height: 1.7;
-    color: var(--color-text, #2A2E2B);
-    background-color: var(--color-bg, #E9ECE8);
+    color: var(--color-text);
+    background-color: var(--color-bg);
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 
-h1, h2, h3, h4, h5, h6,
+/* Serif titles */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
 .hero-title,
 .split-title,
 .cta-banner-title,
@@ -53,9 +93,10 @@ h1, h2, h3, h4, h5, h6,
     font-weight: 600;
     letter-spacing: 0.01em;
     line-height: 1.15;
+    color: var(--color-text);
 }
 
-/* Inter for UI labels, kickers, buttons — keep them sharp */
+/* UI labels */
 .hero-kicker,
 .section-kicker,
 .btn-hero-primary,
@@ -82,20 +123,13 @@ body {
     overflow-x: hidden;
 }
 
-/* Respect reduced motion */
-@media (prefers-reduced-motion: reduce) {
-    *, *::before, *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-    }
-    html { scroll-behavior: auto; }
-}
-
-h1, h2, h3, h4, h5, h6 {
-    color: var(--color-text);
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     margin-bottom: 1rem;
-    font-weight: 700;
 }
 
 p {
@@ -107,7 +141,7 @@ p {
 a {
     color: var(--color-primary);
     text-decoration: none;
-    transition: color var(--transition);
+    transition: color var(--transition), padding-left var(--transition);
 }
 
 a:hover {
@@ -119,21 +153,40 @@ a:hover {
     color: var(--color-text);
 }
 
-/* Navbar */
+/* ── ACCESSIBILITY / REDUCED MOTION ──────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+/* ── NAVBAR: WHITE ALWAYS ───────────────────────────────── */
 .navbar {
-    background-color: var(--color-bg) !important;
-    border-bottom: 1px solid var(--color-border);
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    background-color: var(--color-nav-top-bg) !important;
+    border-bottom: 1px solid var(--color-footer-border);
+    transition:
+        background-color var(--transition),
+        box-shadow var(--transition),
+        border-color var(--transition);
     position: sticky;
     top: 0;
     z-index: 1000;
 }
 
 .navbar.scrolled {
-    background-color: rgba(240, 237, 228, 0.92) !important;
+    background-color: rgba(36, 38, 36, 0.92) !important; /* rocky dark grey */
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+    border-bottom-color: rgba(255, 255, 255, 0.12);
+    box-shadow: 0 2px 20px rgba(17, 17, 17, 0.18);
 }
 
 .navbar-brand span {
@@ -141,23 +194,47 @@ a:hover {
     font-weight: 600;
 }
 
+/* ── Default navbar colors ─────────────────────────────── */
+.navbar .navbar-brand,
+.navbar .navbar-brand span,
+.navbar .nav-link,
+.navbar .contact-info,
+.navbar .contact-info a,
+.navbar .navbar-contact-info,
+.navbar .navbar-contact-info span,
+.navbar .navbar-contact-info a {
+    color: var(--color-nav-top-text) !important;
+}
+
+/* ── Scrolled navbar colors ────────────────────────────── */
+.navbar.scrolled .navbar-brand,
+.navbar.scrolled .navbar-brand span,
+.navbar.scrolled .nav-link,
+.navbar.scrolled .contact-info,
+.navbar.scrolled .contact-info a,
+.navbar.scrolled .navbar-contact-info,
+.navbar.scrolled .navbar-contact-info span,
+.navbar.scrolled .navbar-contact-info a {
+    color: var(--color-nav-scrolled-text) !important;
+}
+
+/* ── Nav links ─────────────────────────────────────────── */
 .navbar .nav-link {
-    color: var(--color-text);
     font-weight: 500;
     position: relative;
     padding-bottom: 6px;
-    transition: color 0.3s ease;
+    transition: color var(--transition);
 }
 
 .navbar .nav-link::after {
-    content: '';
+    content: "";
     position: absolute;
     bottom: 0;
     left: 50%;
     width: 0;
     height: 2px;
-    background: var(--color-primary);
-    transition: width 0.3s ease, left 0.3s ease;
+    background: var(--color-accent);
+    transition: width var(--transition), left var(--transition);
     border-radius: 2px;
 }
 
@@ -167,44 +244,127 @@ a:hover {
     left: 0;
 }
 
-.navbar .nav-link:hover {
-    color: var(--color-primary);
+.navbar .nav-link:hover,
+.navbar .nav-link.active,
+.navbar.scrolled .nav-link:hover,
+.navbar.scrolled .nav-link.active {
+    color: var(--color-accent) !important;
 }
 
 .navbar .nav-link.active {
-    color: var(--color-primary);
     font-weight: 600;
 }
 
+/* ── Contact info inside navbar ────────────────────────── */
+.navbar-contact-info,
+.navbar-contact-info span,
+.navbar-contact-info a,
+.navbar-contact-info i,
+.navbar-contact-info .btn,
+.contact-info,
+.contact-info span,
+.contact-info a,
+.contact-info i,
+.contact-info .btn {
+    transition:
+        color var(--transition),
+        border-color var(--transition),
+        background-color var(--transition);
+}
+
+/* Icons normal + scrolled */
 .navbar .fa-map-marker-alt,
-.navbar .fa-phone-alt {
-    color: var(--color-primary);
+.navbar .fa-phone-alt,
+.navbar .navbar-contact-info i,
+.navbar .contact-info i {
+    color: var(--color-accent) !important;
     margin-right: 5px;
 }
 
-.contact-info {
-    color: var(--color-text);
+.navbar.scrolled .fa-map-marker-alt,
+.navbar.scrolled .fa-phone-alt,
+.navbar.scrolled .navbar-contact-info i,
+.navbar.scrolled .contact-info i {
+    color: var(--color-accent) !important;
 }
 
-.contact-info a {
-    color: inherit;
+/* Phone link overrides Bootstrap text-dark */
+.navbar .navbar-contact-info a.text-dark,
+.navbar .contact-info a.text-dark {
+    color: var(--color-nav-top-text) !important;
 }
 
-/* Superhost badge */
+.navbar.scrolled .navbar-contact-info a.text-dark,
+.navbar.scrolled .contact-info a.text-dark {
+    color: var(--color-nav-scrolled-text) !important;
+}
+
+/* ── Language button ───────────────────────────────────── */
+.navbar .lang-toggle-btn {
+    color: var(--color-nav-top-text) !important;
+    border-color: var(--color-border) !important;
+    background-color: transparent;
+    transition:
+        color var(--transition),
+        border-color var(--transition),
+        background-color var(--transition);
+}
+
+.navbar .lang-toggle-btn:hover {
+    color: #fff !important;
+    background-color: var(--color-primary);
+    border-color: var(--color-primary) !important;
+}
+
+.navbar.scrolled .lang-toggle-btn {
+    color: var(--color-nav-scrolled-text) !important;
+    border-color: rgba(255, 255, 255, 0.55) !important;
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+.navbar.scrolled .lang-toggle-btn:hover {
+    color: var(--color-primary) !important;
+    background-color: #ffffff;
+    border-color: #ffffff !important;
+}
+
+/* ── Logo ──────────────────────────────────────────────── */
+.navbar.scrolled .navbar-brand img {
+    filter: none;
+}
+
+/* ── Bootstrap mobile toggler ──────────────────────────── */
+.navbar-toggler {
+    border-color: var(--color-border);
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+.navbar.scrolled .navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.35);
+}
+
+.navbar.scrolled .navbar-toggler-icon {
+    filter: invert(1);
+}
+
+/* ── SUPERHOST BADGE ─────────────────────────────────────── */
 .superhost-pill {
     display: inline-flex;
     align-items: center;
     gap: 6px;
     padding: 6px 12px;
     border-radius: var(--radius-pill);
-    background-color: rgba(216, 122, 86, 0.12);
-    color: var(--color-primary);
+    background-color: rgba(154, 123, 79, 0.12);
+    color: var(--color-accent);
     font-size: 0.85rem;
     font-weight: 600;
-    border: 1px solid rgba(216, 122, 86, 0.2);
+    border: 1px solid rgba(154, 123, 79, 0.22);
 }
 
-/* Cards */
+/* ── CARDS ───────────────────────────────────────────────── */
 .card {
     background-color: var(--color-surface);
     border: none;
@@ -225,7 +385,7 @@ a:hover {
     margin-bottom: 1rem;
 }
 
-/* Buttons */
+/* ── BUTTONS ─────────────────────────────────────────────── */
 .btn-primary {
     background-color: var(--color-primary);
     border-color: var(--color-primary);
@@ -235,9 +395,11 @@ a:hover {
     transition: all var(--transition);
 }
 
-.btn-primary:hover {
-    background-color: var(--color-primary-hover);
-    border-color: var(--color-primary-hover);
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: var(--color-accent);
+    border-color: var(--color-accent);
+    color: #fff;
     transform: translateY(-2px);
 }
 
@@ -249,18 +411,26 @@ a:hover {
     transition: all var(--transition);
 }
 
-.btn-outline-primary:hover {
+.btn-outline-primary:hover,
+.btn-outline-primary:focus {
     background-color: var(--color-primary);
+    border-color: var(--color-primary);
     color: #fff;
     transform: translateY(-2px);
 }
 
-/* Contact details */
+/* Custom CTA buttons */
+.btn-hero-primary,
+.btn-outline-primary-custom {
+    transition: all var(--transition);
+}
+
+/* ── CONTACT DETAILS ─────────────────────────────────────── */
 .contact-details p {
     font-size: 1.05rem;
     margin-bottom: 12px;
     padding-left: 16px;
-    border-left: 4px solid var(--color-primary);
+    border-left: 4px solid var(--color-accent);
     color: var(--color-text);
     transition: padding-left var(--transition);
 }
@@ -269,7 +439,7 @@ a:hover {
     padding-left: 22px;
 }
 
-/* Embedded map */
+/* ── EMBEDDED MAP ────────────────────────────────────────── */
 iframe {
     border-radius: var(--radius-md);
     box-shadow: var(--shadow-sm);
@@ -280,16 +450,21 @@ iframe:hover {
     transform: scale(1.01);
 }
 
-/* Footer */
+/* ── FOOTER: WHITE ───────────────────────────────────────── */
 footer {
-    background-color: #e9e5da;
-    border-top: 1px solid var(--color-border);
+    background-color: var(--color-footer-bg) !important;
+    color: var(--color-footer-text);
+    border-top: 1px solid var(--color-footer-border) !important;
+}
+
+footer h5,
+footer h6 {
+    color: var(--color-rock-black);
 }
 
 footer h6 {
     font-size: 0.9rem;
     letter-spacing: 0.5px;
-    color: var(--color-text);
 }
 
 footer p,
@@ -298,82 +473,142 @@ footer a {
     font-size: 0.95rem;
 }
 
+footer p,
+footer .text-muted {
+    color: var(--color-footer-muted) !important;
+}
+
 footer a {
-    transition: color 0.3s ease, padding-left 0.3s ease;
+    color: var(--color-footer-text) !important;
+    text-decoration: none;
+    transition: color var(--transition), padding-left var(--transition);
 }
 
 footer a:hover {
-    color: var(--color-primary);
+    color: var(--color-accent) !important;
     text-decoration: none;
     padding-left: 4px;
 }
 
-/* Page-load fade-in */
+footer hr {
+    border-color: var(--color-footer-border);
+    opacity: 1;
+}
+
+footer .btn-primary {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+    color: #fff !important;
+}
+
+footer .btn-primary:hover {
+    background-color: var(--color-accent);
+    border-color: var(--color-accent);
+    color: #fff !important;
+    padding-left: 20px;
+}
+
+/* ── PAGE LOAD FADE-IN ───────────────────────────────────── */
 .page-fade-in {
     animation: pageFadeIn 0.5s ease-out;
 }
 
 @keyframes pageFadeIn {
-    from { opacity: 0; transform: translateY(12px); }
-    to   { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-/* Scroll reveal utility (shared across pages) */
+/* ── SCROLL REVEAL UTILITY ───────────────────────────────── */
 .scroll-reveal {
     opacity: 0;
     transform: translateY(30px);
-    transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
-                transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    transition:
+        opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
 }
+
 .scroll-reveal.visible {
     opacity: 1;
     transform: translateY(0);
 }
-.scroll-reveal[data-delay="1"] { transition-delay: 0.1s; }
-.scroll-reveal[data-delay="2"] { transition-delay: 0.2s; }
-.scroll-reveal[data-delay="3"] { transition-delay: 0.3s; }
-.scroll-reveal[data-delay="4"] { transition-delay: 0.4s; }
 
+.scroll-reveal[data-delay="1"] {
+    transition-delay: 0.1s;
+}
 
-/* Bootstrap helpers override */
+.scroll-reveal[data-delay="2"] {
+    transition-delay: 0.2s;
+}
+
+.scroll-reveal[data-delay="3"] {
+    transition-delay: 0.3s;
+}
+
+.scroll-reveal[data-delay="4"] {
+    transition-delay: 0.4s;
+}
+
+/* ── BOOTSTRAP HELPER OVERRIDES ─────────────────────────── */
 .bg-primary {
     background-color: var(--color-primary) !important;
 }
 
 .text-primary {
-    color: var(--color-primary) !important;
+    color: var(--color-accent) !important;
 }
 
 .bg-light {
-    background-color: #E9ECE8 !important;
+    background-color: var(--color-surface) !important;
 }
 
 .shadow-sm {
     box-shadow: var(--shadow-sm) !important;
 }
 
-/* ── Language Toggle ── */
-/* Default: Greek is shown, English hidden */
-html[data-lang="el"] .lang-en { display: none !important; }
-html[data-lang="el"] .lang-el { display: inline !important; }
-html[data-lang="en"] .lang-el { display: none !important; }
-html[data-lang="en"] .lang-en { display: inline !important; }
+/* ── LANGUAGE TOGGLE ─────────────────────────────────────── */
+/* Default language handling */
+html[data-lang="el"] .lang-en {
+    display: none !important;
+}
 
-/* Ensure both are hidden until lang is set (prevents flash) */
-.lang-en, .lang-el { display: none; }
+html[data-lang="el"] .lang-el {
+    display: inline !important;
+}
+
+html[data-lang="en"] .lang-el {
+    display: none !important;
+}
+
+html[data-lang="en"] .lang-en {
+    display: inline !important;
+}
+
+/* Prevent language flash before data-lang is set */
+.lang-en,
+.lang-el {
+    display: none;
+}
 
 .lang-toggle-btn {
     font-size: 0.78rem;
     padding: 4px 10px;
-    border-radius: 999px;
+    border-radius: var(--radius-pill);
     white-space: nowrap;
 }
+
 .lang-toggle-wrap {
     display: flex;
     align-items: center;
 }
 
-/* Responsive */
+/* ── RESPONSIVE ──────────────────────────────────────────── */
 @media (max-width: 991.98px) {
     .navbar-brand img {
         height: 42px !important;
@@ -385,11 +620,24 @@ html[data-lang="en"] .lang-en { display: inline !important; }
 
     .navbar-collapse {
         margin-top: 12px;
+        padding: 1rem;
+        border-radius: var(--radius-md);
+        background-color: var(--color-surface);
+        box-shadow: var(--shadow-sm);
+    }
+
+    .navbar.scrolled .navbar-collapse {
+        background-color: var(--color-nav-scrolled-bg);
+        box-shadow: none;
     }
 
     .contact-info {
         color: var(--color-primary);
         font-weight: 500;
+    }
+
+    .navbar.scrolled .contact-info {
+        color: var(--color-nav-scrolled-text);
     }
 
     .superhost-pill {
