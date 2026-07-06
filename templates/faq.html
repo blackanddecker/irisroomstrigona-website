@@ -5,743 +5,536 @@
 {% block content %}
 
 <style>
-  .faq-hero {
-    min-height: 360px;
-    border-radius: 28px;
-    overflow: hidden;
-    position: relative;
-    background-image: url('{{ url_for('static', filename='terra-petra/room2.jpg') }}');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+  .faq-page {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+  .section-heading {
+    max-width: 760px;
+    margin-left: auto;
+    margin-right: auto;
+    }
+
+    .section-intro {
+        max-width: 640px;
+        color: var(--color-muted);
+        line-height: 1.8;
+    }
+
+    .faq-image-card {
+        min-height: 220px;
+        border-radius: var(--radius-lg, 20px);
+        overflow: hidden;
+        position: relative;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        box-shadow: var(--shadow-sm);
+    }
+
+    .faq-image-card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+            to top,
+            rgba(17, 17, 17, 0.68),
+            rgba(17, 17, 17, 0.12)
+        );
+    }
+
+    .faq-image-card-content {
+        position: absolute;
+        left: 1.25rem;
+        right: 1.25rem;
+        bottom: 1.25rem;
+        z-index: 2;
+        color: #fff;
+    }
+
+    .faq-image-card-content h3,
+    .faq-image-card-content p {
+        color: #fff;
+    }
+
+    .faq-image-card-content p {
+        margin-bottom: 0;
+        opacity: 0.9;
+    }
+
+    @media (max-width: 767.98px) {
+        .faq-image-card {
+            min-height: 190px;
+            border-radius: var(--radius-md, 15px);
+        }
+    }
+  .faq-amenities-card {
+    background: var(--color-surface, #fff);
+    border: 1px solid var(--color-border, #D8D4C8);
+    border-radius: var(--radius-lg, 20px);
+    box-shadow: var(--shadow-sm);
+    padding: 1.75rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .faq-amenities-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.85rem 1.5rem;
+    margin-top: 1rem;
+  }
+
+  .faq-amenity {
     display: flex;
     align-items: center;
-    justify-content: center;
-    margin-bottom: 3rem;
+    gap: 0.65rem;
+    color: var(--color-text);
   }
 
-  .faq-hero::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-      135deg,
-      rgba(0, 0, 0, 0.58),
-      rgba(0, 0, 0, 0.25)
-    );
+  .faq-amenity i {
+    color: var(--color-accent);
+    width: 18px;
+    text-align: center;
   }
 
-  .faq-hero-content {
-    position: relative;
-    z-index: 2;
-    max-width: 820px;
-    padding: 2rem;
-    color: #fff;
+  .policies-section {
+    max-width: 920px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
-  .faq-hero-content h1,
-  .faq-hero-content p {
-    color: #fff;
+  .policies-accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
   }
 
-  .faq-intro-img {
-    width: 100%;
-    height: 100%;
-    min-height: 280px;
-    object-fit: cover;
-  }
-
-  .faq-image-card {
-    border-radius: 22px;
+  .policies-accordion .accordion-item {
+    border: 1px solid var(--color-border, #D8D4C8);
+    border-radius: var(--radius-md, 15px);
     overflow: hidden;
-    position: relative;
-    min-height: 230px;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+    background: var(--color-surface, #fff);
+    box-shadow: var(--shadow-sm);
   }
 
-  .faq-image-card::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-      to top,
-      rgba(0, 0, 0, 0.62),
-      rgba(0, 0, 0, 0.12)
-    );
+  .policies-accordion .accordion-button {
+    padding: 1.05rem 1.25rem;
+    font-weight: 600;
+    color: var(--color-text);
+    background: var(--color-surface, #fff);
+    box-shadow: none;
+    border-radius: var(--radius-md, 15px);
   }
 
-  .faq-image-card-content {
-    position: absolute;
-    left: 1.25rem;
-    right: 1.25rem;
-    bottom: 1.25rem;
-    color: #fff;
-    z-index: 2;
+  .policies-accordion .accordion-button:not(.collapsed) {
+    color: var(--color-text);
+    background: var(--color-surface-soft, #F8F6F0);
+    box-shadow: none;
   }
 
-  .faq-image-card-content h3,
-  .faq-image-card-content p {
-    color: #fff;
+  .policies-accordion .accordion-button:focus {
+    box-shadow: none;
+    border-color: var(--color-accent);
   }
 
-  .faq-image-card-content p {
-    margin-bottom: 0;
-    opacity: 0.92;
+  .policies-accordion .accordion-button i {
+    color: var(--color-accent) !important;
   }
 
-  .faq-card-image-side {
-    min-height: 100%;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+  .policies-accordion .accordion-button::after {
+    filter: brightness(0.45) sepia(1) hue-rotate(5deg);
+  }
+
+  .policies-accordion .accordion-body {
+    padding: 1.2rem 1.35rem;
+    color: var(--color-muted);
+    line-height: 1.8;
+    background: var(--color-surface, #fff);
+    border-top: 1px solid var(--color-border, #D8D4C8);
   }
 
   @media (max-width: 767.98px) {
-    .faq-hero {
-      min-height: 300px;
-      border-radius: 20px;
+    .faq-header {
+      padding: 2.25rem 1.25rem;
+      border-radius: var(--radius-md, 15px);
     }
 
-    .faq-intro-img {
-      min-height: 220px;
+    .faq-amenities-list {
+      grid-template-columns: 1fr;
+    }
+
+    .faq-amenities-card {
+      padding: 1.35rem;
+      border-radius: var(--radius-md, 15px);
     }
   }
 </style>
 
+{% macro faq_item(id, icon, en_title, el_title, en_body, el_body) %}
+<div class="accordion-item">
+  <h2 class="accordion-header" id="heading{{ id }}">
+    <button class="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapse{{ id }}"
+            aria-expanded="false"
+            aria-controls="collapse{{ id }}">
+      <i class="{{ icon }} me-2"></i>
+      <span class="lang-en">{{ en_title }}</span>
+      <span class="lang-el">{{ el_title }}</span>
+    </button>
+  </h2>
+
+  <div id="collapse{{ id }}"
+       class="accordion-collapse collapse"
+       aria-labelledby="heading{{ id }}"
+       data-bs-parent="#policiesAccordion">
+    <div class="accordion-body">
+      <span class="lang-en">{{ en_body | safe }}</span>
+      <span class="lang-el">{{ el_body | safe }}</span>
+    </div>
+  </div>
+</div>
+{% endmacro %}
+
 <section class="container py-5">
-  <div class="row justify-content-center">
-    <div class="col-lg-10">
+  <div class="faq-page">
 
-      <!-- FAQ Hero Image -->
-      <header class="faq-hero text-center scroll-reveal">
-        <div class="faq-hero-content">
-          <span class="section-kicker">
-            <span class="lang-el">Terra Petra Meteora</span>
-            <span class="lang-en">Terra Petra Meteora</span>
-          </span>
+    <div class="section-heading text-center mb-5 scroll-reveal">
+        <h1 class="display-5 mb-3">
+            <span class="lang-en">Frequently Asked Questions</span>
+            <span class="lang-el">Συχνές Ερωτήσεις</span>
+        </h1>
 
-          <h1 class="display-5">
-            <span class="lang-el">Ερωτήσεις &amp; Απαντήσεις</span>
-            <span class="lang-en">FAQ</span>
-          </h1>
+        <p class="section-intro mx-auto">
+            <span class="lang-en">Useful information about your stay at Terra Petra Meteora — including check-in, parking, Wi-Fi, amenities, pets, accessibility, and house rules.</span>
+            <span class="lang-el">Χρήσιμες πληροφορίες για τη διαμονή σας στο Terra Petra Meteora — σχετικά με το check-in, το πάρκινγκ, το Wi-Fi, τις παροχές, τα κατοικίδια, την προσβασιμότητα και τους κανόνες διαμονής.</span>
+        </p>
+    </div>
 
-          <p class="lead mt-2 mb-0">
-            <span class="lang-el">Βρείτε απαντήσεις στις πιο συνηθισμένες απορίες για τη διαμονή σας, τις παροχές και τις πολιτικές του καταλύματος.</span>
-            <span class="lang-en">Find answers to the most common questions about your stay, amenities, and property policies.</span>
-          </p>
+    <div class="faq-amenities-card scroll-reveal">
+      <h3 class="h5 mb-2">
+        <span class="lang-en">Most Popular Amenities</span>
+        <span class="lang-el">Οι πιο δημοφιλείς παροχές</span>
+      </h3>
+
+      <div class="faq-amenities-list">
+        <div class="faq-amenity">
+          <i class="fas fa-smoking-ban"></i>
+          <span class="lang-en">Non-smoking rooms</span>
+          <span class="lang-el">Δωμάτια για μη καπνίζοντες</span>
         </div>
-      </header>
 
-      <!-- Popular Amenities -->
-      <div class="card mb-4 border-0 shadow-sm scroll-reveal">
-        <div class="card-body p-4">
-          <h3 class="h5 mb-3">
-            <span class="lang-el">Οι πιο δημοφιλείς παροχές</span>
-            <span class="lang-en">Most Popular Amenities</span>
-          </h3>
+        <div class="faq-amenity">
+          <i class="fas fa-parking"></i>
+          <span class="lang-en">Free private parking</span>
+          <span class="lang-el">Δωρεάν ιδιωτικό πάρκινγκ</span>
+        </div>
 
-          <div class="row g-3">
-            <div class="col-md-6">
-              <p class="mb-2"><i class="fas fa-smoking-ban text-primary me-2"></i>
-                <span class="lang-el">Δωμάτια για μη καπνίζοντες</span>
-                <span class="lang-en">Non-smoking rooms</span>
-              </p>
-              <p class="mb-2"><i class="fas fa-parking text-primary me-2"></i>
-                <span class="lang-el">Δωρεάν ιδιωτικός χώρος στάθμευσης</span>
-                <span class="lang-en">Free private parking</span>
-              </p>
-              <p class="mb-2"><i class="fas fa-wheelchair text-primary me-2"></i>
-                <span class="lang-el">Δωμάτια / εγκαταστάσεις για ΑμεΑ</span>
-                <span class="lang-en">Facilities for disabled guests</span>
-              </p>
-            </div>
+        <div class="faq-amenity">
+          <i class="fas fa-wheelchair"></i>
+          <span class="lang-en">Facilities for disabled guests</span>
+          <span class="lang-el">Εγκαταστάσεις για ΑμεΑ</span>
+        </div>
 
-            <div class="col-md-6">
-              <p class="mb-2"><i class="fas fa-users text-primary me-2"></i>
-                <span class="lang-el">Οικογενειακά δωμάτια</span>
-                <span class="lang-en">Family rooms</span>
-              </p>
-              <p class="mb-2"><i class="fas fa-wifi text-primary me-2"></i>
-                <span class="lang-el">Δωρεάν Wi-Fi σε όλους τους χώρους</span>
-                <span class="lang-en">Free Wi-Fi throughout the property</span>
-              </p>
-              <p class="mb-2"><i class="fas fa-glass-martini-alt text-primary me-2"></i>
-                <span class="lang-el">Μπαρ</span>
-                <span class="lang-en">Bar</span>
-              </p>
-            </div>
-          </div>
+        <div class="faq-amenity">
+          <i class="fas fa-users"></i>
+          <span class="lang-en">Family rooms</span>
+          <span class="lang-el">Οικογενειακά δωμάτια</span>
+        </div>
 
-          <p class="small text-muted mt-3 mb-0">
-            <span class="lang-el">Το κατάλυμα είναι επίσης LGBTQ+ friendly.</span>
-            <span class="lang-en">The property is also LGBTQ+ friendly.</span>
-          </p>
+        <div class="faq-amenity">
+          <i class="fas fa-wifi"></i>
+          <span class="lang-en">Free Wi-Fi throughout the property</span>
+          <span class="lang-el">Δωρεάν Wi-Fi σε όλους τους χώρους</span>
+        </div>
+
+        <div class="faq-amenity">
+          <i class="fas fa-glass-martini-alt"></i>
+          <span class="lang-en">Bar</span>
+          <span class="lang-el">Μπαρ</span>
         </div>
       </div>
+
+      <p class="small text-muted mt-3 mb-0">
+        <span class="lang-en">The property is also LGBTQ+ friendly.</span>
+        <span class="lang-el">Το κατάλυμα είναι επίσης LGBTQ+ friendly.</span>
+      </p>
+    </div>
 
       <!-- FAQ Visual Highlights -->
-      <div class="row g-4 mb-4">
+    <div class="row g-4 mb-5">
         <div class="col-md-4 scroll-reveal">
-          <div class="faq-image-card" style="background-image: url('{{ url_for('static', filename='terra-petra/room2.jpg') }}');">
-            <div class="faq-image-card-content">
-              <h3 class="h6 mb-1">
-                <span class="lang-el">Άνετα Δωμάτια</span>
-                <span class="lang-en">Comfortable Rooms</span>
-              </h3>
-              <p class="small">
-                <span class="lang-el">Σύγχρονες παροχές και ήρεμη ατμόσφαιρα.</span>
-                <span class="lang-en">Modern amenities and a peaceful atmosphere.</span>
-              </p>
+            <div class="faq-image-card"
+                 style="background-image: url('{{ url_for('static', filename='terra-petra/room2.jpg') }}');">
+                <div class="faq-image-card-content">
+                    <h3 class="h6 mb-1">
+                        <span class="lang-en">Comfortable Rooms</span>
+                        <span class="lang-el">Άνετα Δωμάτια</span>
+                    </h3>
+                    <p class="small">
+                        <span class="lang-en">Modern amenities and a peaceful atmosphere.</span>
+                        <span class="lang-el">Σύγχρονες παροχές και ήρεμη ατμόσφαιρα.</span>
+                    </p>
+                </div>
             </div>
-          </div>
         </div>
 
         <div class="col-md-4 scroll-reveal">
-          <div class="faq-image-card" style="background-image: url('{{ url_for('static', filename='terra-petra/out1.jpg') }}');">
-            <div class="faq-image-card-content">
-              <h3 class="h6 mb-1">
-                <span class="lang-el">Εξωτερικοί Χώροι</span>
-                <span class="lang-en">Outdoor Areas</span>
-              </h3>
-              <p class="small">
-                <span class="lang-el">Κήπος, βεράντες και χώροι χαλάρωσης.</span>
-                <span class="lang-en">Garden, terraces, and relaxing spaces.</span>
-              </p>
+            <div class="faq-image-card"
+                 style="background-image: url('{{ url_for('static', filename='terra-petra/out1.jpg') }}');">
+                <div class="faq-image-card-content">
+                    <h3 class="h6 mb-1">
+                        <span class="lang-en">Outdoor Areas</span>
+                        <span class="lang-el">Εξωτερικοί Χώροι</span>
+                    </h3>
+                    <p class="small">
+                        <span class="lang-en">Garden, terraces, and relaxing spaces.</span>
+                        <span class="lang-el">Κήπος, βεράντες και χώροι χαλάρωσης.</span>
+                    </p>
+                </div>
             </div>
-          </div>
         </div>
 
         <div class="col-md-4 scroll-reveal">
-          <div class="faq-image-card" style="background-image: url('{{ url_for('static', filename='terra-petra/view5.jpg') }}');">
-            <div class="faq-image-card-content">
-              <h3 class="h6 mb-1">
-                <span class="lang-el">Θέα στα Μετέωρα</span>
-                <span class="lang-en">Meteora Views</span>
-              </h3>
-              <p class="small">
-                <span class="lang-el">Θέα στο βουνό, στην πόλη και σε σημεία ενδιαφέροντος.</span>
-                <span class="lang-en">Mountain, city, and landmark views.</span>
-              </p>
+            <div class="faq-image-card"
+                 style="background-image: url('{{ url_for('static', filename='terra-petra/view5.jpg') }}');">
+                <div class="faq-image-card-content">
+                    <h3 class="h6 mb-1">
+                        <span class="lang-en">Meteora Views</span>
+                        <span class="lang-el">Θέα στα Μετέωρα</span>
+                    </h3>
+                    <p class="small">
+                        <span class="lang-en">Mountain, city, and landmark views.</span>
+                        <span class="lang-el">Θέα στο βουνό, στην πόλη και σε σημεία ενδιαφέροντος.</span>
+                    </p>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
+    </div>
 
-      <!-- Policies accordion -->
+    <div class="policies-section">
       <div class="accordion policies-accordion" id="policiesAccordion">
 
-        <!-- Check-in / Check-out -->
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingCheckin">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCheckin" aria-expanded="false" aria-controls="collapseCheckin">
-              <i class="fas fa-clock text-primary me-2"></i>
-              <span class="lang-en">Check-in &amp; Check-out Time</span>
-              <span class="lang-el">Ώρες Check-in &amp; Check-out</span>
-            </button>
-          </h2>
-          <div id="collapseCheckin" class="accordion-collapse collapse" aria-labelledby="headingCheckin" data-bs-parent="#policiesAccordion">
-            <div class="accordion-body">
-              <span class="lang-en">
-                Check-in is available from <strong>14:00</strong> to <strong>23:00</strong>.<br>
-                Check-out is available from <strong>11:00</strong> to <strong>11:30</strong>.
-              </span>
-              <span class="lang-el">
-                Το check-in γίνεται από τις <strong>14:00</strong> έως τις <strong>23:00</strong>.<br>
-                Το check-out πραγματοποιείται από τις <strong>11:00</strong> έως τις <strong>11:30</strong>.
-              </span>
-            </div>
-          </div>
-        </div>
+        {{ faq_item(
+          'Checkin',
+          'fas fa-clock',
+          'Check-in & Check-out Time',
+          'Ώρες Check-in & Check-out',
+          'Check-in is available from <strong>14:00</strong> to <strong>23:00</strong>.<br>Check-out is available from <strong>11:00</strong> to <strong>11:30</strong>.',
+          'Το check-in γίνεται από τις <strong>14:00</strong> έως τις <strong>23:00</strong>.<br>Το check-out πραγματοποιείται από τις <strong>11:00</strong> έως τις <strong>11:30</strong>.'
+        ) }}
 
-        <!-- Parking -->
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingParking">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseParking" aria-expanded="false" aria-controls="collapseParking">
-              <i class="fas fa-parking text-primary me-2"></i>
-              <span class="lang-en">Parking</span>
-              <span class="lang-el">Χώρος Στάθμευσης</span>
-            </button>
-          </h2>
-          <div id="collapseParking" class="accordion-collapse collapse" aria-labelledby="headingParking" data-bs-parent="#policiesAccordion">
-            <div class="accordion-body">
-              <span class="lang-en">
-                Free private parking is available on site and no reservation is required. Accessible parking is also available.
-              </span>
-              <span class="lang-el">
-                Διατίθεται δωρεάν ιδιωτικός χώρος στάθμευσης στον χώρο του καταλύματος και δεν απαιτείται κράτηση. Υπάρχει επίσης χώρος στάθμευσης για ΑμεΑ.
-              </span>
-            </div>
-          </div>
-        </div>
+        {{ faq_item(
+          'Parking',
+          'fas fa-parking',
+          'Parking',
+          'Χώρος Στάθμευσης',
+          'Free private parking is available on site and no reservation is required. Accessible parking is also available.',
+          'Διατίθεται δωρεάν ιδιωτικός χώρος στάθμευσης στον χώρο του καταλύματος και δεν απαιτείται κράτηση. Υπάρχει επίσης χώρος στάθμευσης για ΑμεΑ.'
+        ) }}
 
-        <!-- WiFi -->
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingWifi">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWifi" aria-expanded="false" aria-controls="collapseWifi">
-              <i class="fas fa-wifi text-primary me-2"></i>
-              <span class="lang-en">Wi-Fi Policy</span>
-              <span class="lang-el">Πολιτική Wi-Fi</span>
-            </button>
-          </h2>
-          <div id="collapseWifi" class="accordion-collapse collapse" aria-labelledby="headingWifi" data-bs-parent="#policiesAccordion">
-            <div class="accordion-body">
-              <span class="lang-en">
-                Wi-Fi is available in all areas of the property and is free of charge.
-              </span>
-              <span class="lang-el">
-                Το Wi-Fi διατίθεται σε όλους τους χώρους του καταλύματος και δεν χρεώνεται.
-              </span>
-            </div>
-          </div>
-        </div>
+        {{ faq_item(
+          'Wifi',
+          'fas fa-wifi',
+          'Wi-Fi Policy',
+          'Πολιτική Wi-Fi',
+          'Wi-Fi is available in all areas of the property and is free of charge.',
+          'Το Wi-Fi διατίθεται σε όλους τους χώρους του καταλύματος και δεν χρεώνεται.'
+        ) }}
 
-        <!-- Restaurant -->
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingRestaurant">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseRestaurant" aria-expanded="false" aria-controls="collapseRestaurant">
-              <i class="fas fa-utensils text-primary me-2"></i>
-              <span class="lang-en">Is there a restaurant?</span>
-              <span class="lang-el">Υπάρχει εστιατόριο;</span>
-            </button>
-          </h2>
-          <div id="collapseRestaurant" class="accordion-collapse collapse" aria-labelledby="headingRestaurant" data-bs-parent="#policiesAccordion">
-            <div class="accordion-body">
-              <span class="lang-en">
-                There is no restaurant at Terra Petra Meteora. However, the property offers a bar, snack bar, and an on-site coffee shop.
-              </span>
-              <span class="lang-el">
-                Δεν υπάρχει εστιατόριο στο Terra Petra Meteora. Ωστόσο, το κατάλυμα διαθέτει μπαρ, σνακ μπαρ και καφετέρια στον χώρο του καταλύματος.
-              </span>
-            </div>
-          </div>
-        </div>
+        {{ faq_item(
+          'Restaurant',
+          'fas fa-utensils',
+          'Is there a restaurant?',
+          'Υπάρχει εστιατόριο;',
+          'There is no restaurant at Terra Petra Meteora. However, the property offers a bar, snack bar, and an on-site coffee shop.',
+          'Δεν υπάρχει εστιατόριο στο Terra Petra Meteora. Ωστόσο, το κατάλυμα διαθέτει μπαρ, σνακ μπαρ και καφετέρια στον χώρο του καταλύματος.'
+        ) }}
 
-        <!-- Bar / Food & Drink -->
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingFoodDrink">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFoodDrink" aria-expanded="false" aria-controls="collapseFoodDrink">
-              <i class="fas fa-glass-martini-alt text-primary me-2"></i>
-              <span class="lang-en">Food &amp; Drink</span>
-              <span class="lang-el">Φαγητό &amp; Ποτό</span>
-            </button>
-          </h2>
-          <div id="collapseFoodDrink" class="accordion-collapse collapse" aria-labelledby="headingFoodDrink" data-bs-parent="#policiesAccordion">
-            <div class="accordion-body">
-              <span class="lang-en">
-                Terra Petra Meteora offers a bar, snack bar, on-site coffee shop, fruit, and wine/champagne with an additional charge where applicable.
-              </span>
-              <span class="lang-el">
-                Το Terra Petra Meteora διαθέτει μπαρ, σνακ μπαρ, καφετέρια στον χώρο του καταλύματος, φρούτα και κρασί/σαμπάνια με επιπλέον χρέωση όπου ισχύει.
-              </span>
-            </div>
-          </div>
-        </div>
+        {{ faq_item(
+          'FoodDrink',
+          'fas fa-glass-martini-alt',
+          'Food & Drink',
+          'Φαγητό & Ποτό',
+          'Terra Petra Meteora offers a bar, snack bar, on-site coffee shop, fruit, and wine/champagne with an additional charge where applicable.',
+          'Το Terra Petra Meteora διαθέτει μπαρ, σνακ μπαρ, καφετέρια στον χώρο του καταλύματος, φρούτα και κρασί/σαμπάνια με επιπλέον χρέωση όπου ισχύει.'
+        ) }}
 
-        <!-- Family rooms -->
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingFamily">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFamily" aria-expanded="false" aria-controls="collapseFamily">
-              <i class="fas fa-users text-primary me-2"></i>
-              <span class="lang-en">Family Rooms &amp; Children</span>
-              <span class="lang-el">Οικογενειακά Δωμάτια &amp; Παιδιά</span>
-            </button>
-          </h2>
-          <div id="collapseFamily" class="accordion-collapse collapse" aria-labelledby="headingFamily" data-bs-parent="#policiesAccordion">
-            <div class="accordion-body">
-              <span class="lang-en">
-                Family rooms are available. Children of all ages are welcome. Children aged 4 years and above are charged as adults at this property. Baby cots are available upon request for children aged 0–3 years, free of charge and subject to availability. Extra beds are not available.
-              </span>
-              <span class="lang-el">
-                Υπάρχουν οικογενειακά δωμάτια. Γίνονται δεκτά παιδιά όλων των ηλικιών. Τα παιδιά 4 ετών και άνω χρεώνονται ως ενήλικες. Βρεφικές κούνιες διατίθενται κατόπιν αιτήματος για παιδιά 0–3 ετών, δωρεάν και βάσει διαθεσιμότητας. Δεν διατίθενται επιπλέον κρεβάτια.
-              </span>
-            </div>
-          </div>
-        </div>
+        {{ faq_item(
+          'Family',
+          'fas fa-users',
+          'Family Rooms & Children',
+          'Οικογενειακά Δωμάτια & Παιδιά',
+          'Family rooms are available. Children of all ages are welcome. Children aged 4 years and above are charged as adults. Baby cots are available upon request for children aged 0–3 years, free of charge and subject to availability. Extra beds are not available.',
+          'Υπάρχουν οικογενειακά δωμάτια. Γίνονται δεκτά παιδιά όλων των ηλικιών. Τα παιδιά 4 ετών και άνω χρεώνονται ως ενήλικες. Βρεφικές κούνιες διατίθενται κατόπιν αιτήματος για παιδιά 0–3 ετών, δωρεάν και βάσει διαθεσιμότητας. Δεν διατίθενται επιπλέον κρεβάτια.'
+        ) }}
 
-        <!-- Pets -->
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingPets">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePets" aria-expanded="false" aria-controls="collapsePets">
-              <i class="fas fa-paw text-primary me-2"></i>
-              <span class="lang-en">Pets Policy</span>
-              <span class="lang-el">Πολιτική για Κατοικίδια</span>
-            </button>
-          </h2>
-          <div id="collapsePets" class="accordion-collapse collapse" aria-labelledby="headingPets" data-bs-parent="#policiesAccordion">
-            <div class="accordion-body">
-              <span class="lang-en">
-                Pets are allowed upon request and no extra charges apply.
-              </span>
-              <span class="lang-el">
-                Τα κατοικίδια επιτρέπονται κατόπιν αιτήματος και χωρίς επιπλέον χρέωση.
-              </span>
-            </div>
-          </div>
-        </div>
+        {{ faq_item(
+          'Pets',
+          'fas fa-paw',
+          'Pets Policy',
+          'Πολιτική για Κατοικίδια',
+          'Pets are allowed upon request and no extra charges apply.',
+          'Τα κατοικίδια επιτρέπονται κατόπιν αιτήματος και χωρίς επιπλέον χρέωση.'
+        ) }}
 
-        <!-- Smoking -->
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingSmoking">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSmoking" aria-expanded="false" aria-controls="collapseSmoking">
-              <i class="fas fa-smoking-ban text-danger me-2"></i>
-              <span class="lang-en">Smoking Policy</span>
-              <span class="lang-el">Πολιτική Καπνίσματος</span>
-            </button>
-          </h2>
-          <div id="collapseSmoking" class="accordion-collapse collapse" aria-labelledby="headingSmoking" data-bs-parent="#policiesAccordion">
-            <div class="accordion-body">
-              <span class="lang-en">
-                Smoking is not allowed in all areas of the property.
-              </span>
-              <span class="lang-el">
-                Το κάπνισμα δεν επιτρέπεται σε όλους τους χώρους του καταλύματος.
-              </span>
-            </div>
-          </div>
-        </div>
+        {{ faq_item(
+          'Smoking',
+          'fas fa-smoking-ban',
+          'Smoking Policy',
+          'Πολιτική Καπνίσματος',
+          'Smoking is not allowed in all areas of the property.',
+          'Το κάπνισμα δεν επιτρέπεται σε όλους τους χώρους του καταλύματος.'
+        ) }}
 
-        <!-- Accessibility -->
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingAccessibility">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAccessibility" aria-expanded="false" aria-controls="collapseAccessibility">
-              <i class="fas fa-wheelchair text-primary me-2"></i>
-              <span class="lang-en">Accessibility</span>
-              <span class="lang-el">Προσβασιμότητα</span>
-            </button>
-          </h2>
-          <div id="collapseAccessibility" class="accordion-collapse collapse" aria-labelledby="headingAccessibility" data-bs-parent="#policiesAccordion">
-            <div class="accordion-body">
-              <span class="lang-en">
-                The property offers facilities for disabled guests, wheelchair-accessible units, elevator access to upper floors, accessible toilets with grab rails, raised toilets, low bathroom sinks, Braille and tactile signs, and features suitable for guests with hearing difficulties.
-              </span>
-              <span class="lang-el">
-                Το κατάλυμα προσφέρει εγκαταστάσεις για ΑμεΑ, μονάδες προσβάσιμες σε αναπηρικό αμαξίδιο, πρόσβαση στους πάνω ορόφους μέσω ανελκυστήρα, τουαλέτες με λαβές στήριξης, υπερυψωμένες τουαλέτες, νιπτήρες χαμηλού ύψους, οπτικά βοηθήματα με Μπράιγ και ανάγλυφα σήματα, καθώς και παροχές κατάλληλες για άτομα με προβλήματα ακοής.
-              </span>
-            </div>
-          </div>
-        </div>
+        {{ faq_item(
+          'Accessibility',
+          'fas fa-wheelchair',
+          'Accessibility',
+          'Προσβασιμότητα',
+          'The property offers facilities for disabled guests, wheelchair-accessible units, elevator access, accessible toilets with grab rails, raised toilets, low bathroom sinks, Braille and tactile signs, and features suitable for guests with hearing difficulties.',
+          'Το κατάλυμα προσφέρει εγκαταστάσεις για ΑμεΑ, μονάδες προσβάσιμες σε αναπηρικό αμαξίδιο, πρόσβαση με ανελκυστήρα, τουαλέτες με λαβές στήριξης, υπερυψωμένες τουαλέτες, νιπτήρες χαμηλού ύψους, οπτικά βοηθήματα με Μπράιγ και ανάγλυφα σήματα, καθώς και παροχές κατάλληλες για άτομα με προβλήματα ακοής.'
+        ) }}
 
-        <!-- Room Amenities -->
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingRoomAmenities">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseRoomAmenities" aria-expanded="false" aria-controls="collapseRoomAmenities">
-              <i class="fas fa-bed text-primary me-2"></i>
-              <span class="lang-en">Room Amenities</span>
-              <span class="lang-el">Παροχές Δωματίου</span>
-            </button>
-          </h2>
-          <div id="collapseRoomAmenities" class="accordion-collapse collapse" aria-labelledby="headingRoomAmenities" data-bs-parent="#policiesAccordion">
-            <div class="accordion-body">
-              <span class="lang-en">
-                Rooms include air conditioning, heating, soundproofing, a desk, wardrobe, dressing room, large beds, flat-screen TV, satellite channels, radio, iPad, safe, laptop-size safe, refrigerator, bed linen, towels, slippers, bathrobe, hairdryer, free toiletries, and a private bathroom with shower or bath.
-              </span>
-              <span class="lang-el">
-                Τα δωμάτια διαθέτουν κλιματισμό, θέρμανση, ηχομόνωση, επιφάνεια εργασίας, ντουλάπα, γκαρνταρόμπα, μεγάλα κρεβάτια, τηλεόραση επίπεδης οθόνης, δορυφορικά κανάλια, ραδιόφωνο, iPad, θυρίδα ασφαλείας, θυρίδα ασφαλείας μεγέθους φορητού υπολογιστή, ψυγείο, λευκά είδη, πετσέτες, παντόφλες, μπουρνούζι, στεγνωτήρα μαλλιών, δωρεάν προϊόντα περιποίησης και ιδιωτικό μπάνιο με μπανιέρα ή ντους.
-              </span>
-            </div>
-          </div>
-        </div>
+        {{ faq_item(
+          'RoomAmenities',
+          'fas fa-bed',
+          'Room Amenities',
+          'Παροχές Δωματίου',
+          'Rooms include air conditioning, heating, soundproofing, desk, wardrobe, flat-screen TV, satellite channels, iPad, safe, refrigerator, bed linen, towels, slippers, bathrobe, hairdryer, free toiletries, and a private bathroom.',
+          'Τα δωμάτια διαθέτουν κλιματισμό, θέρμανση, ηχομόνωση, επιφάνεια εργασίας, ντουλάπα, τηλεόραση επίπεδης οθόνης, δορυφορικά κανάλια, iPad, θυρίδα ασφαλείας, ψυγείο, λευκά είδη, πετσέτες, παντόφλες, μπουρνούζι, στεγνωτήρα μαλλιών, δωρεάν προϊόντα περιποίησης και ιδιωτικό μπάνιο.'
+        ) }}
 
-        <!-- Views & Outdoor Areas -->
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingViews">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseViews" aria-expanded="false" aria-controls="collapseViews">
-              <i class="fas fa-mountain text-primary me-2"></i>
-              <span class="lang-en">Views &amp; Outdoor Areas</span>
-              <span class="lang-el">Θέα &amp; Εξωτερικοί Χώροι</span>
-            </button>
-          </h2>
-          <div id="collapseViews" class="accordion-collapse collapse" aria-labelledby="headingViews" data-bs-parent="#policiesAccordion">
-            <div class="accordion-body">
-              <span class="lang-en">
-                Guests can enjoy views of the mountain, garden, city, inner courtyard, and nearby landmarks. Outdoor areas include a garden, terrace, balcony, patio, sun terrace, picnic area, outdoor furniture, and outdoor dining area.
-              </span>
-              <span class="lang-el">
-                Οι επισκέπτες μπορούν να απολαύσουν θέα στο βουνό, στον κήπο, στην πόλη, στην εσωτερική αυλή και σε σημεία ενδιαφέροντος. Οι εξωτερικοί χώροι περιλαμβάνουν κήπο, βεράντα, μπαλκόνι, αυλή, ηλιόλουστη βεράντα, χώρο για πικ-νικ, έπιπλα εξωτερικού χώρου και τραπεζαρία εξωτερικού χώρου.
-              </span>
-            </div>
-          </div>
-        </div>
+        {{ faq_item(
+          'Views',
+          'fas fa-mountain',
+          'Views & Outdoor Areas',
+          'Θέα & Εξωτερικοί Χώροι',
+          'Guests can enjoy mountain, garden, city, inner courtyard, and landmark views. Outdoor areas include a garden, terrace, balcony, patio, sun terrace, picnic area, outdoor furniture, and outdoor dining area.',
+          'Οι επισκέπτες μπορούν να απολαύσουν θέα στο βουνό, στον κήπο, στην πόλη, στην εσωτερική αυλή και σε σημεία ενδιαφέροντος. Οι εξωτερικοί χώροι περιλαμβάνουν κήπο, βεράντα, μπαλκόνι, αυλή, ηλιόλουστη βεράντα, χώρο για πικ-νικ, έπιπλα εξωτερικού χώρου και τραπεζαρία εξωτερικού χώρου.'
+        ) }}
 
-        <!-- Gym -->
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingGym">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseGym" aria-expanded="false" aria-controls="collapseGym">
-              <i class="fas fa-dumbbell text-primary me-2"></i>
-              <span class="lang-en">Is there a gym?</span>
-              <span class="lang-el">Υπάρχει γυμναστήριο;</span>
-            </button>
-          </h2>
-          <div id="collapseGym" class="accordion-collapse collapse" aria-labelledby="headingGym" data-bs-parent="#policiesAccordion">
-            <div class="accordion-body">
-              <span class="lang-en">
-                There is no gym at Terra Petra Meteora.
-              </span>
-              <span class="lang-el">
-                Δεν υπάρχει γυμναστήριο στο Terra Petra Meteora.
-              </span>
-            </div>
-          </div>
-        </div>
+        {{ faq_item(
+          'Gym',
+          'fas fa-dumbbell',
+          'Is there a gym?',
+          'Υπάρχει γυμναστήριο;',
+          'There is no gym at Terra Petra Meteora.',
+          'Δεν υπάρχει γυμναστήριο στο Terra Petra Meteora.'
+        ) }}
 
-        <!-- Spa -->
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingSpa">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpa" aria-expanded="false" aria-controls="collapseSpa">
-              <i class="fas fa-spa text-primary me-2"></i>
-              <span class="lang-en">Is there a spa?</span>
-              <span class="lang-el">Υπάρχει σπα;</span>
-            </button>
-          </h2>
-          <div id="collapseSpa" class="accordion-collapse collapse" aria-labelledby="headingSpa" data-bs-parent="#policiesAccordion">
-            <div class="accordion-body">
-              <span class="lang-en">
-                There is no spa or wellness centre at Terra Petra Meteora.
-              </span>
-              <span class="lang-el">
-                Δεν υπάρχει σπα ή κέντρο ευεξίας στο Terra Petra Meteora.
-              </span>
-            </div>
-          </div>
-        </div>
+        {{ faq_item(
+          'Spa',
+          'fas fa-spa',
+          'Is there a spa?',
+          'Υπάρχει σπα;',
+          'There is no spa or wellness centre at Terra Petra Meteora.',
+          'Δεν υπάρχει σπα ή κέντρο ευεξίας στο Terra Petra Meteora.'
+        ) }}
 
-        <!-- Pool -->
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingPool">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePool" aria-expanded="false" aria-controls="collapsePool">
-              <i class="fas fa-swimming-pool text-primary me-2"></i>
-              <span class="lang-en">Is there a pool?</span>
-              <span class="lang-el">Υπάρχει πισίνα;</span>
-            </button>
-          </h2>
-          <div id="collapsePool" class="accordion-collapse collapse" aria-labelledby="headingPool" data-bs-parent="#policiesAccordion">
-            <div class="accordion-body">
-              <span class="lang-en">
-                Terra Petra Meteora does not have a swimming pool.
-              </span>
-              <span class="lang-el">
-                Το Terra Petra Meteora δεν διαθέτει πισίνα.
-              </span>
-            </div>
-          </div>
-        </div>
+        {{ faq_item(
+          'Pool',
+          'fas fa-swimming-pool',
+          'Is there a pool?',
+          'Υπάρχει πισίνα;',
+          'Terra Petra Meteora does not have a swimming pool.',
+          'Το Terra Petra Meteora δεν διαθέτει πισίνα.'
+        ) }}
 
-        <!-- Luggage -->
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingLuggage">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseLuggage" aria-expanded="false" aria-controls="collapseLuggage">
-              <i class="fas fa-suitcase text-primary me-2"></i>
-              <span class="lang-en">Luggage Storage</span>
-              <span class="lang-el">Φύλαξη Αποσκευών</span>
-            </button>
-          </h2>
-          <div id="collapseLuggage" class="accordion-collapse collapse" aria-labelledby="headingLuggage" data-bs-parent="#policiesAccordion">
-            <div class="accordion-body">
-              <span class="lang-en">
-                Luggage storage is available at the property.
-              </span>
-              <span class="lang-el">
-                Διατίθεται χώρος φύλαξης αποσκευών στο κατάλυμα.
-              </span>
-            </div>
-          </div>
-        </div>
+        {{ faq_item(
+          'Luggage',
+          'fas fa-suitcase',
+          'Luggage Storage',
+          'Φύλαξη Αποσκευών',
+          'Luggage storage is available at the property.',
+          'Διατίθεται χώρος φύλαξης αποσκευών στο κατάλυμα.'
+        ) }}
 
-        <!-- Reception Services -->
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingReception">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseReception" aria-expanded="false" aria-controls="collapseReception">
-              <i class="fas fa-concierge-bell text-primary me-2"></i>
-              <span class="lang-en">Reception Services</span>
-              <span class="lang-el">Υπηρεσίες Ρεσεψιόν</span>
-            </button>
-          </h2>
-          <div id="collapseReception" class="accordion-collapse collapse" aria-labelledby="headingReception" data-bs-parent="#policiesAccordion">
-            <div class="accordion-body">
-              <span class="lang-en">
-                Reception services include invoice provision, private check-in/check-out, luggage storage, tour organization, and express check-in/check-out.
-              </span>
-              <span class="lang-el">
-                Οι υπηρεσίες ρεσεψιόν περιλαμβάνουν δυνατότητα παροχής τιμολογίου, ιδιωτικό check-in/check-out, φύλαξη αποσκευών, οργάνωση εκδρομών και γρήγορο check-in/check-out.
-              </span>
-            </div>
-          </div>
-        </div>
+        {{ faq_item(
+          'Reception',
+          'fas fa-concierge-bell',
+          'Reception Services',
+          'Υπηρεσίες Ρεσεψιόν',
+          'Reception services include invoice provision, private check-in/check-out, luggage storage, tour organization, and express check-in/check-out.',
+          'Οι υπηρεσίες ρεσεψιόν περιλαμβάνουν δυνατότητα παροχής τιμολογίου, ιδιωτικό check-in/check-out, φύλαξη αποσκευών, οργάνωση εκδρομών και γρήγορο check-in/check-out.'
+        ) }}
 
-        <!-- Activities -->
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingActivities">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseActivities" aria-expanded="false" aria-controls="collapseActivities">
-              <i class="fas fa-bicycle text-primary me-2"></i>
-              <span class="lang-en">Activities</span>
-              <span class="lang-el">Δραστηριότητες</span>
-            </button>
-          </h2>
-          <div id="collapseActivities" class="accordion-collapse collapse" aria-labelledby="headingActivities" data-bs-parent="#policiesAccordion">
-            <div class="accordion-body">
-              <span class="lang-en">
-                Bicycle rental is available with an additional charge. Guests can also enjoy live sports event broadcasts.
-              </span>
-              <span class="lang-el">
-                Διατίθεται ενοικίαση ποδηλάτου με επιπλέον χρέωση. Οι επισκέπτες μπορούν επίσης να παρακολουθήσουν ζωντανές προβολές αθλητικών γεγονότων.
-              </span>
-            </div>
-          </div>
-        </div>
+        {{ faq_item(
+          'Activities',
+          'fas fa-bicycle',
+          'Activities',
+          'Δραστηριότητες',
+          'Bicycle rental is available with an additional charge. Guests can also enjoy live sports event broadcasts.',
+          'Διατίθεται ενοικίαση ποδηλάτου με επιπλέον χρέωση. Οι επισκέπτες μπορούν επίσης να παρακολουθήσουν ζωντανές προβολές αθλητικών γεγονότων.'
+        ) }}
 
-        <!-- Transfers -->
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingTransfers">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTransfers" aria-expanded="false" aria-controls="collapseTransfers">
-              <i class="fas fa-shuttle-van text-primary me-2"></i>
-              <span class="lang-en">Transport Services</span>
-              <span class="lang-el">Υπηρεσίες Μεταφοράς</span>
-            </button>
-          </h2>
-          <div id="collapseTransfers" class="accordion-collapse collapse" aria-labelledby="headingTransfers" data-bs-parent="#policiesAccordion">
-            <div class="accordion-body">
-              <span class="lang-en">
-                Shuttle service and car rental are available. Additional charges may apply.
-              </span>
-              <span class="lang-el">
-                Διατίθεται υπηρεσία μεταφοράς και ενοικίαση αυτοκινήτου. Ενδέχεται να ισχύουν επιπλέον χρεώσεις.
-              </span>
-            </div>
-          </div>
-        </div>
+        {{ faq_item(
+          'Transfers',
+          'fas fa-shuttle-van',
+          'Transport Services',
+          'Υπηρεσίες Μεταφοράς',
+          'Shuttle service and car rental are available. Additional charges may apply.',
+          'Διατίθεται υπηρεσία μεταφοράς και ενοικίαση αυτοκινήτου. Ενδέχεται να ισχύουν επιπλέον χρεώσεις.'
+        ) }}
 
-        <!-- Cancellation -->
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingCancellation">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCancellation" aria-expanded="false" aria-controls="collapseCancellation">
-              <i class="fas fa-calendar-times text-primary me-2"></i>
-              <span class="lang-en">Cancellation &amp; Prepayment</span>
-              <span class="lang-el">Ακύρωση &amp; Προπληρωμή</span>
-            </button>
-          </h2>
-          <div id="collapseCancellation" class="accordion-collapse collapse" aria-labelledby="headingCancellation" data-bs-parent="#policiesAccordion">
-            <div class="accordion-body">
-              <span class="lang-en">
-                Cancellation and prepayment policies vary according to accommodation type. Please check the conditions that may apply to each unit when making your selection.
-              </span>
-              <span class="lang-el">
-                Οι πολιτικές ακύρωσης και προπληρωμής διαφέρουν ανάλογα με τον τύπο καταλύματος. Παρακαλούμε ελέγξτε τους όρους που μπορεί να ισχύουν για κάθε μονάδα όταν κάνετε την επιλογή σας.
-              </span>
-            </div>
-          </div>
-        </div>
+        {{ faq_item(
+          'Cancellation',
+          'fas fa-calendar-times',
+          'Cancellation & Prepayment',
+          'Ακύρωση & Προπληρωμή',
+          'Cancellation and prepayment policies vary according to accommodation type. Please check the conditions that may apply to each unit when making your selection.',
+          'Οι πολιτικές ακύρωσης και προπληρωμής διαφέρουν ανάλογα με τον τύπο καταλύματος. Παρακαλούμε ελέγξτε τους όρους που μπορεί να ισχύουν για κάθε μονάδα όταν κάνετε την επιλογή σας.'
+        ) }}
 
-        <!-- Age restriction -->
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingAge">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAge" aria-expanded="false" aria-controls="collapseAge">
-              <i class="fas fa-id-card text-primary me-2"></i>
-              <span class="lang-en">Age Restriction</span>
-              <span class="lang-el">Περιορισμός Ηλικίας</span>
-            </button>
-          </h2>
-          <div id="collapseAge" class="accordion-collapse collapse" aria-labelledby="headingAge" data-bs-parent="#policiesAccordion">
-            <div class="accordion-body">
-              <span class="lang-en">
-                There is no age restriction for check-in.
-              </span>
-              <span class="lang-el">
-                Δεν υπάρχουν περιορισμοί ηλικίας για το check-in.
-              </span>
-            </div>
-          </div>
-        </div>
+        {{ faq_item(
+          'Age',
+          'fas fa-id-card',
+          'Age Restriction',
+          'Περιορισμός Ηλικίας',
+          'There is no age restriction for check-in.',
+          'Δεν υπάρχουν περιορισμοί ηλικίας για το check-in.'
+        ) }}
 
-        <!-- Parties -->
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingParties">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseParties" aria-expanded="false" aria-controls="collapseParties">
-              <i class="fas fa-volume-mute text-danger me-2"></i>
-              <span class="lang-en">Parties &amp; Events</span>
-              <span class="lang-el">Πάρτι &amp; Εκδηλώσεις</span>
-            </button>
-          </h2>
-          <div id="collapseParties" class="accordion-collapse collapse" aria-labelledby="headingParties" data-bs-parent="#policiesAccordion">
-            <div class="accordion-body">
-              <span class="lang-en">
-                Parties and events are not allowed.
-              </span>
-              <span class="lang-el">
-                Δεν επιτρέπονται τα πάρτι ή/και οι εκδηλώσεις.
-              </span>
-            </div>
-          </div>
-        </div>
+        {{ faq_item(
+          'Parties',
+          'fas fa-volume-mute',
+          'Parties & Events',
+          'Πάρτι & Εκδηλώσεις',
+          'Parties and events are not allowed.',
+          'Δεν επιτρέπονται τα πάρτι ή/και οι εκδηλώσεις.'
+        ) }}
 
-        <!-- Group bookings -->
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingGroups">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseGroups" aria-expanded="false" aria-controls="collapseGroups">
-              <i class="fas fa-layer-group text-primary me-2"></i>
-              <span class="lang-en">Group Bookings</span>
-              <span class="lang-el">Ομαδικές Κρατήσεις</span>
-            </button>
-          </h2>
-          <div id="collapseGroups" class="accordion-collapse collapse" aria-labelledby="headingGroups" data-bs-parent="#policiesAccordion">
-            <div class="accordion-body">
-              <span class="lang-en">
-                For bookings of more than 2 rooms, different policies and additional charges may apply.
-              </span>
-              <span class="lang-el">
-                Σε κρατήσεις για περισσότερα από 2 δωμάτια, μπορεί να ισχύουν διαφορετικές πολιτικές και επιπλέον χρεώσεις.
-              </span>
-            </div>
-          </div>
-        </div>
+        {{ faq_item(
+          'Groups',
+          'fas fa-layer-group',
+          'Group Bookings',
+          'Ομαδικές Κρατήσεις',
+          'For bookings of more than 2 rooms, different policies and additional charges may apply.',
+          'Σε κρατήσεις για περισσότερα από 2 δωμάτια, μπορεί να ισχύουν διαφορετικές πολιτικές και επιπλέον χρεώσεις.'
+        ) }}
 
-        <!-- Payment methods -->
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingPayment">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePayment" aria-expanded="false" aria-controls="collapsePayment">
-              <i class="fas fa-credit-card text-primary me-2"></i>
-              <span class="lang-en">Accepted Payment Methods</span>
-              <span class="lang-el">Αποδεκτοί Τρόποι Πληρωμής</span>
-            </button>
-          </h2>
-          <div id="collapsePayment" class="accordion-collapse collapse" aria-labelledby="headingPayment" data-bs-parent="#policiesAccordion">
-            <div class="accordion-body">
-              <span class="lang-en">
-                Accepted payment methods include American Express, Visa, Mastercard, JCB, and cash.
-              </span>
-              <span class="lang-el">
-                Οι αποδεκτοί τρόποι πληρωμής περιλαμβάνουν American Express, Visa, Mastercard, JCB και μετρητά.
-              </span>
-            </div>
-          </div>
-        </div>
+        {{ faq_item(
+          'Payment',
+          'fas fa-credit-card',
+          'Accepted Payment Methods',
+          'Αποδεκτοί Τρόποι Πληρωμής',
+          'Accepted payment methods include American Express, Visa, Mastercard, JCB, and cash.',
+          'Οι αποδεκτοί τρόποι πληρωμής περιλαμβάνουν American Express, Visa, Mastercard, JCB και μετρητά.'
+        ) }}
 
-        <!-- Languages -->
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingLanguages">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseLanguages" aria-expanded="false" aria-controls="collapseLanguages">
-              <i class="fas fa-language text-primary me-2"></i>
-              <span class="lang-en">Languages Spoken</span>
-              <span class="lang-el">Γλώσσες Επικοινωνίας</span>
-            </button>
-          </h2>
-          <div id="collapseLanguages" class="accordion-collapse collapse" aria-labelledby="headingLanguages" data-bs-parent="#policiesAccordion">
-            <div class="accordion-body">
-              <span class="lang-en">
-                Languages spoken: Greek, English, and Italian.
-              </span>
-              <span class="lang-el">
-                Γλώσσες επικοινωνίας: Ελληνικά, Αγγλικά και Ιταλικά.
-              </span>
-            </div>
-          </div>
-        </div>
+        {{ faq_item(
+          'Languages',
+          'fas fa-language',
+          'Languages Spoken',
+          'Γλώσσες Επικοινωνίας',
+          'Languages spoken: Greek, English, and Italian.',
+          'Γλώσσες επικοινωνίας: Ελληνικά, Αγγλικά και Ιταλικά.'
+        ) }}
 
       </div>
-
     </div>
+
   </div>
 </section>
 
