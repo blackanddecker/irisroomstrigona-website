@@ -968,3 +968,320 @@
         border-radius: 14px;
     }
 }
+
+* ================================================================
+   TRANSPARENT HERO NAVBAR
+   ================================================================ */
+
+:root {
+    --navbar-height: 82px;
+}
+
+
+/* Navbar positioned over the carousel images */
+
+.site-navbar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1100;
+
+    min-height: var(--navbar-height);
+
+    background: rgba(0, 0, 0, 0.25) !important;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: none;
+
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+
+    transition:
+        background 0.35s ease,
+        min-height 0.35s ease,
+        border-color 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+
+/* Black navbar after scrolling */
+
+.site-navbar.navbar-scrolled {
+    min-height: 68px;
+    background: rgba(5, 5, 5, 0.97) !important;
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.32);
+}
+
+
+/* White navbar logo and links */
+
+.site-navbar .navbar-brand,
+.site-navbar .navbar-brand:hover,
+.site-navbar .navbar-brand:focus,
+.site-navbar .nav-link,
+.site-navbar .nav-link:focus {
+    color: rgba(255, 255, 255, 0.94) !important;
+}
+
+.site-navbar .nav-link {
+    position: relative;
+    font-weight: 600;
+
+    transition:
+        color 0.25s ease,
+        opacity 0.25s ease;
+}
+
+.site-navbar .nav-link:hover,
+.site-navbar .nav-link.active {
+    color: #ffffff !important;
+}
+
+
+/* Gold link underline */
+
+.site-navbar .nav-link::after {
+    content: "";
+
+    position: absolute;
+    right: 0.5rem;
+    bottom: 0;
+    left: 0.5rem;
+
+    height: 2px;
+
+    background: var(--color-accent, #9a7b4f);
+
+    transform: scaleX(0);
+    transform-origin: center;
+
+    transition: transform 0.25s ease;
+}
+
+.site-navbar .nav-link:hover::after,
+.site-navbar .nav-link.active::after {
+    transform: scaleX(1);
+}
+
+
+/* Mobile menu button */
+
+.site-navbar .navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.55);
+}
+
+.site-navbar .navbar-toggler:focus {
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.14);
+}
+
+
+/* ================================================================
+   LARGER FULL-SCREEN HERO
+   ================================================================ */
+
+.hero-section {
+    position: relative;
+    width: 100vw;
+
+    height: 100vh;
+    height: 100svh;
+    min-height: 650px;
+
+    /*
+     * Pull the hero upward through the spacing added
+     * by the base layout, so the image reaches the
+     * absolute top of the viewport behind the navbar.
+     */
+    margin-top: -3rem;
+
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* Carousel fills the complete hero */
+
+.hero-carousel,
+.hero-carousel-inner,
+.hero-carousel .carousel-item {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+}
+
+.hero-carousel {
+    z-index: 0;
+}
+
+
+/* Make the background images larger */
+
+.hero-carousel .hero-bg {
+    position: absolute;
+    inset: -3%;
+
+    width: 106%;
+    height: 106%;
+
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    animation: heroKenBurns 15s ease-in-out infinite alternate;
+
+    will-change: transform;
+}
+
+@keyframes heroKenBurns {
+    from {
+        transform: scale(1.02);
+    }
+
+    to {
+        transform: scale(1.13);
+    }
+}
+
+
+/* Dark overlay behind text and navbar */
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+
+    background: linear-gradient(
+        to bottom,
+        rgba(5, 5, 5, 0.24) 0%,
+        rgba(5, 5, 5, 0.12) 35%,
+        rgba(5, 5, 5, 0.62) 100%
+    );
+
+    pointer-events: none;
+}
+
+
+/* Keep text below the fixed navbar */
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+    max-width: 900px;
+
+    padding:
+        calc(var(--navbar-height) + 2rem)
+        2rem
+        2rem;
+}
+
+
+/* Larger hero typography */
+
+.hero-title {
+    font-size: clamp(2.7rem, 6vw, 5.2rem);
+}
+
+.hero-subtitle {
+    max-width: 680px;
+    font-size: clamp(1rem, 1.8vw, 1.25rem);
+}
+
+
+/* ================================================================
+   TABLET AND MOBILE
+   ================================================================ */
+
+@media (max-width: 991.98px) {
+    :root {
+        --navbar-height: 72px;
+    }
+
+    .site-navbar .navbar-collapse.show,
+    .site-navbar .navbar-collapse.collapsing {
+        margin-top: 0.75rem;
+        padding: 1rem 1.25rem;
+
+        background: rgba(5, 5, 5, 0.96);
+
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 8px;
+
+        box-shadow: 0 18px 35px rgba(0, 0, 0, 0.3);
+
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+    }
+
+    .site-navbar .navbar-collapse .nav-link {
+        padding: 0.75rem 0.5rem;
+    }
+
+    .hero-section {
+        height: 100vh;
+        height: 100svh;
+        min-height: 600px;
+    }
+
+    .hero-title {
+        font-size: clamp(2.3rem, 8vw, 4rem);
+    }
+}
+
+
+@media (max-width: 767.98px) {
+    .hero-section {
+        height: 100vh;
+        height: 100svh;
+        min-height: 560px;
+    }
+
+    .hero-content {
+        padding:
+            calc(var(--navbar-height) + 1.5rem)
+            1.25rem
+            1.5rem;
+    }
+
+    .hero-title {
+        font-size: clamp(2rem, 10vw, 3.2rem);
+    }
+
+    .hero-subtitle {
+        max-width: 520px;
+        font-size: 0.95rem;
+        line-height: 1.55;
+    }
+
+    .hero-carousel .hero-bg {
+        inset: -5%;
+
+        width: 110%;
+        height: 10%;
+
+        background-position: center center;
+    }
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+    .hero-carousel .hero-bg {
+        animation: none;
+        transform: scale(1.04);
+    }
+
+    .site-navbar {
+        transition: none;
+    }
+}
