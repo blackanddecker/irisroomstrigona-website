@@ -3,13 +3,56 @@
 <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
 {% endblock %}
 {% block content %}
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const heroCarousel = document.querySelector("#heroCarousel");
 
+    if (heroCarousel && typeof bootstrap !== "undefined") {
+        new bootstrap.Carousel(heroCarousel, {
+            interval: 2000,
+            ride: "carousel",
+            pause: false,
+            wrap: true
+        });
+    }
+});
+</script>
 <!-- ══════════════════════════════════════════════════════
      1. HERO — full-screen cinematic opening
      ══════════════════════════════════════════════════════ -->
 <div class="hero-section">
-    <div class="hero-bg" style="background-image: url('{{ url_for('static', filename='terra-petra/outside2.jpg') }}');"></div>
+
+    <div id="heroCarousel"
+         class="carousel slide hero-carousel"
+         data-bs-ride="carousel"
+         data-bs-interval="4000"
+         data-bs-pause="false">
+
+        <div class="carousel-inner hero-carousel-inner">
+            <div class="carousel-item active">
+                <div class="hero-bg"
+                     style="background-image: url('{{ url_for('static', filename='terra-petra/cloud1.jpg') }}');">
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <div class="hero-bg"
+                     style="background-image: url('{{ url_for('static', filename='terra-petra/view5.jpg') }}');">
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <div class="hero-bg"
+                     style="background-image: url('{{ url_for('static', filename='terra-petra/thea1.jpg') }}');">
+                </div>
+            </div>
+        </div>
+
+    </div>
+
     <div class="hero-overlay"></div>
+
     <div class="hero-content text-center">
         <span class="hero-kicker">
             <span class="lang-en">
@@ -25,25 +68,29 @@
                 <i class="fas fa-star"></i>
             </span>
         </span>
+
         <h1 class="hero-title">
             <span class="lang-en">Terra Petra Meteora</span>
-            <span class="lang-el">Διαμονή με Μαγευτική Θέα στα Μετέωρα</span>
+            <span class="lang-el">Terra Petra Meteora</span>
         </h1>
+
         <p class="hero-subtitle">
             <span class="lang-en">Wake up to peaceful Meteora scenery, warm Greek hospitality, and unforgettable views of the Meteora landscape.</span>
-            <span class="lang-el">Ξυπνήστε με μαγευτικό τοπί με  ζεστή ελληνική φιλοξενία και αξέχαστη θέα στο τοπίο των Μετεώρων.</span>
+            <span class="lang-el">Ξυπνήστε με γαλήνιο τοπίο στα Μετέωρα, ζεστή ελληνική φιλοξενία και αξέχαστη θέα στο μοναδικό τοπίο των Μετεώρων.</span>
         </p>
-        </p>
+
         <div class="hero-cta-group mt-3">
             <a href="{{ url_for('rooms') }}" class="btn-hero-primary">
                 <span class="lang-en">Explore Rooms</span>
                 <span class="lang-el">Δείτε τα Δωμάτια</span>
             </a>
+
             <a href="{{ url_for('contact') }}" class="btn-hero-secondary">
                 <span class="lang-en">Book Your Stay with a View of Meteora</span>
                 <span class="lang-el">Κλείστε τη Διαμονή σας με Θέα στα Μετέωρα</span>
             </a>
         </div>
+
         <div class="hero-scroll-hint">
             <i class="fas fa-chevron-down"></i>
         </div>
