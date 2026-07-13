@@ -86,8 +86,8 @@ document.addEventListener("DOMContentLoaded", function () {
             </a>
 
             <a href="{{ url_for('contact') }}" class="btn-hero-secondary">
-                <span class="lang-en">Book Your Stay with a View of Meteora</span>
-                <span class="lang-el">Κλείστε τη Διαμονή σας με Θέα στα Μετέωρα</span>
+                <span class="lang-en">Book Your Stay</span>
+                <span class="lang-el">Κλείστε τη Διαμονή σας</span>
             </a>
         </div>
 
@@ -139,7 +139,7 @@ document.addEventListener("DOMContentLoaded", function () {
         <!-- Right: image fills exactly 50vw -->
         <div class="intro-halves__image-col reveal-image from-right">
             <div class="intro-halves__img">
-                <img src="{{ url_for('static', filename='terra-petra/room1.jpg') }}" alt="Cozy room interior" loading="lazy">
+                <img src="{{ url_for('static', filename='terra-petra/room_with_view.jpg') }}" alt="Cozy room interior" loading="lazy">
             </div>
         </div>
         <!-- Left: text -->
@@ -399,7 +399,7 @@ document.addEventListener("DOMContentLoaded", function () {
          ══════════════════════════════════════════════════════ -->
         <div class="cta-banner"
              style="
-                background-image: url('{{ url_for('static', filename='terra-petra/room2.jpg') }}');
+                background-image: url('{{ url_for('static', filename='terra-petra/terra-petra-2.jpg') }}');
                 background-repeat: no-repeat;
                 background-size: cover;
                 background-position: center;
