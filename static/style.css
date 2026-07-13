@@ -450,16 +450,16 @@ iframe:hover {
     transform: scale(1.01);
 }
 
-/* ── FOOTER: WHITE ───────────────────────────────────────── */
+/* ── FOOTER: BLACK ──────────────────────────────────────── */
 footer {
-    background-color: var(--color-footer-bg) !important;
-    color: var(--color-footer-text);
-    border-top: 1px solid var(--color-footer-border) !important;
+    background-color: #111111 !important;
+    color: #ffffff;
+    border-top: 1px solid rgba(255, 255, 255, 0.12) !important;
 }
 
 footer h5,
 footer h6 {
-    color: var(--color-rock-black);
+    color: #ffffff;
 }
 
 footer h6 {
@@ -475,11 +475,11 @@ footer a {
 
 footer p,
 footer .text-muted {
-    color: var(--color-footer-muted) !important;
+    color: rgba(255, 255, 255, 0.68) !important;
 }
 
 footer a {
-    color: var(--color-footer-text) !important;
+    color: rgba(255, 255, 255, 0.82) !important;
     text-decoration: none;
     transition: color var(--transition), padding-left var(--transition);
 }
@@ -490,20 +490,25 @@ footer a:hover {
     padding-left: 4px;
 }
 
+footer i,
+footer .text-primary {
+    color: var(--color-accent) !important;
+}
+
 footer hr {
-    border-color: var(--color-footer-border);
+    border-color: rgba(255, 255, 255, 0.14);
     opacity: 1;
 }
 
 footer .btn-primary {
-    background-color: var(--color-primary);
-    border-color: var(--color-primary);
+    background-color: var(--color-accent);
+    border-color: var(--color-accent);
     color: #fff !important;
 }
 
 footer .btn-primary:hover {
-    background-color: var(--color-accent);
-    border-color: var(--color-accent);
+    background-color: var(--color-accent-hover);
+    border-color: var(--color-accent-hover);
     color: #fff !important;
     padding-left: 20px;
 }
